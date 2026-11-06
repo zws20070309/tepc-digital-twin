@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-06T085206Z",
+  "generated": "2026-11-06T092501Z",
   "generated_note": "由 tools/writeLatestEvidence.m 生成; 清单自身与 latest_evidence.json 不进表",
   "n_files": 241,
   "files": [
@@ -1439,9 +1439,9 @@
     },
     {
       "path": "README.md",
-      "sha256": "53c145e06bfa6f4b987ae361d122eaff3f37b28735ed3c4c286b4cf3f6c4678a",
-      "bytes": 16085,
-      "mtime_local": "06-11月-2026 16:50:50"
+      "sha256": "9cfa63cec3eac46fb77da0c9c1cf88d393bf5b5bdf147a5b8052cdb301578ef4",
+      "bytes": 17271,
+      "mtime_local": "06-11月-2026 17:17:58"
     },
     {
       "path": "tepc_3d_workbench.m",

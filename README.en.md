@@ -61,26 +61,31 @@ and random stream that produced it.
 ## Pipeline
 
 ```
-┌──────────────┐   ┌───────────────┐   ┌──────────────────┐   ┌─────────────────┐
-│ config v1    │──▶│ geometry      │──▶│ transport adapter│──▶│ event batch     │
-│ (JSON+schema)│   │ chord / field │   │ analytic/empirical│  │ (SoA, 23 cols)  │
-└──────────────┘   └───────────────┘   └──────────────────┘   └────────┬────────┘
-                                                                       │
-   ┌───────────────────────────────────────────────────────────────────▼──────┐
-   │ detector: ion pairs → drift → avalanche (Polya) → Shockley-Ramo waveform │
-   └────────────────────────────────────┬─────────────────────────────────────┘
-                                        │
-   ┌────────────────────────────────────▼─────────────────────────────────────┐
-   │ electronics: CSA → PZ / CR-RC shaper → ADC (dual range, INL) → trigger   │
-   └────────────────────────────────────┬─────────────────────────────────────┘
-                                        │
-   ┌────────────────────────────────────▼─────────────────────────────────────┐
-   │ analysis: f(y) / d(y) → yF, yD → Q(y) → dose chains → instrument inversion│
-   └────────────────────────────────────┬─────────────────────────────────────┘
-                                        │
-   ┌────────────────────────────────────▼─────────────────────────────────────┐
-   │ validation: 16 red-line gates → release flag → report.html / summary.json │
-   └──────────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────────────────────────────────────┐
+├─ 1 config / source ───────────────────────────────────────────────────────────────────────────────┤
+│ config v1 JSON (schema-checked) -> source type / energy / fluence / direction / rate              │
+│                                                v                                                  │
+├─ 2 geometry / field ──────────────────────────────────────────────────────────────────────────────┤
+│ sphere/cyl/slab chords (Cauchy 4V/S); cylindrical or spherical field, closed form or FEM          │
+│                                                v                                                  │
+├─ 3 transport adapter ─────────────────────────────────────────────────────────────────────────────┤
+│ two-body elastic kinematics, Klein-Nishina, Bethe + effective charge + anchored splice            │
+│                                                v                                                  │
+├─ 4 event construction ────────────────────────────────────────────────────────────────────────────┤
+│ event batch as SoA (23 datasets): deposit, chord length and channel tag per event                 │
+│                                                v                                                  │
+├─ 5 detector ──────────────────────────────────────────────────────────────────────────────────────┤
+│ ion-pair fluctuation -> drift -> avalanche (Diethorn + Polya) -> Shockley-Ramo current            │
+│                                                v                                                  │
+├─ 6 electronics ───────────────────────────────────────────────────────────────────────────────────┤
+│ charge-sensitive preamp -> PZ / CR-RC shaper -> ADC (dual range + INL) -> trigger                 │
+│                                                v                                                  │
+├─ 7 microdosimetry ────────────────────────────────────────────────────────────────────────────────┤
+│ weighted f(y) / d(y) -> yF, yD -> Q(y) -> three dose chains -> instrument inversion               │
+│                                                v                                                  │
+├─ 8 validation ────────────────────────────────────────────────────────────────────────────────────┤
+│ 16 red-line gates -> release flag -> summary / gates / report.html / GUI                          │
+└───────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Quick start

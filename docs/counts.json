@@ -1,6 +1,6 @@
 {
   "schema": "tepc-counts-v1",
-  "generated_utc": "2026-11-06T08:51:58Z",
+  "generated_utc": "2026-11-06T09:24:24Z",
   "matlab_release": "R2025a",
   "command": "cd tests; runAllTests",
   "regen_command": "cd <repo>/tests; matlab -batch \"addpath ../src; addpath ../app; addpath ../tools; genCounts\"",
