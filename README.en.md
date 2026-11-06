@@ -41,7 +41,7 @@ splicing — deliberately not a collision-by-collision Monte Carlo.
 | | |
 |---|---|
 | Language | MATLAB (pure `.m`, no MEX, no compiled artifacts; SHA-256 is pure MATLAB, no Java) |
-| Releases | Built and verified on **R2025a**; requires **R2023b+** |
+| Releases | Built and measured on **R2025a**. Nothing here has been run on an earlier release: **R2023b+ is the original project's intent, not something this round verified** |
 | Required toolboxes | Simulink (reference electronics model), Parallel Computing Toolbox (background GUI runs, process pool), PDE Toolbox (optional FEM field map) |
 | Not required | Statistics Toolbox — LHS, Poisson, quantiles, bootstrap and `norminv` are implemented in-repo |
 | Entry points | `tepc_quickstart`, `tepc_gui`, `tepc_3d_workbench` |

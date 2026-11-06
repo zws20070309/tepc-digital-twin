@@ -38,7 +38,7 @@
 | | |
 |---|---|
 | 语言 | MATLAB（纯 `.m`，无 MEX、无编译产物；SHA-256 为纯 MATLAB 实现，不依赖 Java） |
-| 版本 | 在 **R2025a** 上开发与验证；要求 **R2023b+** |
+| 版本 | 在 **R2025a** 上开发并实测；仓库内的代码未在更早版本上跑过，**R2023b+ 只是原项目的目标声明，未经本轮验证** |
 | 必需工具箱 | Simulink（电子学对照模型）、Parallel Computing Toolbox（GUI 后台运行 / 进程池）、PDE Toolbox（可选，FEM 场图） |
 | 不需要 | Statistics Toolbox —— LHS、泊松、分位数、bootstrap、`norminv` 全部仓库内自实现 |
 | 入口 | `tepc_quickstart`、`tepc_gui`、`tepc_3d_workbench` |
