@@ -1,0 +1,7 @@
+BASE_SIGMA 4.2 1.5 1.6  N 4000  SEED 12345  LBAR 0.3539106921
+LEG BASE sigma 4.2 1.5 1.6 | p_analytic 0.813559 0.108959 0.077482 | p_H_measured 0.813225 | yF 19.41256772 dyF_rel 0 | u_floor 0.0146625 | nOk 4000 | 19.9 s
+LEG H_x2 sigma 8.4 1.5 1.6 | p_analytic 0.897196 0.060080 0.042724 | p_H_measured 0.892138 | yF 21.25837068 dyF_rel 0.0950829 | u_floor 0.0134839 | nOk 4000 | 19.6 s
+LEG H_half sigma 2.1 1.5 1.6 | p_analytic 0.685714 0.183673 0.130612 | p_H_measured 0.682634 | yF 17.05015757 dyF_rel -0.121695 | u_floor 0.0165364 | nOk 4000 | 21.1 s
+LEG C_x3 sigma 4.2 4.5 1.6 | p_analytic 0.667992 0.268390 0.063618 | p_H_measured 0.667969 | yF 16.85377331 dyF_rel -0.131811 | u_floor 0.0166018 | nOk 4000 | 19.8 s
+LEG O_x3 sigma 4.2 1.5 4.8 | p_analytic 0.704403 0.094340 0.201258 | p_H_measured 0.700791 | yF 17.27498518 dyF_rel -0.110113 | u_floor 0.0164298 | nOk 4000 | 20.4 s
+SENS_DONE

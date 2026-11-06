@@ -1,0 +1,12 @@
+# MATLAB sources and Markdown are UTF-8 without BOM, LF line endings.
+* text=auto eol=lf
+*.m      text eol=lf
+*.md     text eol=lf
+*.json   text eol=lf
+*.csv    text eol=lf
+*.cff    text eol=lf
+*.log    text eol=lf
+*.slx    binary
+*.png    binary
+*.h5     binary
+*.mat    binary

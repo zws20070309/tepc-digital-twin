@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0",
+  "_banner": "演示参数 — 禁止绝对剂量发布 (DEMO ONLY - do not publish absolute dose)",
+  "run": { "nEvents": 10000, "chunkSize": 2000, "mode": "RESEARCH_DEMO", "uncertaintyDepth": "standard" },
+  "geometry": {
+    "type": "sphere",
+    "electrodeTopology": "axialWire",
+    "_electrodeTopology_note": "type 指微剂量学敏感体积 (弦长/轨迹几何); electrodeTopology 指电极场结构, 是阳极形状与场类型的唯一真相源 (tepc.geometry.electrode)。axialWire=>同轴圆柱场, centerSphere=>同心球壳场。本配置 50 um 阳极按丝状处理 => 柱对称场 (G_mean~136 @700 V); 改 centerSphere 会使 G 跳到 ~1.6e5 并被增益-量程门禁拒绝, 须同时重设 hv_V 与前放/ADC 量程。旧字段 fieldGeometry 已删除: 它曾与阳极类型各自为政, 且 resolve 的 centerSphere 分支是空操作。",
+    "gasRadius_mm": 25.4,
+    "wallThickness_mm": 3.0,
+    "wallMaterial": "A150",
+    "anodeRadius_um": 50.0
+  },
+  "site": { "targetDiameter_um": 2.0, "tissueDensity_kg_m3": 1000.0,
+            "equivalenceMode": "derived" },
+  "gas": {
+    "composition_molfrac": { "CH4": 0.64, "CO2": 0.32, "N2": 0.04 },
+    "pressure_Pa": 1000.0,
+    "temperature_K": 293.15,
+    "compressibility_Z": 1.0,
+    "W_eV": { "value": 31.1, "status": "REFERENCE",
+      "source": "甲烷基组织等效气体 W 值，文献常用值 31.1 eV（ICRU 31 / TEPC 文献），登记见 docs/reference_register.csv" },
+    "fano": { "value": 0.20, "status": "ASSUMED",
+      "source": "正比气体 Fano 因子典型域 0.15-0.25，无本装置实测，ASSUMED" },
+    "transport": {
+      "vd_max_m_s":    { "value": 6.0e5, "status": "ASSUMED",
+        "source": "电子漂移速度饱和值量级 (P-10 类混合气高 E/N 下的典型文献量级)，无本装置实测也无 Magboltz 表，ASSUMED；仅用于漂移-收集时间诊断，不参与任何发布量" },
+      "vd_half_Ed_Vm2": { "value": 3.0e-21, "status": "ASSUMED",
+        "source": "v_d 取到一半饱和值所需的 E/N (约 3 Td 量级，1 Td = 1e-21 V m^2)，ASSUMED 演示级；换成 Magboltz/Boltzmann 求解表才是可核对的口径" },
+      "eta_attach_per_m": { "value": 0.0, "status": "ASSUMED",
+        "source": "CH4/CO2/N2 混合气在本模型里按无显著附着处理 (0 /m)；若改用空气基或含电负性组分的气体，此值必须由外部输运数据给出" }
+    },
+    "_transport_note": "数密度 N = pressure_Pa / (compressibility_Z * kB * temperature_K) 由配置量导出，不是假设值；上面三个才是 ASSUMED。漂移诊断逐事件用事件表自己的 r0_m（不是 resolve 里那个统一雪崩半径 10a），因为输运时间由每个簇的起始半径决定，统一半径只会给一个数、看不出分布。"
+  },
+  "field": { "mode": "analytic", "hv_V": 700.0 },
+  "source": {
+    "type": "mono_neutron",
+    "energy_MeV": 1.0,
+    "fluence_m2": 1.0e6,
+    "arrivalModel": "poisson",
+    "rate_cps": 100.0,
+    "direction": [0, 0, -1],
+    "coneHalfAngle_deg": 15,
+    "_direction_note": "入射方向 (源指向腔心的传播方向, 不必单位化: 消费点归一) 与锥束半角。二者现在驱动三维源锥几何 (tepc.geometry.meshSpec 读它们, 并与装置清单声明的同名值对账), 但解析输运的角度分布仍是各向同性 (tepc.geometry.sampleChord 不接受方向参数) —— 换这个字段不改变任何弦长抽样, 因此对 y_F、f(y) 与剂量全部无影响; 它只让'辐照从哪儿来'成为可核对的声明。",
+    "neutronChannels": { "elastic_H": 1.0, "elastic_C": 1.0, "elastic_O": 1.0 },
+    "channelSigma_barn": { "H": 4.2, "C": 1.5, "O": 1.6,
+      "_status": "ASSUMED", "_source": "ENDF 量级演示值, 仅用于通道权重; 不宣称响应精度" },
+    "gamma_massatt_cm2_g": { "value": 0.08, "status": "ASSUMED",
+      "_source": "662 keV 光子在 TE 气中质量衰减系数量级演示值" },
+    "gamma_photoelectric_frac": { "value": 0.003, "status": "ASSUMED",
+      "_source": "662 keV 光电分支份额演示值" }
+  },
+  "detector": {
+    "gainMode": "analytic_diethorn",
+    "diethorn_deltaV_V": { "value": 36.5, "status": "ASSUMED",
+      "source": "Diethorn 模型 deltaV 参数，甲烷类气体文献典型值，未标定，ASSUMED" },
+    "spaceCharge": { "enabled": false, "k_sc": 0.0 },
+    "avalancheStartMode": "fixed",
+    "startPositionJitter": 0.0,
+    "_avalancheStart_note": "fixed = 所有事件共用名义雪崩起点 r0=10a (回归模式, 与历史逐位一致); sampled = 按 ln(r0) 对数正态抽样 (sd=relative), 增益 G(r0) 逐事件跟随并用 Gauss-Hermite 条件化保持名义均值。二者都是 ASSUMED: 真实电离云径向分布需要输运级蒙卡 (Magboltz/Geant4) 才能定。"
+  },
+  "electronics": {
+    "sampleTime_s": 1.0e-8,
+    "waveWindow_s": 1.2e-5,
+    "Cf_F": 1.0e-12,
+    "Rf_Ohm": 5.0e7,
+    "shaperType": "cr_rc",
+    "shaping_s": 1.0e-6,
+    "shaperOrder": 1,
+    "noise": { "en_white_nV_per_rootHz": 4.0, "en_1f_corner_Hz": 100.0,
+               "en_1f_amp_nV": 20.0, "in_pA_per_rootHz": 0.5 },
+    "trigger": { "threshold_V": 0.02, "hysteresis_V": 0.005,
+                 "preTrigSamples": 64, "pileUpReject_s": 3.0e-6 },
+    "adc": { "bits": 14, "fullScale_V": 2.0, "inl_lsb": 0.5,
+             "clockJitter_s": 1.0e-11, "range2Gain": 32.0,
+             "_range2_note": "量程2 上限 = range2Gain*FS = 64 V; 本配置 (G=136, Cf=1pF, tau_f=50us, tau=1us) 下 1 MeV 反冲质子峰值约 35 V, 取 32 才覆盖源能谱" },
+    "deadTime_s": 1.0e-5,
+    "deadTimeMode": "nonparalyzable"
+  },
+  "analysis": {
+    "linealEnergyDefinition": "epsilon_over_mean_chord",
+    "yMin_keV_um": 0.01, "yMax_keV_um": 500.0, "nBins": 120, "binSpacing": "log",
+    "qualityFactor": { "version": "icrp60_let_on_y",
+      "file": "config/quality-factor/icrp60_let_on_y.csv" }
+  },
+  "uq": {
+    "enabled": true, "nSamples": 32, "seed": 24680, "minSamples": 32,
+    "_minSamples_note": "UQ 完成度门禁的下限。样本数低于它或有任何失败样本或 CI 非有限 => uq_status=INCOMPLETE, VALIDATED 模式阻断发布, DEMO 模式降级水印。",
+    "_note": "演示值: 32 样本保证一次运行秒级完成且 uq.json 真实生成; 正式不确定度评定应按 docs/uncertainty_budget.md 取 nSamples>=500",
+    "variables": {
+      "W_rel":        { "dist": "normal",  "mean": 0.0, "sd": 0.02 },
+      "fano":         { "dist": "uniform", "lo": 0.15, "hi": 0.25 },
+      "gainScale":    { "dist": "normal",  "mean": 0.0, "sd": 0.03 },
+      "threshold_rel": { "dist": "normal", "mean": 0.0, "sd": 0.05,
+        "_class": "measurement", "_note": "触发阈值相对不确定度 (刻度后仍存在的残余设置误差)" },
+      "noise_rel":     { "dist": "normal", "mean": 0.0, "sd": 0.10,
+        "_class": "measurement", "_note": "串联噪声密度幅度的相对不确定度 (经 ctx.noiseScale 真正进入波形)" },
+      "deadTime_rel":  { "dist": "normal", "mean": 0.0, "sd": 0.05,
+        "_class": "measurement", "_note": "死时间常数相对不确定度 (经统一 DAQ 状态机进入权重)" },
+      "stopScale":    { "dist": "normal",  "mean": 0.0, "sd": 0.05 },
+      "pressure_rel": { "dist": "normal",  "mean": 0.0, "sd": 0.005 },
+      "adcCal_rel":   { "dist": "normal",  "mean": 0.0, "sd": 0.01 }
+    },
+    "correlations": {}
+  },
+  "waveform": {
+    "enabled": false,
+    "nSub": 100,
+    "_note": "诊断/数据契约开关: enabled=true 时在事件循环之后按 (seed, nSub) 抽出的事件子集重跑一次仪器链, 把成形+串联噪声后的电压时序按 int16 量化写入独立文件 events/waveforms.h5 (不进 events.h5 的 22 数据集锁)。文件里的 peak_V/t_trigger_s/adc_code/integral_Vs 一律由落盘波形复算, 因此 tests/unit/test_waveform_replay 能用回放证明它们是波形的函数而不是事件表里另存的一份数。默认 false: 不生成该文件; events.h5 的 22 个数据集与 spectrum.csv 不受本开关影响 (tests/integration/test_run_waveform_stage.m 按开关两态逐数据集比对锁住这一点), 但 summary.json 仍固定多出 waveform_status/waveform_note/waveform_nSub 三个披露键。代价与副作用要如实看两条: (1) 整个 waveform 块 (含本段说明文字) 都参与配置身份哈希, 只有 run.nEvents 被排除, 所以翻开关或改这段注释都会换掉 config_sha256; (2) 因此中途翻开关再续跑会被自己的身份守卫拒绝 (报 config_sha256 不一致), 要换状态就新开运行目录。enabled/nSub 的 null、字符串、非标量、非正整数一律被 +config/validate 拒绝, 运行阶段也会再判一次: 空值在 MATLAB 里会让 if 走假分支, 放行它等于把'关掉'变成'打开'。",
+    "_cost_note": "子集是逐事件重跑 tepc.electronics.simulate 取波形, 每次调用都要重做一次噪声 sigma 标定 (200 次实现), 成本随 nSub 线性增长; nSub 只需覆盖'峰/触发/码可回放'的论证需要, 不要当成长谱的采样器。",
+    "_honesty_note": "写入的是解析代理模型 (backendId=analytic_surrogate_v1) 电子学链的模拟波形, 不是实测脉冲形状; 回放只验数据契约自洽, 不构成电子学符合性或'已用实测脉冲标定'的结论。"
+  },
+  "provenance": { "seed": 12345, "parameterStatusPolicy": "strict" }
+}

@@ -1,0 +1,3 @@
+anchor_id,quantity,particle,material,energy,energy_unit,value,unit,tolerance_rel,i_value_eV,source,provenance_status,retrieved,doi_or_url,notes
+PSTAR_H2O_p_10MeV,collision_stopping_power,proton,H2O_liquid,10,MeV,45.67,MeV_cm2_per_g,0.01,75.0,NIST PSTAR (ICRU Report 49 液态水 电子阻止); 已登记于 docs/reference_register.csv,REFERENCE,2026-09-18,https://physics.nist.gov/PhysRefData/Star/Text/PSTAR.html,本实现给 45.95 (+0.61%); 并由 Bethe(ICRU49) 主形式手工独立复算得 ~46.0 互洽
+ESTAR_H2O_e_1MeV,collision_stopping_power,electron,H2O_liquid,1,MeV,1.86,MeV_cm2_per_g,0.015,75.0,NIST ESTAR (ICRU Report 37 液态水 碰撞阻止); 已登记于 docs/reference_register.csv,REFERENCE,2026-09-18,https://physics.nist.gov/PhysRefData/Star/Text/ESTAR.html,本实现给 1.8725 (+0.67%); 修正前为 1.939 (+4.3%) 因 ICRU-37 对数项漏 1/2; 忽略辐射损失与密度效应

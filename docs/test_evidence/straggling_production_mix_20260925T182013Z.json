@@ -1,0 +1,103 @@
+{
+  "generated_utc": "2026-09-25T182013Z",
+  "seed": 90210,
+  "n_events": 2000,
+  "source_energy_MeV": [
+    1,
+    0.3,
+    0.05
+  ],
+  "gas_composition_molfrac": {
+    "CH4": 0.64,
+    "CO2": 0.32,
+    "N2": 0.04
+  },
+  "channel_weights": {
+    "elastic_H": 1,
+    "elastic_C": 1,
+    "elastic_O": 1
+  },
+  "channel_sigma_barn": {
+    "H": 4.2,
+    "C": 1.5,
+    "O": 1.6,
+    "x_status": "ASSUMED",
+    "x_source": "ENDF 量级演示值, 仅用于通道权重; 不宣称响应精度"
+  },
+  "bohr_coeff_MeV2_cm2_per_g": 0.1569,
+  "env": {
+    "free_mb": 4680.20703125,
+    "total_mb": 15986.6796875,
+    "matlab_processes": 2,
+    "source": "win32_os_query"
+  },
+  "note": "涨落触发占比 = 两腿的**气/壁/逸出分配**变化超过 tol 的事件比例 (in-gas 停住的径迹两腿沉积恒等, 所以只看 EdepGas 的逐位差会把浮点重结合读成物理效应, 该列单列\"仅 ulp 条数\")。偏置是配对差, 只与该比例一起读; 均值标准误是本探针自己估计量的, 不是 performance_tiers §3 的 u_yF。道别 (H/C/O) 未拆: 通道标签在 AnalyticAdapter 的文件内函数 pickChannel 里, 未导出。",
+  "rows": [
+    {
+      "E0_MeV": 1,
+      "N": 2000,
+      "tol_keV": 1E-6,
+      "n_partition_changed": 615,
+      "frac_partition_changed": 0.3075,
+      "n_gas_diff": 620,
+      "n_gas_ulp_only": 5,
+      "frac_gas_over_tol": 0.3075,
+      "mean_A_keV": 7.0615074425797983,
+      "mean_B_keV": 7.0113587518080793,
+      "bias_rel": 0.0071524924835413284,
+      "se_rel": 0.0032364434476552088,
+      "bias_over_se": 2.209985312341324,
+      "cv_A": 0.9640522289615423,
+      "se_mean_A_rel": 0.021556863178182,
+      "max_abs_diff_keV": 14.451117008874293,
+      "n_ledger_open_A": 2000,
+      "n_ledger_open_B": 2000,
+      "table_floor_keV": 10,
+      "n_below_table_floor": 40
+    },
+    {
+      "E0_MeV": 0.3,
+      "N": 2000,
+      "tol_keV": 1E-6,
+      "n_partition_changed": 1280,
+      "frac_partition_changed": 0.64,
+      "n_gas_diff": 1312,
+      "n_gas_ulp_only": 32,
+      "frac_gas_over_tol": 0.64,
+      "mean_A_keV": 9.7666668299439436,
+      "mean_B_keV": 9.7281498687713146,
+      "bias_rel": 0.003959330570787456,
+      "se_rel": 0.0034797181355103587,
+      "bias_over_se": 1.1378308289923471,
+      "cv_A": 0.89215937397730871,
+      "se_mean_A_rel": 0.019949290069769192,
+      "max_abs_diff_keV": 20.794012000881271,
+      "n_ledger_open_A": 2000,
+      "n_ledger_open_B": 2000,
+      "table_floor_keV": 10,
+      "n_below_table_floor": 108
+    },
+    {
+      "E0_MeV": 0.05,
+      "N": 2000,
+      "tol_keV": 1E-6,
+      "n_partition_changed": 1029,
+      "frac_partition_changed": 0.5145,
+      "n_gas_diff": 1184,
+      "n_gas_ulp_only": 155,
+      "frac_gas_over_tol": 0.5145,
+      "mean_A_keV": 8.1895330864035927,
+      "mean_B_keV": 8.037616074600308,
+      "bias_rel": 0.018900754949388254,
+      "se_rel": 0.0049174164979902072,
+      "bias_over_se": 3.8436351602743359,
+      "cv_A": 0.78929586134757068,
+      "se_mean_A_rel": 0.017649192003324168,
+      "max_abs_diff_keV": 13.632404222499986,
+      "n_ledger_open_A": 2000,
+      "n_ledger_open_B": 2000,
+      "table_floor_keV": 10,
+      "n_below_table_floor": 620
+    }
+  ]
+}

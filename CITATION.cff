@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software in academic work, please cite it as below."
+title: "TEPC Digital Twin: analytical event, electronics and microdosimetry baseline"
+abstract: >-
+  A pure-MATLAB analytical surrogate model of a spherical tissue-equivalent
+  proportional counter (TEPC), chaining source definition, geometry and field,
+  an analytical transport adapter, event construction, gas ionization, drift
+  and avalanche gain, a full electronics readout chain, microdosimetric
+  analysis, uncertainty propagation and a 16-item red-line validation gate.
+  RESEARCH/DEMO delivery label: not a Monte Carlo transport code, not a
+  reproduction of any physical device, absolute dose is blocked from release.
+authors:
+  - name: "TEPC Digital Twin authors"
+version: "1.0.0"
+date-released: "2026-11-06"
+license: MIT
+repository-code: "https://github.com/zws20070309/tepc-digital-twin"
+keywords:
+  - microdosimetry
+  - tissue-equivalent proportional counter
+  - TEPC
+  - radiation detection
+  - digital twin
+  - MATLAB
+  - validation
+type: software

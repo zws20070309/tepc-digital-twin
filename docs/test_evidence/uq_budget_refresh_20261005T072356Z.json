@@ -1,0 +1,68 @@
+{
+  "schema": "tepc-uq-budget-refresh-v1",
+  "generated_utc": "2026-10-05T07:23:56Z",
+  "recipe": {
+    "config": "config/defaults/demo_only.json",
+    "config_sha256": "26240b68c5e89bbd0573c1d790832840a715ab7a174142f1371e4b81d37efff1",
+    "stream_kind": "Threefry",
+    "stream_seed": 12345,
+    "run_seed": 12345,
+    "nEv_neutron": 4000,
+    "nEv_gamma": 1500,
+    "transport_entry": "tepc.transport.AnalyticAdapter (不经 execute/analyze)",
+    "y_F_definition": "buildSpectrum(EdepGas_keV, R.lbar_tissue_um, weight, R.edges).yF_exact",
+    "y_F_is_instrument_published": false,
+    "matlab_version": "2025a",
+    "backend_id": "analytic_surrogate_v1"
+  },
+  "context": {
+    "pressure_Pa": 1000,
+    "temperature_K": 293.15,
+    "energy_MeV": 1,
+    "lbar_tissue_um": 0.3539106921268359,
+    "wall_thickness_m": 0.003,
+    "rho_wall_g_cm3": 1.124,
+    "site_mode": "derived"
+  },
+  "neutron": {
+    "yF_exact": 37.793698895076609,
+    "escape_keV_sum": 0,
+    "edep_wall_keV_sum": 1.6782395165718896E+6,
+    "wall_rho_x3": {
+      "yF_exact": 37.793698895076609,
+      "gas_column_bitwise_equal": true,
+      "yF_bitwise_equal": true,
+      "escape_keV_sum": 0
+    },
+    "wall_thickness_x5": {
+      "yF_exact": 37.793698895076609,
+      "gas_column_bitwise_equal": true,
+      "yF_bitwise_equal": true,
+      "escape_keV_sum": 0
+    }
+  },
+  "gamma": {
+    "nEv": 1500,
+    "source_type": "mono_gamma",
+    "mass_atten_cm2_per_g": 0.08,
+    "rho_multiples": [
+      1,
+      2,
+      3
+    ],
+    "wall_born_count": [
+      120,
+      226,
+      323
+    ],
+    "gas_deposit_events": [
+      20,
+      15,
+      18
+    ],
+    "production_responds_to_override": true
+  },
+  "selfcheck": {
+    "same_recipe_bitwise_reproducible": true
+  }
+}

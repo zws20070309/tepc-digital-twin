@@ -1,0 +1,1447 @@
+{
+  "generated": "2026-11-06T083825Z",
+  "generated_note": "由 tools/writeLatestEvidence.m 生成; 清单自身与 latest_evidence.json 不进表",
+  "n_files": 240,
+  "files": [
+    {
+      "path": "src/+tepc/Project.m",
+      "sha256": "4ba5404aebca5d5f194116b3358bc0ad21548d9b13a7d11ec56331f9ba46ddbe",
+      "bytes": 1173,
+      "mtime_local": "24-9月-2026 12:40:57"
+    },
+    {
+      "path": "src/+tepc/backendId.m",
+      "sha256": "41f61fadbcf7a081f467b0a0a343e9c82386cb776f82ee233d22d489eea2a57f",
+      "bytes": 555,
+      "mtime_local": "21-9月-2026 19:01:30"
+    },
+    {
+      "path": "src/+tepc/+analysis/analyze.m",
+      "sha256": "f5cc6ca284ee6bddfd8fe5074b85c53f28b703a793007c26bd2660bdf823f598",
+      "bytes": 17870,
+      "mtime_local": "05-10月-2026 11:52:55"
+    },
+    {
+      "path": "src/+tepc/+analysis/buildSpectrum.m",
+      "sha256": "22f4c8daf91d7265791ba600da26ca2d6f9323b1f821c8ce2fef991db5f45358",
+      "bytes": 8777,
+      "mtime_local": "03-10月-2026 02:18:18"
+    },
+    {
+      "path": "src/+tepc/+analysis/doseChain.m",
+      "sha256": "e35437c2161cdeada47035d93fe27626a171f50b5af10d8eaa111c20e6814518",
+      "bytes": 17252,
+      "mtime_local": "22-9月-2026 15:08:21"
+    },
+    {
+      "path": "src/+tepc/+analysis/instrumentVarianceSplit.m",
+      "sha256": "da1db1dc00eb061d19f6f8a692cf11d092b3c6a648140a85bca39f82b8f238a0",
+      "bytes": 6413,
+      "mtime_local": "28-9月-2026 13:39:02"
+    },
+    {
+      "path": "src/+tepc/+analysis/organDoseFigure.m",
+      "sha256": "b15c96a0eb97b95252cf5be445ad5bbd92188077593feb5eac3c95678bee9b96",
+      "bytes": 13677,
+      "mtime_local": "10-10月-2026 12:15:19"
+    },
+    {
+      "path": "src/+tepc/+analysis/organDoseFromField.m",
+      "sha256": "b9f46920f4fa06729bbc15112f882fc02dcb3c14e98a3a992268bd8f6db9a662",
+      "bytes": 30434,
+      "mtime_local": "10-10月-2026 13:05:15"
+    },
+    {
+      "path": "src/+tepc/+analysis/qualityFactor.m",
+      "sha256": "ea5350001727f08ccd40257c66c0fd78eecaaa4ccf0f873f44e34dfedd1cf2ec",
+      "bytes": 2429,
+      "mtime_local": "21-9月-2026 15:33:59"
+    },
+    {
+      "path": "src/+tepc/+analysis/radiationWeighting.m",
+      "sha256": "3e7def3885f16942db890d26622abfcd94a5bc54fdd5f74740598874ec9d4452",
+      "bytes": 6041,
+      "mtime_local": "09-10月-2026 21:29:17"
+    },
+    {
+      "path": "src/+tepc/+analysis/separateFields.m",
+      "sha256": "e218de4597477e79fa989c2bdf5b3686a7764e1cc7addc1fd2dfc9f2f417ac18",
+      "bytes": 2212,
+      "mtime_local": "21-9月-2026 15:34:46"
+    },
+    {
+      "path": "src/+tepc/+analysis/sourceNormalization.m",
+      "sha256": "3e4d41601ab2b12b503692b98b08849d791af84ba3f9081ef2155b9dcde64eb8",
+      "bytes": 10965,
+      "mtime_local": "22-9月-2026 18:05:34"
+    },
+    {
+      "path": "src/+tepc/+calibration/adcToEnergy.m",
+      "sha256": "4822359ddf8118edaba452b15c9cbe769cc34d39e9357928c428ffdab95d542a",
+      "bytes": 1301,
+      "mtime_local": "21-9月-2026 15:34:46"
+    },
+    {
+      "path": "src/+tepc/+calibration/fitChargeInjection.m",
+      "sha256": "7cbc94943a2c3700ac4d731f40ff335256a652c1e512ebd742ee28fbdd4b8d0a",
+      "bytes": 2329,
+      "mtime_local": "21-9月-2026 15:35:16"
+    },
+    {
+      "path": "src/+tepc/+calibration/injectCalibrate.m",
+      "sha256": "9feabbf0d7cb790c986144d6191ab182cbc6dcdf4263f3ada13bf28ae556c636",
+      "bytes": 6365,
+      "mtime_local": "21-9月-2026 15:34:47"
+    },
+    {
+      "path": "src/+tepc/+config/applyDepthTier.m",
+      "sha256": "889a78e07055bc52c28d6c457106dae68b114e2c1b09e8bd2faf443971e43984",
+      "bytes": 4520,
+      "mtime_local": "25-9月-2026 11:59:15"
+    },
+    {
+      "path": "src/+tepc/+config/constants.m",
+      "sha256": "3693e60eace352a76a4e27677471bef041068df98fb3fb7b040517e05bf34911",
+      "bytes": 6799,
+      "mtime_local": "21-9月-2026 20:23:35"
+    },
+    {
+      "path": "src/+tepc/+config/depthConflicts.m",
+      "sha256": "4ad5f2a9144da6eff1dc358ebf2f9cfbbb7ace5f54393b1dd05a1a43c5f336ad",
+      "bytes": 5074,
+      "mtime_local": "25-9月-2026 12:36:58"
+    },
+    {
+      "path": "src/+tepc/+config/load.m",
+      "sha256": "54883adb6c794232464158880caec0b3cd67d492e4268f3c6e0c5ad3c55d180d",
+      "bytes": 1235,
+      "mtime_local": "19-9月-2026 17:36:46"
+    },
+    {
+      "path": "src/+tepc/+config/referenceSlots.m",
+      "sha256": "da125cdd41a1f57dd0766ae82930f01fce87b43e9e78aaaaee7d748898d71a1d",
+      "bytes": 7816,
+      "mtime_local": "25-9月-2026 01:34:23"
+    },
+    {
+      "path": "src/+tepc/+config/resolve.m",
+      "sha256": "6258ef3ed985aab0e7fbe76f0e66ab56aba6db1ad51b72207f71872fbe50ee95",
+      "bytes": 5331,
+      "mtime_local": "21-9月-2026 19:39:35"
+    },
+    {
+      "path": "src/+tepc/+config/statusScan.m",
+      "sha256": "d33bf1f364e608e56666bb0f8b70481afd62e68ca25f716d05dac0ce513a5919",
+      "bytes": 1217,
+      "mtime_local": "20-9月-2026 00:57:28"
+    },
+    {
+      "path": "src/+tepc/+config/uncertaintyDepthKnobs.m",
+      "sha256": "c04ee1e34894704630532b50c5da24bdddf15932a603ec749c042d6d96ae7589",
+      "bytes": 361,
+      "mtime_local": "25-9月-2026 04:06:18"
+    },
+    {
+      "path": "src/+tepc/+config/uncertaintyDepthTiers.m",
+      "sha256": "8d3a35d4d35f9d65c16f4ab4548c332bd217edfef2648a47350c77f681328ce0",
+      "bytes": 6646,
+      "mtime_local": "25-9月-2026 04:06:18"
+    },
+    {
+      "path": "src/+tepc/+config/validate.m",
+      "sha256": "84768e9a11fa071ed4f44e7bb2a1f3678ba5197458f4e3c28ea3278f4998a03d",
+      "bytes": 35090,
+      "mtime_local": "05-10月-2026 00:34:58"
+    },
+    {
+      "path": "src/+tepc/+detector/avalanche.m",
+      "sha256": "c45586896a4f3cc317330f164d73b37c97313ff9d4ccd981cf39f2ef13d16d41",
+      "bytes": 2863,
+      "mtime_local": "21-9月-2026 19:38:15"
+    },
+    {
+      "path": "src/+tepc/+detector/driftCollect.m",
+      "sha256": "e067bf31916e5e11fc0e1907b70c686f0ffe1667c4f9fbde143811c08cf990f7",
+      "bytes": 2777,
+      "mtime_local": "24-9月-2026 10:48:20"
+    },
+    {
+      "path": "src/+tepc/+detector/fieldConvergence.m",
+      "sha256": "67d7ba82a551b414040a9a1faefeaa7af0fb1ad32e843f34516c292f28e4fa2a",
+      "bytes": 7068,
+      "mtime_local": "21-9月-2026 19:37:23"
+    },
+    {
+      "path": "src/+tepc/+detector/fieldKindOf.m",
+      "sha256": "0c4090161b3a4062ef7240701fba05a0c1eeed1df4ce6ed440c709d9c8f488be",
+      "bytes": 394,
+      "mtime_local": "20-9月-2026 07:14:19"
+    },
+    {
+      "path": "src/+tepc/+detector/fieldMapFingerprint.m",
+      "sha256": "a3fa0f3eda85e6f3b024d4d4e27c206c53d686f852227c50550f6f281c5d84dc",
+      "bytes": 1572,
+      "mtime_local": "21-9月-2026 19:52:57"
+    },
+    {
+      "path": "src/+tepc/+detector/fieldModeOf.m",
+      "sha256": "b51787ca318948015e30e0d084671572b3e6ad64f9d826e06eb038f6da57fd6c",
+      "bytes": 1349,
+      "mtime_local": "21-9月-2026 19:34:42"
+    },
+    {
+      "path": "src/+tepc/+detector/fieldModel.m",
+      "sha256": "16c0c49d59a5570dfef3cd9bd4fc644578533f928a5f107fbc06362dbd124805",
+      "bytes": 3840,
+      "mtime_local": "20-9月-2026 21:18:17"
+    },
+    {
+      "path": "src/+tepc/+detector/fieldOf.m",
+      "sha256": "17d16802f091106aad45ac0da5365062b19aac3795d99bd87f56a53e731b2ab6",
+      "bytes": 11707,
+      "mtime_local": "21-9月-2026 19:36:30"
+    },
+    {
+      "path": "src/+tepc/+detector/ramoCurrent.m",
+      "sha256": "3a56f975e44262eba60addbf3e1d63f65aed73870040b8f5fedf81242cb005f7",
+      "bytes": 2325,
+      "mtime_local": "21-9月-2026 19:38:24"
+    },
+    {
+      "path": "src/+tepc/+detector/ramoWaveform.m",
+      "sha256": "1aae89bbcec674ff2dd75f565947667ea040e19d10acd003539f04a03df1c14e",
+      "bytes": 3575,
+      "mtime_local": "27-9月-2026 20:32:15"
+    },
+    {
+      "path": "src/+tepc/+detector/sampleIonPairs.m",
+      "sha256": "362b8402d5622fe41d824c3c704c1bd01290f719794377825ba15553c702bfff",
+      "bytes": 1408,
+      "mtime_local": "21-9月-2026 15:35:17"
+    },
+    {
+      "path": "src/+tepc/+detector/solveElectrostatic.m",
+      "sha256": "25ddcef2da0ffd162d613b91490b31554dac8375457d3b014ff3f7d89acac746",
+      "bytes": 22413,
+      "mtime_local": "22-9月-2026 12:34:34"
+    },
+    {
+      "path": "src/+tepc/+domain/EventBatch.m",
+      "sha256": "e152189047a09615fb6597efe8eb5550d0987452b214957efb57eafbbea003ca",
+      "bytes": 4675,
+      "mtime_local": "30-9月-2026 13:11:57"
+    },
+    {
+      "path": "src/+tepc/+domain/Flags.m",
+      "sha256": "e8a8a2225ac58d84d2bcc760ff06aec87f5b6cdfef16c432fb18baefd297daef",
+      "bytes": 1094,
+      "mtime_local": "05-10月-2026 00:19:02"
+    },
+    {
+      "path": "src/+tepc/+electronics/adc.m",
+      "sha256": "58c767c04fd9725f70838c4dcd4d89507bf0d702857715798592331cb304c534",
+      "bytes": 3535,
+      "mtime_local": "28-9月-2026 11:29:43"
+    },
+    {
+      "path": "src/+tepc/+electronics/chargeAmp.m",
+      "sha256": "0523c15070cfbdd3c0d332702e04df53dd972b4cc33756125731afca7fe6a1a9",
+      "bytes": 337,
+      "mtime_local": "21-9月-2026 15:33:28"
+    },
+    {
+      "path": "src/+tepc/+electronics/daq.m",
+      "sha256": "d0b7bdbcef0b36131a59c17b3fac1dab2d7104dc6218e7dd7adef33acf603fbd",
+      "bytes": 6185,
+      "mtime_local": "21-9月-2026 15:35:43"
+    },
+    {
+      "path": "src/+tepc/+electronics/deadTime.m",
+      "sha256": "f4c19b26a9a76a68f6a2d1da0d789151032d902f6aa898e3a5eee24752f926c4",
+      "bytes": 6435,
+      "mtime_local": "21-9月-2026 15:33:30"
+    },
+    {
+      "path": "src/+tepc/+electronics/extCode.m",
+      "sha256": "4f8039e49eb26e1153882dae696ab3a7412f2e57f36f76cdfa3f5402f5850ea7",
+      "bytes": 1092,
+      "mtime_local": "20-9月-2026 01:16:15"
+    },
+    {
+      "path": "src/+tepc/+electronics/filters.m",
+      "sha256": "a761cedd8982a847025e3b928f5c19afbeb5804bb5a9640559358e5349d6caf3",
+      "bytes": 4791,
+      "mtime_local": "05-10月-2026 23:59:46"
+    },
+    {
+      "path": "src/+tepc/+electronics/gaussHermiteNodes.m",
+      "sha256": "e56d5afb41d54a07a04cfaf9a4140479e381208e46994ad728d5e063663a04ab",
+      "bytes": 1262,
+      "mtime_local": "21-9月-2026 15:35:07"
+    },
+    {
+      "path": "src/+tepc/+electronics/noise.m",
+      "sha256": "16eaea266fc93ee2f7559ca3d13e6f788615aceb85aadfab1d710bc50d5bd09e",
+      "bytes": 3304,
+      "mtime_local": "28-9月-2026 11:29:41"
+    },
+    {
+      "path": "src/+tepc/+electronics/peakSigned.m",
+      "sha256": "4d685f365ea73a5156ac1b3bae4452f5f74351a643b67a26932b5e212b258c59",
+      "bytes": 1631,
+      "mtime_local": "21-9月-2026 15:33:34"
+    },
+    {
+      "path": "src/+tepc/+electronics/pulseOccupancy_s.m",
+      "sha256": "8f6d9cb7606a9fdd4169e1f95a78a99738a14630fc7b2d4c260ea0896f8df7b2",
+      "bytes": 1733,
+      "mtime_local": "27-9月-2026 20:32:06"
+    },
+    {
+      "path": "src/+tepc/+electronics/shaper.m",
+      "sha256": "9949d378b439b57c9bab9437a4675415455d17c11cc683fcca1ecc8c19d9c73e",
+      "bytes": 2505,
+      "mtime_local": "21-9月-2026 15:35:08"
+    },
+    {
+      "path": "src/+tepc/+electronics/simulate.m",
+      "sha256": "5713747b110b05273fb0be56acb81beb8b65a31c764f0b4d144e33f1c84f3a86",
+      "bytes": 13035,
+      "mtime_local": "21-9月-2026 19:39:13"
+    },
+    {
+      "path": "src/+tepc/+electronics/waveTailTau.m",
+      "sha256": "f9e2d0d357ea29895985ecc59f49b15e7566962da05cda5cc163921f03379947",
+      "bytes": 736,
+      "mtime_local": "27-9月-2026 20:31:47"
+    },
+    {
+      "path": "src/+tepc/+field/fieldMap.m",
+      "sha256": "76750a91a8bdc42b2ad876e8f51d9069a65e6cd523e060649b846a9c32912b9a",
+      "bytes": 20598,
+      "mtime_local": "21-9月-2026 22:14:06"
+    },
+    {
+      "path": "src/+tepc/+field/solveElectrostatic.m",
+      "sha256": "f6a45288669834886c7afca60d87c0bf3f591ce0120bbb40cdb6b0a177fe7351",
+      "bytes": 78025,
+      "mtime_local": "21-9月-2026 23:34:12"
+    },
+    {
+      "path": "src/+tepc/+geometry/buildGeometry.m",
+      "sha256": "d2c03699e6b410c426d9cc8e16036654c77a3d727759633d2b0cfb82007ccb49",
+      "bytes": 3233,
+      "mtime_local": "21-9月-2026 15:31:54"
+    },
+    {
+      "path": "src/+tepc/+geometry/checkMesh.m",
+      "sha256": "856e0cde8fd8ce36be406958b366cb915a0411ccc3582295a83b632a11cb73d0",
+      "bytes": 12425,
+      "mtime_local": "21-9月-2026 15:33:07"
+    },
+    {
+      "path": "src/+tepc/+geometry/clipVolume.m",
+      "sha256": "ca634ca61d31210215f9d4f0c6af9740008085500f1c9d5e6befa8aa835ce2b8",
+      "bytes": 45655,
+      "mtime_local": "21-9月-2026 23:30:54"
+    },
+    {
+      "path": "src/+tepc/+geometry/coneMesh.m",
+      "sha256": "06279ba6576a9a4d374538156d4812df6f3aa832433e3eba368453c222b122ec",
+      "bytes": 3051,
+      "mtime_local": "23-9月-2026 17:50:06"
+    },
+    {
+      "path": "src/+tepc/+geometry/deviceSpec.m",
+      "sha256": "46931bf1c5c7c8d599a01ceee14d4fee292cddb502fbeb5045e5252fa74d43aa",
+      "bytes": 68976,
+      "mtime_local": "23-9月-2026 13:39:42"
+    },
+    {
+      "path": "src/+tepc/+geometry/electrode.m",
+      "sha256": "36734c87cdb61176243c33b8ce0aba60bb1a867697b238f5dc615664a8c6cddc",
+      "bytes": 3654,
+      "mtime_local": "21-9月-2026 15:32:02"
+    },
+    {
+      "path": "src/+tepc/+geometry/exportGeometry.m",
+      "sha256": "d50e46567ce660c727edc88fa51ed62c048854e0394c0af48aa095839fcb36f5",
+      "bytes": 18546,
+      "mtime_local": "23-9月-2026 17:49:45"
+    },
+    {
+      "path": "src/+tepc/+geometry/gasDensity.m",
+      "sha256": "4177e1fd201946acaf74b78e8dbda1f8b71fd6f0c4af1f6456d8b3a8afb9f98e",
+      "bytes": 1706,
+      "mtime_local": "19-9月-2026 17:48:47"
+    },
+    {
+      "path": "src/+tepc/+geometry/meanChordLength.m",
+      "sha256": "9c8ef0e8b4913caee08f9061cb61f4523a17de44e88856daae5347580524f8fe",
+      "bytes": 760,
+      "mtime_local": "19-9月-2026 16:13:45"
+    },
+    {
+      "path": "src/+tepc/+geometry/meshSpec.m",
+      "sha256": "bc7503af37eb624994314a54aebdc1bb50c5963745118bf0ef5d3044f4accce2",
+      "bytes": 58161,
+      "mtime_local": "24-9月-2026 18:39:55"
+    },
+    {
+      "path": "src/+tepc/+geometry/overlapCheck.m",
+      "sha256": "8f78b87ffbe7687f470e9c9ce3001906940e6b482a5201ad4d6dfc67104d1637",
+      "bytes": 61260,
+      "mtime_local": "22-9月-2026 16:07:46"
+    },
+    {
+      "path": "src/+tepc/+geometry/renderTEPC3D.m",
+      "sha256": "fdd921d19651d9ebe326200ccb9960fe1447704352b954839a26759f460adb16",
+      "bytes": 20234,
+      "mtime_local": "04-10月-2026 20:03:55"
+    },
+    {
+      "path": "src/+tepc/+geometry/sampleChord.m",
+      "sha256": "ea9a7db07fe66ed5962a509104e14fa3f02505ce8fd580294bebd31eb049df3a",
+      "bytes": 12414,
+      "mtime_local": "26-9月-2026 07:49:53"
+    },
+    {
+      "path": "src/+tepc/+geometry/siteConsistency.m",
+      "sha256": "55c6d20c283e07965acf890a1d9d5de72ecb68e6650f0cbe09928df7cec29e12",
+      "bytes": 1846,
+      "mtime_local": "21-9月-2026 19:03:21"
+    },
+    {
+      "path": "src/+tepc/+geometry/toleranceMonteCarlo.m",
+      "sha256": "b0e1c19ae3644a1d6ecb1b6433d7590765af9cee357c95c253060349c69e9940",
+      "bytes": 35989,
+      "mtime_local": "21-9月-2026 19:34:01"
+    },
+    {
+      "path": "src/+tepc/+geometry/traceSpec.m",
+      "sha256": "9ad6e597184ff34f820427c559be16664194dbf799eadc34a7dd0ce93950c987",
+      "bytes": 7907,
+      "mtime_local": "26-9月-2026 05:13:27"
+    },
+    {
+      "path": "src/+tepc/+io/artifactManifest.m",
+      "sha256": "b927f2eb4e326ae3f7876844f894a218ef9b284255ebded23a6243adcdfc335e",
+      "bytes": 2492,
+      "mtime_local": "21-9月-2026 15:30:37"
+    },
+    {
+      "path": "src/+tepc/+io/canonicalJson.m",
+      "sha256": "39b191cd784e62405e2eb39770dd1fded79c5cc718699aa06dcec7e505a2e79a",
+      "bytes": 3606,
+      "mtime_local": "20-9月-2026 19:39:26"
+    },
+    {
+      "path": "src/+tepc/+io/commitRun.m",
+      "sha256": "9e00850a28d7f9d7619ec4d99acc6a0f93eda3bfca2f151bb7b9f0c8cef3502f",
+      "bytes": 4223,
+      "mtime_local": "21-9月-2026 15:30:42"
+    },
+    {
+      "path": "src/+tepc/+io/hashFile.m",
+      "sha256": "7f7fd83d07ae871882e230e537fd1a1a4d7213ec24f8c807f434d74b08f60990",
+      "bytes": 750,
+      "mtime_local": "21-9月-2026 15:30:57"
+    },
+    {
+      "path": "src/+tepc/+io/hashText.m",
+      "sha256": "bbd10566f38348232f08f9ea089b9fc2e32ae4a8622f6942cf2721c7e07c7683",
+      "bytes": 448,
+      "mtime_local": "20-9月-2026 17:58:54"
+    },
+    {
+      "path": "src/+tepc/+io/hostMemory.m",
+      "sha256": "165a19d884d6b02127e39abc891f31a82952231f84cc1d7870ada9be5fa25d92",
+      "bytes": 2754,
+      "mtime_local": "26-9月-2026 01:15:21"
+    },
+    {
+      "path": "src/+tepc/+io/layoutRunDirs.m",
+      "sha256": "61024ff0da0140965e6f2c0b1dc9c3be3619bd3970ad07a0b0ef85be5a1d48a3",
+      "bytes": 1807,
+      "mtime_local": "21-9月-2026 15:31:11"
+    },
+    {
+      "path": "src/+tepc/+io/makeProvenance.m",
+      "sha256": "cab311c3f33b95b68359e96427b69ba87a93b183c84608ff7e34046654bb9736",
+      "bytes": 3377,
+      "mtime_local": "21-9月-2026 19:01:50"
+    },
+    {
+      "path": "src/+tepc/+io/projectRoot.m",
+      "sha256": "c133b2cf11768a76adceaa3f39183c2ba0399ad1d90e63e9b138acfb203b0991",
+      "bytes": 183,
+      "mtime_local": "19-9月-2026 17:42:29"
+    },
+    {
+      "path": "src/+tepc/+io/readEventsH5.m",
+      "sha256": "b30db0f583e855fa526099e15ab15d78c3cd717f1216cd9f46e27e432376c823",
+      "bytes": 1572,
+      "mtime_local": "30-9月-2026 13:12:29"
+    },
+    {
+      "path": "src/+tepc/+io/readWaveformsH5.m",
+      "sha256": "0cf2734c9589d59a84b6097f69162d2abb24e05a98b7560a872811f3a78ddfcd",
+      "bytes": 7095,
+      "mtime_local": "24-9月-2026 19:35:50"
+    },
+    {
+      "path": "src/+tepc/+io/runDirs.m",
+      "sha256": "f4ad45b5067eef2e2d7df9848d593b5c613e66578d87d4df142b8dff29ea0df8",
+      "bytes": 2210,
+      "mtime_local": "25-9月-2026 05:11:47"
+    },
+    {
+      "path": "src/+tepc/+io/runDirsForPath.m",
+      "sha256": "2b7e777e6f5ea54c71bf001a3cd6bc74f5fbb46461d30d5cc6a85879470a005e",
+      "bytes": 1138,
+      "mtime_local": "21-9月-2026 15:31:56"
+    },
+    {
+      "path": "src/+tepc/+io/runWriteStatus.m",
+      "sha256": "abb9d805247dc0539a77660bb55f95bfe69414f815c3b3d36ab111264fdc5ff1",
+      "bytes": 2159,
+      "mtime_local": "21-9月-2026 15:32:08"
+    },
+    {
+      "path": "src/+tepc/+io/setH5RunStatus.m",
+      "sha256": "ba818b6b0d7ffa24a8798ccbcaceedfe7f751ae78b93e0f50bcf81c320817419",
+      "bytes": 841,
+      "mtime_local": "20-9月-2026 20:49:04"
+    },
+    {
+      "path": "src/+tepc/+io/sha256pm.m",
+      "sha256": "909b0b98d4f0438eaf9efc30699ccd825edb2b36a0e0ac10d5e8da2b6ab421aa",
+      "bytes": 3182,
+      "mtime_local": "19-9月-2026 19:55:32"
+    },
+    {
+      "path": "src/+tepc/+io/waveformSubset.m",
+      "sha256": "4d7d0b3a794241531b8fddeb222124e1fcacc64af4ca22bb9e74361438e52196",
+      "bytes": 2690,
+      "mtime_local": "23-9月-2026 22:54:25"
+    },
+    {
+      "path": "src/+tepc/+io/writeCanonicalJson.m",
+      "sha256": "a24236fbf460498e3866868547928fe0c2d6f107c1a4c7fc95ff60e2d84db26b",
+      "bytes": 1112,
+      "mtime_local": "21-9月-2026 15:32:13"
+    },
+    {
+      "path": "src/+tepc/+io/writeErrorLog.m",
+      "sha256": "523e68b0297fa3ee6dec2a14f648e990af83d7ef0781834d1d17bf9de27e8ddc",
+      "bytes": 2661,
+      "mtime_local": "21-9月-2026 15:32:22"
+    },
+    {
+      "path": "src/+tepc/+io/writeEventsH5.m",
+      "sha256": "728e3ecf6656645883d13f53c8e59de67359e7d2e4ea6763abd5e2da9dd2f51e",
+      "bytes": 2733,
+      "mtime_local": "30-9月-2026 13:12:07"
+    },
+    {
+      "path": "src/+tepc/+io/writeJson.m",
+      "sha256": "3fadd310a34c0d05910b46b35bb509d14b4f487fc72727daef33e1058fd3856a",
+      "bytes": 282,
+      "mtime_local": "19-9月-2026 17:35:12"
+    },
+    {
+      "path": "src/+tepc/+io/writeWaveformsH5.m",
+      "sha256": "18ea75c81d50e60dd52c5271e009a96db6c53fa446ab703b681bf2d0985c52ab",
+      "bytes": 19701,
+      "mtime_local": "30-9月-2026 13:31:42"
+    },
+    {
+      "path": "src/+tepc/+report/depthLine.m",
+      "sha256": "69be4f34c2474166edc4aa0f8a4fa7eeef169ca4a24c4b2ade9cb9d32e111d0d",
+      "bytes": 2570,
+      "mtime_local": "25-9月-2026 04:52:38"
+    },
+    {
+      "path": "src/+tepc/+report/diagnosticFigure.m",
+      "sha256": "f94b40b02ced94fd9b831d2a7871ab06f9bfb174618dfbc1589ccb1f68b51145",
+      "bytes": 23833,
+      "mtime_local": "04-10月-2026 00:43:57"
+    },
+    {
+      "path": "src/+tepc/+report/doseLine.m",
+      "sha256": "beb21b9dfc36862920c3ab105b01e4af6997878db63cbc605f0768f102d0ef7c",
+      "bytes": 3806,
+      "mtime_local": "21-9月-2026 21:38:41"
+    },
+    {
+      "path": "src/+tepc/+report/htmlReport.m",
+      "sha256": "6f4d5d6d33bb371406c4a3d0bc4753963bbf7c337a767498d7a5839c1487aa96",
+      "bytes": 21648,
+      "mtime_local": "07-10月-2026 15:56:50"
+    },
+    {
+      "path": "src/+tepc/+report/publishedFieldSpecs.m",
+      "sha256": "759c9cf245b5f3295e64125f5e0b844ee108f50e238203d20ca4c3590076a953",
+      "bytes": 1152,
+      "mtime_local": "27-9月-2026 11:38:48"
+    },
+    {
+      "path": "src/+tepc/+report/publishedNumber.m",
+      "sha256": "f6cc726399c80cc2c9c73d9afe31305445c37a5395e102ec2f3b841b19fac67e",
+      "bytes": 904,
+      "mtime_local": "27-9月-2026 11:42:21"
+    },
+    {
+      "path": "src/+tepc/+report/publishedText.m",
+      "sha256": "1d2cf8527a2d53786e25ad527c4b659b547d5b4f6448c1d2a274415a132bf292",
+      "bytes": 538,
+      "mtime_local": "27-9月-2026 11:39:22"
+    },
+    {
+      "path": "src/+tepc/+run/execute.m",
+      "sha256": "3908b7b0d86cc126be5858ed960bca182b53075cdb81fd5fdbcb6e3e8681fc6a",
+      "bytes": 84894,
+      "mtime_local": "07-10月-2026 15:53:50"
+    },
+    {
+      "path": "src/+tepc/+run/hdf5Probe.m",
+      "sha256": "980326ae8b647bf5b5ba777a8e1d4ac61e97a1f8ddc313625b4bc1f896bc6da2",
+      "bytes": 2087,
+      "mtime_local": "21-9月-2026 15:38:35"
+    },
+    {
+      "path": "src/+tepc/+run/probeRuntime.m",
+      "sha256": "fabcb0b7e0259b6ea435fc6081ce3ac5230521b9eca179d37c8a9b5ad310fa89",
+      "bytes": 6676,
+      "mtime_local": "04-10月-2026 01:03:38"
+    },
+    {
+      "path": "src/+tepc/+simulink/applyParams.m",
+      "sha256": "ff97f4fe59016bda7bc31914ba71f56ca7575936e45df365d6c7e46f8c4c07d7",
+      "bytes": 1245,
+      "mtime_local": "21-9月-2026 21:36:55"
+    },
+    {
+      "path": "src/+tepc/+simulink/buildElectronicsModel.m",
+      "sha256": "3a1dd82b5b058e9ff7c563c80b1c75346fcea3992eda963b8ddc5f53f9998716",
+      "bytes": 5420,
+      "mtime_local": "21-9月-2026 22:01:15"
+    },
+    {
+      "path": "src/+tepc/+simulink/checkParamIdentity.m",
+      "sha256": "ddea8cee3c4d11e60af0bed6b7786c27b1934a0d91042d4bc178e51449b5b176",
+      "bytes": 7282,
+      "mtime_local": "26-9月-2026 02:26:52"
+    },
+    {
+      "path": "src/+tepc/+simulink/compareWithMatlab.m",
+      "sha256": "eade187da38af0d5ba340dfc5b4d8f3dfa131983f761e11d5be55ac64e198cbd",
+      "bytes": 5961,
+      "mtime_local": "27-9月-2026 20:20:27"
+    },
+    {
+      "path": "src/+tepc/+simulink/inject.m",
+      "sha256": "488e1df462c5a2d214a8d4fc27615b86c8bf17ec58fdcc883799e344a67dda05",
+      "bytes": 550,
+      "mtime_local": "21-9月-2026 21:34:08"
+    },
+    {
+      "path": "src/+tepc/+simulink/modelFingerprint.m",
+      "sha256": "963eaf267429027266716ae2a8f4c9c8c97c1e823d7d5ffa828af6f225bccdf9",
+      "bytes": 2101,
+      "mtime_local": "21-9月-2026 21:55:38"
+    },
+    {
+      "path": "src/+tepc/+simulink/modelParams.m",
+      "sha256": "b53b995865e95e29c0191ef9b413cd2b4b43a748a255c175203656d0daeb2ac1",
+      "bytes": 4493,
+      "mtime_local": "27-9月-2026 17:56:15"
+    },
+    {
+      "path": "src/+tepc/+transport/AnalyticAdapter.m",
+      "sha256": "7f9228671b1c916ce26c9c7af7782a459464e4e9cf5d604eac7e81cc4633b661",
+      "bytes": 18501,
+      "mtime_local": "05-10月-2026 11:51:30"
+    },
+    {
+      "path": "src/+tepc/+transport/TransportAdapter.m",
+      "sha256": "dec19e65c92ee87b84ffe83cb11a5d44797ae024f616f00dcb5555e15e5b2698",
+      "bytes": 507,
+      "mtime_local": "21-9月-2026 15:35:46"
+    },
+    {
+      "path": "src/+tepc/+transport/birthPoint.m",
+      "sha256": "50cf35efdcf9a0a76886ddf76017edfe7d1d24d784eabb6e43bf0676370bdf25",
+      "bytes": 2305,
+      "mtime_local": "05-10月-2026 11:52:54"
+    },
+    {
+      "path": "src/+tepc/+transport/comptonKN.m",
+      "sha256": "ef1dbc546ab3ba5db28ccad964829befb5b175352c719fd29f019d0989084797",
+      "bytes": 1321,
+      "mtime_local": "20-9月-2026 00:47:45"
+    },
+    {
+      "path": "src/+tepc/+transport/csdaRange.m",
+      "sha256": "3bcda30fb5805c174b57245817804d55199610303041df59f749972b26882baa",
+      "bytes": 2414,
+      "mtime_local": "10-10月-2026 10:31:30"
+    },
+    {
+      "path": "src/+tepc/+transport/csdaTransport.m",
+      "sha256": "4fa5717bcbc095ee80d9f39dbc27d2a16849c15b8ab06dcd503114dab507265c",
+      "bytes": 10568,
+      "mtime_local": "05-10月-2026 00:10:33"
+    },
+    {
+      "path": "src/+tepc/+transport/nuclearChannel.m",
+      "sha256": "eb0bfac6a263552f7e34e541f4f89bbd4a0104ee3b5d979fd27cb115bff08637",
+      "bytes": 1899,
+      "mtime_local": "19-9月-2026 16:37:48"
+    },
+    {
+      "path": "src/+tepc/+transport/sampleArrivals.m",
+      "sha256": "7d8e3d1faf85ed4c1cc1b0c1b3e6d64fefc280360e2874e99c0e9a40c424fc8a",
+      "bytes": 639,
+      "mtime_local": "19-9月-2026 16:39:36"
+    },
+    {
+      "path": "src/+tepc/+transport/sampleInVolume.m",
+      "sha256": "173b84c18eaa71dbf007c63d771309a6f4e3815caf07e23c74c68cd98e076b8e",
+      "bytes": 781,
+      "mtime_local": "03-10月-2026 05:39:25"
+    },
+    {
+      "path": "src/+tepc/+transport/stopAt.m",
+      "sha256": "1eab1b549aab96859b459be2d26b69f959a187aa2309ba0db7a06478b286cd94",
+      "bytes": 1438,
+      "mtime_local": "21-9月-2026 15:34:11"
+    },
+    {
+      "path": "src/+tepc/+transport/stoppingPower.m",
+      "sha256": "07650e81a6113e5d40ec4e5db002f6d4128961c6d4806e8590bd1339f5e4eb9b",
+      "bytes": 11127,
+      "mtime_local": "10-10月-2026 11:01:40"
+    },
+    {
+      "path": "src/+tepc/+transport/wallDensity.m",
+      "sha256": "6fcbb5ad2bb02db46864a27700a5768e5473c816e6c4fc5463035f76d1a022ea",
+      "bytes": 2430,
+      "mtime_local": "24-9月-2026 11:53:11"
+    },
+    {
+      "path": "src/+tepc/+units/convert.m",
+      "sha256": "48731211246610431168cf0b38dcfe8ad7068782629fb141f172136a8919e947",
+      "bytes": 2008,
+      "mtime_local": "19-9月-2026 16:09:13"
+    },
+    {
+      "path": "src/+tepc/+uq/bootstrapSpectrum.m",
+      "sha256": "43bef4783b983ef926dee49a7d7b3836a4bbaf124f1712da4cadfd157e7892f1",
+      "bytes": 960,
+      "mtime_local": "21-9月-2026 15:35:12"
+    },
+    {
+      "path": "src/+tepc/+uq/convergence.m",
+      "sha256": "8715418dfb3631785fb379b7df81efde58c14f2ce5b7b8e60b796234e3c2117b",
+      "bytes": 6404,
+      "mtime_local": "22-9月-2026 17:20:48"
+    },
+    {
+      "path": "src/+tepc/+uq/lhs.m",
+      "sha256": "6a237510fcfb0c91a943390b24c6e6b42264448f76f2daa9e58dfe4c3684beaf",
+      "bytes": 327,
+      "mtime_local": "19-9月-2026 18:52:00"
+    },
+    {
+      "path": "src/+tepc/+uq/mappedVariables.m",
+      "sha256": "0c81aba8d540834efb39e9abc9ab828fcf993576683f7226e145c0a0ddc94d4d",
+      "bytes": 1026,
+      "mtime_local": "23-9月-2026 09:35:37"
+    },
+    {
+      "path": "src/+tepc/+uq/norminv.m",
+      "sha256": "853ed1e1a77b683712bbb498e288d547ef6e7fcf9be86384daf0173f993b8248",
+      "bytes": 1937,
+      "mtime_local": "20-9月-2026 04:18:06"
+    },
+    {
+      "path": "src/+tepc/+uq/propagateMC.m",
+      "sha256": "ec8603a2d46396464408da510e9c789226238b11b3007f48dfd33ab370cdfb8a",
+      "bytes": 23289,
+      "mtime_local": "04-10月-2026 01:06:43"
+    },
+    {
+      "path": "src/+tepc/+validation/checkAnchors.m",
+      "sha256": "47fa49c60341bd8d2b8ff23c234aeefefd208071e00d73cff76e82836128b273",
+      "bytes": 6521,
+      "mtime_local": "10-10月-2026 10:55:39"
+    },
+    {
+      "path": "src/+tepc/+validation/compareSpectra.m",
+      "sha256": "46568e67cc5543c61cd1ece9afc6a8fd15b93cfa4e5755eceb188d8fe0e94bb7",
+      "bytes": 904,
+      "mtime_local": "21-9月-2026 15:40:15"
+    },
+    {
+      "path": "src/+tepc/+validation/gateLayers.m",
+      "sha256": "8c3578f57ec679c3851a10a0e9f6894691b3197341f4d00f61bacd482910e0f4",
+      "bytes": 2990,
+      "mtime_local": "24-9月-2026 21:57:01"
+    },
+    {
+      "path": "src/+tepc/+validation/gofChord.m",
+      "sha256": "499a7f3626c9dc61f72151f7889bf1c082abda6ca4dd049cc5303e7161b71398",
+      "bytes": 10099,
+      "mtime_local": "23-9月-2026 16:19:10"
+    },
+    {
+      "path": "src/+tepc/+validation/loadAnchors.m",
+      "sha256": "aab91fa5f27fb03dad016e46c736c7c92fc4246742b776f0e23b56cc101f6e8f",
+      "bytes": 2842,
+      "mtime_local": "20-9月-2026 01:06:30"
+    },
+    {
+      "path": "src/+tepc/+validation/runGate.m",
+      "sha256": "e5b1de0cc3b426916dcfafc85c23dc07c569242082fb313b5a60e94bf05eadda",
+      "bytes": 21520,
+      "mtime_local": "10-10月-2026 10:57:46"
+    },
+    {
+      "path": "app/AppController.m",
+      "sha256": "ed5c0f1616b6866527c29246438d81944b32c2afa60a9ac29fad0501025b63bd",
+      "bytes": 15364,
+      "mtime_local": "21-9月-2026 15:43:20"
+    },
+    {
+      "path": "app/AppState.m",
+      "sha256": "89ff0c632c2ef631ec1b3ccda1fd36dc31fd9676abd64cc28602c613259444cd",
+      "bytes": 46409,
+      "mtime_local": "22-9月-2026 13:36:55"
+    },
+    {
+      "path": "app/TEPC3DWorkbench.m",
+      "sha256": "6b6054ffb8c2771cb17c9f2b42d07c8a63a6b13c772c57a39caa83e2e5e2eb0f",
+      "bytes": 50655,
+      "mtime_local": "04-10月-2026 19:34:02"
+    },
+    {
+      "path": "app/TEPCApp.m",
+      "sha256": "e3a5afebe08e84ccc1088262eaeb554098d4374d6d47a503dbb63e4c5839c4ba",
+      "bytes": 127607,
+      "mtime_local": "06-10月-2026 03:47:47"
+    },
+    {
+      "path": "app/Theme.m",
+      "sha256": "e222e4bd359f05a1e283dfa4a2dea94ff83443adb6ce2f3cb322868628509f34",
+      "bytes": 20293,
+      "mtime_local": "06-10月-2026 03:37:54"
+    },
+    {
+      "path": "app/components/EvidencePanel.m",
+      "sha256": "c53ee1113a6b23516f41015e30496dbe0d5e164f88862b6d47b60d863b6e5b50",
+      "bytes": 31457,
+      "mtime_local": "22-9月-2026 13:43:58"
+    },
+    {
+      "path": "app/components/ParameterCard.m",
+      "sha256": "8783dbacd636b659778eb42787581bd429d6ad1038b7eedc73d0bdd2b866c4c8",
+      "bytes": 39294,
+      "mtime_local": "21-9月-2026 21:43:59"
+    },
+    {
+      "path": "app/components/PlotToolbar.m",
+      "sha256": "cdd735550e030f14f8f63de01cf53b3516ef25b569b345350f258bbcc2174efe",
+      "bytes": 24690,
+      "mtime_local": "22-9月-2026 13:28:07"
+    },
+    {
+      "path": "app/components/StatusChip.m",
+      "sha256": "efd6a821a5a9cb712550f1ed8c312185b8d77701eba3731d1dd3d51f6b407336",
+      "bytes": 11559,
+      "mtime_local": "22-9月-2026 13:28:18"
+    },
+    {
+      "path": "tests/runAllTests.m",
+      "sha256": "d1a2eb396734c2cf8c41b7f7bcfea2aae7d599cf0adce6526a8657e34677edc7",
+      "bytes": 8993,
+      "mtime_local": "22-9月-2026 11:49:28"
+    },
+    {
+      "path": "tests/golden/baseline_pre_r17.json",
+      "sha256": "8f78b8b587e6ccd69605ee3a385eb804266f3f3cdbb8b3ee10c91e548936ed01",
+      "bytes": 6552,
+      "mtime_local": "06-11月-2026 16:31:12"
+    },
+    {
+      "path": "tests/integration/test_gui.m",
+      "sha256": "3e87e49caf9848ff9d58f56235b29d76f0c2e9a60cefae2e25de6f6fe5e9370f",
+      "bytes": 46642,
+      "mtime_local": "06-10月-2026 00:37:33"
+    },
+    {
+      "path": "tests/integration/test_gui_3d_tab.m",
+      "sha256": "bfa5563af918eb0ab46fcfc9f5548174992a56f0100a0979e51901ae70e3ae21",
+      "bytes": 12152,
+      "mtime_local": "06-10月-2026 03:48:50"
+    },
+    {
+      "path": "tests/integration/test_gui_3d_workbench.m",
+      "sha256": "07c851b42c1702b1726a3afb21339b00fa76aad86d6bacbe17f1dee83eac91e1",
+      "bytes": 43074,
+      "mtime_local": "10-10月-2026 12:18:23"
+    },
+    {
+      "path": "tests/integration/test_gui_honest_positioning.m",
+      "sha256": "b8808c419b3e2244ba1de1d73e6ef68a16994f337f958abac3084d0c741b2a7a",
+      "bytes": 13249,
+      "mtime_local": "26-9月-2026 23:24:49"
+    },
+    {
+      "path": "tests/integration/test_gui_tab_mapping.m",
+      "sha256": "1e5874ed35860d3f3b2641a3efcaa1c430b8cabfb5e0a3126dd8133530ef8888",
+      "bytes": 9062,
+      "mtime_local": "04-10月-2026 12:18:17"
+    },
+    {
+      "path": "tests/integration/test_pipeline.m",
+      "sha256": "389ac32fa2431b0f3774f46f725ef70e3ef0b160e5e3f47928908a8733f3e8a2",
+      "bytes": 21627,
+      "mtime_local": "07-10月-2026 16:03:36"
+    },
+    {
+      "path": "tests/integration/test_pipeline_rerun_equivalence.m",
+      "sha256": "e23fda8e05058bc210e6a7a32af7325296a409a39f4a156e34fd12efa86f56b3",
+      "bytes": 3009,
+      "mtime_local": "05-10月-2026 11:53:10"
+    },
+    {
+      "path": "tests/integration/test_release_transaction.m",
+      "sha256": "c3f37e6e05716dc0e3f85771d467769d2d5648620ca2c27fe6e3303cd46d8dcc",
+      "bytes": 9521,
+      "mtime_local": "21-9月-2026 17:24:48"
+    },
+    {
+      "path": "tests/integration/test_report_gate_identity.m",
+      "sha256": "3ef45c7917ce0a0c7e6a00341ea796c9db007e99bf67dd08b6cae81faa5f3961",
+      "bytes": 21109,
+      "mtime_local": "05-10月-2026 21:28:47"
+    },
+    {
+      "path": "tests/integration/test_report_semantics.m",
+      "sha256": "68142d7545cb07b9ce337266fe0fffb83de220ddf639f3996d7d6c1ca976d34c",
+      "bytes": 26511,
+      "mtime_local": "28-9月-2026 21:17:01"
+    },
+    {
+      "path": "tests/integration/test_run_chunk_invariance.m",
+      "sha256": "020f9f5ae9f7879baca13d8319b0b7a3df31841b00964192e69f289d73b406b1",
+      "bytes": 13304,
+      "mtime_local": "23-9月-2026 23:06:01"
+    },
+    {
+      "path": "tests/integration/test_run_drift_diagnostic.m",
+      "sha256": "0845c7504a886e285c576d7c4deee2e6d85c2e8629a7804f858401385e91d13a",
+      "bytes": 12797,
+      "mtime_local": "24-9月-2026 12:03:37"
+    },
+    {
+      "path": "tests/integration/test_run_threshold_disclosure.m",
+      "sha256": "b44bbd9e8c95e195123056e68601647b33e92f19f8d348e9413df0907ba61a39",
+      "bytes": 3397,
+      "mtime_local": "03-10月-2026 02:05:09"
+    },
+    {
+      "path": "tests/integration/test_run_waveform_stage.m",
+      "sha256": "96bd0a17a3772dc4be9c2757307d2e704b6c72db39231a0953d65e7dec0b790d",
+      "bytes": 17378,
+      "mtime_local": "30-9月-2026 13:31:42"
+    },
+    {
+      "path": "tests/integration/test_simulink_gate.m",
+      "sha256": "d89680564ee8de945f0a88e8d76f13cce2ba9a752b35c72e79c07f896330034b",
+      "bytes": 5427,
+      "mtime_local": "27-9月-2026 20:18:40"
+    },
+    {
+      "path": "tests/unit/test_artifact_transaction.m",
+      "sha256": "e58a9b3db850f04702ff22bf99ad316866af8e6acf7288761ecdb35d947574b4",
+      "bytes": 21726,
+      "mtime_local": "21-9月-2026 17:24:49"
+    },
+    {
+      "path": "tests/unit/test_banned_claims_lexicon.m",
+      "sha256": "544d7030193e28c30b0505b11af75341666f2acaed6c996388189754768d66b2",
+      "bytes": 10048,
+      "mtime_local": "22-9月-2026 15:40:14"
+    },
+    {
+      "path": "tests/unit/test_config_validate.m",
+      "sha256": "ba16aaffb8db7db685570cb7a2509c583531f1a97747519fef558f7133bff0b5",
+      "bytes": 16927,
+      "mtime_local": "24-9月-2026 19:38:30"
+    },
+    {
+      "path": "tests/unit/test_constants_registry.m",
+      "sha256": "dcb99750e333cf4263b6c8ee042aeec9a9f269c5f4b0e20991869602c47332ff",
+      "bytes": 22982,
+      "mtime_local": "21-9月-2026 15:36:39"
+    },
+    {
+      "path": "tests/unit/test_daq_statemachine.m",
+      "sha256": "9a182d46841b40787b05c6434addc965e22018e33fcd45588f9dff68d86795f4",
+      "bytes": 6003,
+      "mtime_local": "21-9月-2026 15:33:28"
+    },
+    {
+      "path": "tests/unit/test_device_v2_manifest.m",
+      "sha256": "e8aeeb709c7c12837ab28b13591e67212d7cd532d52c730901a7ef5ec30252cb",
+      "bytes": 29058,
+      "mtime_local": "23-9月-2026 13:16:20"
+    },
+    {
+      "path": "tests/unit/test_directional_beam_chord.m",
+      "sha256": "2f9422df5e9836edc7dd015edbc40b71ec8f5754a6538b85a75af718293461ea",
+      "bytes": 11150,
+      "mtime_local": "26-9月-2026 08:13:31"
+    },
+    {
+      "path": "tests/unit/test_doc_counts.m",
+      "sha256": "7b2c57c5c43120fdc502c278189c7e64759baf20995eeeb7169551642678d41f",
+      "bytes": 21832,
+      "mtime_local": "10-10月-2026 12:21:10"
+    },
+    {
+      "path": "tests/unit/test_dose_normalization.m",
+      "sha256": "1f871e8276f0395551ee08b45eacf550c4c42e2b89fd5fec3b76c5037db85ad9",
+      "bytes": 25612,
+      "mtime_local": "22-9月-2026 18:09:51"
+    },
+    {
+      "path": "tests/unit/test_drift_collect.m",
+      "sha256": "bba18e283d075e556909a7ee2e202c2f2406032902492dfb2edba9e100f3727b",
+      "bytes": 5588,
+      "mtime_local": "24-9月-2026 10:47:47"
+    },
+    {
+      "path": "tests/unit/test_electronics.m",
+      "sha256": "bfbf5023e65e84ba26a1d902f621da54d680ad9b3a5b176b593b11705bece1e5",
+      "bytes": 43415,
+      "mtime_local": "10-10月-2026 13:17:11"
+    },
+    {
+      "path": "tests/unit/test_false_trigger_rate.m",
+      "sha256": "8afdcf9104b097cf48bc23bbed9dd8dae0684a072f0e3f41fc3faaa5f72776de",
+      "bytes": 19056,
+      "mtime_local": "10-10月-2026 12:25:34"
+    },
+    {
+      "path": "tests/unit/test_field_electrostatic_gate.m",
+      "sha256": "202d6b77dc82b2c4510a86eb4d743af2c680130ff0437b9a72cf82c27b505340",
+      "bytes": 12533,
+      "mtime_local": "22-9月-2026 00:03:38"
+    },
+    {
+      "path": "tests/unit/test_field_fem_map.m",
+      "sha256": "486140cf6d03a53a5b0acfd5d6efcbfb68e7c5340056b5d677f7a263b853bf9e",
+      "bytes": 24116,
+      "mtime_local": "21-9月-2026 19:55:57"
+    },
+    {
+      "path": "tests/unit/test_field_map_reciprocity.m",
+      "sha256": "8933b6f85c40d3dd61c137b72901935035a1e6135ec9e716c56d0a3fe931d4dd",
+      "bytes": 8453,
+      "mtime_local": "24-9月-2026 21:59:09"
+    },
+    {
+      "path": "tests/unit/test_field_topology_guard.m",
+      "sha256": "6df37e59ebbbe1de71ead9ec6d3a6cec17c61ec1f0ce1373a644099f3327093b",
+      "bytes": 6261,
+      "mtime_local": "21-9月-2026 15:34:55"
+    },
+    {
+      "path": "tests/unit/test_gate_failability.m",
+      "sha256": "2c9c98eeeb57725c5df9e1d80193fc25d69ddf4a1bc8f9cd48c15fab18bc7f07",
+      "bytes": 15526,
+      "mtime_local": "10-10月-2026 13:28:16"
+    },
+    {
+      "path": "tests/unit/test_gate_layer_map.m",
+      "sha256": "ec3aea26c459cd21f172a418d1bf2acf552cbcb5c3b7280f51b3d40ef3b41945",
+      "bytes": 7201,
+      "mtime_local": "24-9月-2026 21:40:07"
+    },
+    {
+      "path": "tests/unit/test_geometry_3d_contract.m",
+      "sha256": "026dd2a7767fd6ec8f7a567c11d8ff1c0f0f80faacef31ed8eb60edd84b26bb7",
+      "bytes": 68593,
+      "mtime_local": "04-10月-2026 20:04:35"
+    },
+    {
+      "path": "tests/unit/test_geometry_chord.m",
+      "sha256": "2996183a40a0466e48ab016948148053e5f483608317d29b3edc6db3c38a4051",
+      "bytes": 10583,
+      "mtime_local": "24-9月-2026 14:51:38"
+    },
+    {
+      "path": "tests/unit/test_geometry_clip.m",
+      "sha256": "9f4b0d6047d269f2a2cd06ed1bebe345ef337054150026ddb5e9acdd4a18233a",
+      "bytes": 30521,
+      "mtime_local": "22-9月-2026 12:18:01"
+    },
+    {
+      "path": "tests/unit/test_geometry_overlap.m",
+      "sha256": "94acfa61886982f571376c7fac3452d8d76b67d34c3788ae232256e0c5de3b1f",
+      "bytes": 13601,
+      "mtime_local": "22-9月-2026 13:04:07"
+    },
+    {
+      "path": "tests/unit/test_geometry_single_source.m",
+      "sha256": "68315b07ee50b3b31f440fe7098f8de1a0d0f948d536a4a91dc8a72308c46ceb",
+      "bytes": 16727,
+      "mtime_local": "22-9月-2026 13:19:41"
+    },
+    {
+      "path": "tests/unit/test_geometry_transport_identity.m",
+      "sha256": "c53fb79fb6436485d8ee001c18979451512a778422aa89c13de5992c291bd765",
+      "bytes": 13787,
+      "mtime_local": "22-9月-2026 12:59:02"
+    },
+    {
+      "path": "tests/unit/test_golden_baseline_fields.m",
+      "sha256": "e478b4ad4b10729d7adbcd0945759fa701f759412bde79649a976e06c004fa06",
+      "bytes": 11382,
+      "mtime_local": "21-9月-2026 18:29:58"
+    },
+    {
+      "path": "tests/unit/test_gui_components.m",
+      "sha256": "7eaaacc7f26575c625f16e35bcc796f1b0f4b4e77934dbda9453cc53a276b4d0",
+      "bytes": 41641,
+      "mtime_local": "30-9月-2026 15:53:18"
+    },
+    {
+      "path": "tests/unit/test_gui_error_surface.m",
+      "sha256": "31424febe342886184cf2e549d2aef80b55422832c9ce8f8e5264560e4cbd995",
+      "bytes": 6180,
+      "mtime_local": "22-9月-2026 11:55:23"
+    },
+    {
+      "path": "tests/unit/test_gui_state.m",
+      "sha256": "3fe851af86277eb876cf8a4167fd8b6bf638d69f873c596794625fd500b3fa53",
+      "bytes": 21931,
+      "mtime_local": "29-9月-2026 20:18:13"
+    },
+    {
+      "path": "tests/unit/test_io_transaction.m",
+      "sha256": "c6a64e81c47493aec17a160337b7a6d829f5fcb2cf7814f36c8e4b3b5fc44d96",
+      "bytes": 7429,
+      "mtime_local": "21-9月-2026 15:35:49"
+    },
+    {
+      "path": "tests/unit/test_organ_dose_from_field.m",
+      "sha256": "b5e6cc578e86b8323cbb4d1ed3e18fd0a93e8f9403133ff9b332a6d10f7f0090",
+      "bytes": 38440,
+      "mtime_local": "10-10月-2026 12:54:39"
+    },
+    {
+      "path": "tests/unit/test_peak_polarity.m",
+      "sha256": "2edb29c07fb6ba2a9446f4abdeab1a4a6852c6e94bfdb8a649b45679ead66e11",
+      "bytes": 6152,
+      "mtime_local": "05-10月-2026 00:19:27"
+    },
+    {
+      "path": "tests/unit/test_position_spread.m",
+      "sha256": "c33ddf053c6257bac7e5cc9361f11ce05f8264c24be737ab7f6129d584e6e385",
+      "bytes": 11179,
+      "mtime_local": "21-9月-2026 15:36:32"
+    },
+    {
+      "path": "tests/unit/test_positioning_claims.m",
+      "sha256": "34245887f36e47e593923b7469bf3c1016b4623e177e6c41b75f0626b13b1cba",
+      "bytes": 11351,
+      "mtime_local": "26-9月-2026 03:27:33"
+    },
+    {
+      "path": "tests/unit/test_published_fields_source.m",
+      "sha256": "be4f3fcb1f214703eae2224aaec5d6a9bbcef70247fbfb77a2f51fcce15715ec",
+      "bytes": 10146,
+      "mtime_local": "27-9月-2026 11:42:10"
+    },
+    {
+      "path": "tests/unit/test_radiation_weighting.m",
+      "sha256": "91bd7e103d8f4c5e4604c95e95243f3e8cb427a6b9518efe0b927f6bef5644d9",
+      "bytes": 4548,
+      "mtime_local": "09-10月-2026 21:21:30"
+    },
+    {
+      "path": "tests/unit/test_rate_sweep.m",
+      "sha256": "8c9f11e351fbd1b5e1c551e63ba80d731a22ccdb1f3269b4b8b6855dd6a55b01",
+      "bytes": 10944,
+      "mtime_local": "27-9月-2026 20:33:23"
+    },
+    {
+      "path": "tests/unit/test_reference_slots_invariants.m",
+      "sha256": "346d9df1a68e7ad21407273bc23fd79c0c81e799d5f7641934aec34497130a31",
+      "bytes": 22796,
+      "mtime_local": "25-9月-2026 01:51:16"
+    },
+    {
+      "path": "tests/unit/test_report_diagnostic_figure.m",
+      "sha256": "09cbd1cd9f47a747af28886b0e12477e27059395c95818721d79fcc7277a72de",
+      "bytes": 29557,
+      "mtime_local": "06-10月-2026 00:54:09"
+    },
+    {
+      "path": "tests/unit/test_requested_realized_site_block.m",
+      "sha256": "3e36ba32221ff5dfc0f3f391906b56a734adc662ed8c521d424e95a1e3502a4a",
+      "bytes": 13627,
+      "mtime_local": "05-10月-2026 11:53:54"
+    },
+    {
+      "path": "tests/unit/test_run_dirs_env.m",
+      "sha256": "4a07218a97b26e7aa1237d8becc10cedb0c2118f6de9aac27baa924091121d45",
+      "bytes": 4920,
+      "mtime_local": "25-9月-2026 05:24:25"
+    },
+    {
+      "path": "tests/unit/test_slx_config_identity.m",
+      "sha256": "31d2f80dfaa37542606e5a2d548870c1b24a334f13cd39af4e67e2489e05260e",
+      "bytes": 17526,
+      "mtime_local": "27-9月-2026 22:09:59"
+    },
+    {
+      "path": "tests/unit/test_source_direction_identity.m",
+      "sha256": "ba93afb50a1bd28096b259fdd71a5027e6cab0767f262bc45502746122c0438b",
+      "bytes": 21623,
+      "mtime_local": "26-9月-2026 02:13:12"
+    },
+    {
+      "path": "tests/unit/test_spectrum_dose.m",
+      "sha256": "21f794e930b1b75875ac0f1fbfa4c772c60b57d7381f621efe61bf215ce7cbca",
+      "bytes": 24106,
+      "mtime_local": "28-9月-2026 13:39:04"
+    },
+    {
+      "path": "tests/unit/test_transport.m",
+      "sha256": "514f99e11240a5600524a4cb64b75ef71b35973b5648cfbdaa284304f223aa1d",
+      "bytes": 41485,
+      "mtime_local": "10-10月-2026 10:57:09"
+    },
+    {
+      "path": "tests/unit/test_uncertainty_depth_tiers.m",
+      "sha256": "8cc28a9447ddcaa631513342f1023de84ee41b3af2f64a9be78a2f82ae4521c8",
+      "bytes": 35026,
+      "mtime_local": "27-9月-2026 02:45:27"
+    },
+    {
+      "path": "tests/unit/test_uq_budget_inertness.m",
+      "sha256": "baf77196c90dc686ccaedc7f036b0eb4a9b096648da097388912708e6b50fb3c",
+      "bytes": 17054,
+      "mtime_local": "03-10月-2026 01:57:07"
+    },
+    {
+      "path": "tests/unit/test_uq_convergence.m",
+      "sha256": "99ef325a8759b9896d76f84561f253e467eac44615e8b3b2e7a64cb8159d09e5",
+      "bytes": 5159,
+      "mtime_local": "22-9月-2026 17:21:30"
+    },
+    {
+      "path": "tests/unit/test_uq_measurement.m",
+      "sha256": "a40c282f62361b6bc293f2dad0808878c3a9735f17b54a830d5ea2735ac894c8",
+      "bytes": 11897,
+      "mtime_local": "23-9月-2026 21:47:58"
+    },
+    {
+      "path": "tests/unit/test_uq_stage_heartbeat.m",
+      "sha256": "58b8b6ea09c39363ea43bc04e6d94b4961e28ebbf3f0df18721af71c804054c4",
+      "bytes": 5645,
+      "mtime_local": "04-10月-2026 01:07:04"
+    },
+    {
+      "path": "tests/unit/test_uq_validation.m",
+      "sha256": "f6ef4c8124058dca3ab386186c3ebb83233b91f406aecf1b4239b3b25b0607f2",
+      "bytes": 14023,
+      "mtime_local": "03-10月-2026 12:26:50"
+    },
+    {
+      "path": "tests/unit/test_validation_gof_chord.m",
+      "sha256": "bce5d38380a7e24cb27355c12cd90c8b7e81e751152be146ef3de75119a2bb71",
+      "bytes": 12201,
+      "mtime_local": "23-9月-2026 16:01:28"
+    },
+    {
+      "path": "tests/unit/test_wall_density_single_source.m",
+      "sha256": "972ab413e5c42e72ff10675e6de3677cdf312e3405a3fcee91c0805b90805fea",
+      "bytes": 8738,
+      "mtime_local": "22-9月-2026 17:39:59"
+    },
+    {
+      "path": "tests/unit/test_wall_effect_negative_control.m",
+      "sha256": "2ac92318485ee356ccac7c388142aba2081100e7eefaa3d2d1f960b0a7035d9b",
+      "bytes": 10412,
+      "mtime_local": "21-9月-2026 19:50:31"
+    },
+    {
+      "path": "tests/unit/test_waveform_replay.m",
+      "sha256": "66a098e16b5b7a1a939938225226c209ba0b59f6ab09f5edc5a122b5e7859ca0",
+      "bytes": 27505,
+      "mtime_local": "24-9月-2026 22:05:14"
+    },
+    {
+      "path": "tools/genCounts.m",
+      "sha256": "930665dbe8cc65433e172ea5b147430fe220d0dcb154cbe3c5064e2fd872c9cf",
+      "bytes": 9527,
+      "mtime_local": "10-10月-2026 12:19:43"
+    },
+    {
+      "path": "tools/genPositioning.m",
+      "sha256": "5eb2afd3650e8d0b0bffc325028411f1ca5d408efb90097267d8a7e237416705",
+      "bytes": 5104,
+      "mtime_local": "21-9月-2026 19:08:10"
+    },
+    {
+      "path": "tools/stragglingProductionMixProbe.m",
+      "sha256": "60a9290230a79ae5dde9f313fb5c4589377356c4945c88497e64e3dbd43a3d49",
+      "bytes": 14156,
+      "mtime_local": "05-10月-2026 11:54:49"
+    },
+    {
+      "path": "tools/uncertaintyDepthLadder.m",
+      "sha256": "4cd6f27dfaa1683bb0c22d3bedc404f01f977c008f500905005b9b91f79eff46",
+      "bytes": 10315,
+      "mtime_local": "26-9月-2026 02:17:13"
+    },
+    {
+      "path": "tools/uqBudgetRefreshProbe.m",
+      "sha256": "b28047068ce13fd795158884baa01967591da0d7f22c733215e4167b4d4cb9d6",
+      "bytes": 9383,
+      "mtime_local": "05-10月-2026 15:22:08"
+    },
+    {
+      "path": "tools/writeLatestEvidence.m",
+      "sha256": "3cb3928a218cd561652d1221d55cb97ce81f9df88077c15052a4bd3c582dd4d4",
+      "bytes": 13967,
+      "mtime_local": "10-10月-2026 11:25:46"
+    },
+    {
+      "path": "tools/_reconcile/reconcileDeviceV2.m",
+      "sha256": "11f077c8f8c29a169bffaa931ed83223d1e585691311a7f45f55df3cd70ee751",
+      "bytes": 15089,
+      "mtime_local": "23-9月-2026 17:50:07"
+    },
+    {
+      "path": "config/banned_claims.json",
+      "sha256": "4d20a846f76f53e8f1b26c5a8d6fea21dae33f37962c2d6c63132a3e9421bad2",
+      "bytes": 3269,
+      "mtime_local": "23-9月-2026 21:04:51"
+    },
+    {
+      "path": "config/capability_register.json",
+      "sha256": "fc59ea9e25ac3974b1f8d412c837c59ab267c448a4ee9d11a75d263f8dbff2a9",
+      "bytes": 85368,
+      "mtime_local": "06-11月-2026 16:32:06"
+    },
+    {
+      "path": "config/reference_slots.json",
+      "sha256": "355623e159823eee57d5b37e77e207c6fcf6ef233ebaccf2d49b503d2ddb9b58",
+      "bytes": 6958,
+      "mtime_local": "10-10月-2026 01:10:06"
+    },
+    {
+      "path": "config/uncertainty_depth_tiers.json",
+      "sha256": "d35992c61290db37f7356d6d6c62058b0e0a80941f1673118ad5edd3dd6279b8",
+      "bytes": 6926,
+      "mtime_local": "27-9月-2026 06:23:53"
+    },
+    {
+      "path": "config/defaults/demo_only.json",
+      "sha256": "26240b68c5e89bbd0573c1d790832840a715ab7a174142f1371e4b81d37efff1",
+      "bytes": 9361,
+      "mtime_local": "25-9月-2026 04:07:47"
+    },
+    {
+      "path": "config/defaults/site_matched_3767Pa.json",
+      "sha256": "fd04ac024a2754c5a00f5006cc7b9cb191c6a480a07d0e92e10a27beb5c82ad5",
+      "bytes": 9766,
+      "mtime_local": "03-10月-2026 09:03:31"
+    },
+    {
+      "path": "config/quality-factor/icrp60_let_on_y.csv",
+      "sha256": "06c5d392fa21c3dba5eb96fea325878667cf05e2fdaae4955ca9fb44feb3494f",
+      "bytes": 1077,
+      "mtime_local": "19-9月-2026 16:08:25"
+    },
+    {
+      "path": "config/reference/icrp103_neutron_wR_branches.csv",
+      "sha256": "02b37075476cd733987bc0a1369e3df28b5c6fe43a03d84b58defe762c2e5437",
+      "bytes": 1694,
+      "mtime_local": "09-10月-2026 21:21:30"
+    },
+    {
+      "path": "config/reference/icrp110_tissue_elemental_composition.csv",
+      "sha256": "144cfdeed3def21904253e83153979931adf4475e1a8c7889900bb1cfdef4c6b",
+      "bytes": 11588,
+      "mtime_local": "09-10月-2026 15:38:20"
+    },
+    {
+      "path": "config/reference/icrp116_neutron_skin_lens_coefficients.csv",
+      "sha256": "3997a03163b12612f6f180837573521ae0907ff346271fbe441dd123fa7c0fae",
+      "bytes": 52633,
+      "mtime_local": "10-10月-2026 12:54:39"
+    },
+    {
+      "path": "config/reference/lhasa_neutron_spectrum_digitized.csv",
+      "sha256": "075c5be67e4714dc571272aea12dd7e013012b2251d1f21339faa8624f043503",
+      "bytes": 13776,
+      "mtime_local": "10-10月-2026 12:54:39"
+    },
+    {
+      "path": "config/reference/lhasa_neutron_spectrum_fullrange_digitized.csv",
+      "sha256": "836f50942770f957231bf68852acd36879ad3801a34715509993c03784a6e688",
+      "bytes": 43429,
+      "mtime_local": "10-10月-2026 12:54:39"
+    },
+    {
+      "path": "config/reference/pstar_water_proton_range.csv",
+      "sha256": "a3d6edd13e3521a8b2f094bfccb2be725649c546a4afbd7735b7a21dbe2182e6",
+      "bytes": 17559,
+      "mtime_local": "10-10月-2026 11:56:26"
+    },
+    {
+      "path": "config/reference/stopping_anchors.csv",
+      "sha256": "d300d32888b07ccdfd2f38ae0503358d7de01f9eb23d988c8a8e86147572b6c6",
+      "bytes": 899,
+      "mtime_local": "03-10月-2026 01:49:01"
+    },
+    {
+      "path": "config/schema/tepc-config-v1.json",
+      "sha256": "043feb25bac5cdc541bf3847908a8fe5f1a38adb64b47c788376a1114de1ec48",
+      "bytes": 5512,
+      "mtime_local": "30-9月-2026 13:51:45"
+    },
+    {
+      "path": "geometry/device_v2.json",
+      "sha256": "0fcb1f09ef10baa5a08e8a0fa31075bdf400b899da86c0a6d9fc7ea08d55618a",
+      "bytes": 15342,
+      "mtime_local": "23-9月-2026 15:06:14"
+    },
+    {
+      "path": "geometry/materials.json",
+      "sha256": "8920cd759aea6e19fbd5e9429a5c98fec69d35f63299827f3cb8f763b7cbe396",
+      "bytes": 7576,
+      "mtime_local": "22-9月-2026 16:10:27"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e33073e3feb3dc239dafc55194aed8ca8013f15dbc1cdc43fee205f818f84e2d",
+      "bytes": 15356,
+      "mtime_local": "06-11月-2026 16:36:31"
+    },
+    {
+      "path": "tepc_3d_workbench.m",
+      "sha256": "bb7a191b346987c817b7dc73873d96211fefdc3f10f715bc0a46a07492a925fa",
+      "bytes": 1346,
+      "mtime_local": "21-9月-2026 21:25:23"
+    }
+  ]
+}

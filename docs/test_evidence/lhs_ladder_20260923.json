@@ -1,0 +1,76 @@
+{
+  "schema": "tepc-lhs-ladder-v1",
+  "utc": "20260923_085051Z",
+  "matlab": "25.1.0.2943329 (R2025a)",
+  "samples": [
+    64,
+    128,
+    256,
+    512
+  ],
+  "nEv_per_sample": 150,
+  "seed": 2.0260922E+7,
+  "elapsed_s": 302.4549443,
+  "ladder": [
+    {
+      "N": 64,
+      "yF_mean": 31.278144185920176,
+      "u_yF_rel": 0.14145941669153872,
+      "se_yF_rel": 0.01768242708644234,
+      "u_level_ratio": null,
+      "expected_ratio": null,
+      "observed_ratio": null,
+      "noise_ref": 0.0890870806374748,
+      "within_slack": true
+    },
+    {
+      "N": 128,
+      "yF_mean": 31.267068544302372,
+      "u_yF_rel": 0.14103859839135222,
+      "se_yF_rel": 0.012466168666446405,
+      "u_level_ratio": 0.997025165874223,
+      "expected_ratio": 0.70710678118654757,
+      "observed_ratio": 0.70500325580330536,
+      "noise_ref": 0.06274558051381586,
+      "within_slack": true
+    },
+    {
+      "N": 256,
+      "yF_mean": 31.267379394707632,
+      "u_yF_rel": 0.13301442964511348,
+      "se_yF_rel": 0.0083134018528195925,
+      "u_level_ratio": 0.94310657622976823,
+      "expected_ratio": 0.70710678118654757,
+      "observed_ratio": 0.6668770554336968,
+      "noise_ref": 0.044280744277004763,
+      "within_slack": true
+    },
+    {
+      "N": 512,
+      "yF_mean": 31.265571762837066,
+      "u_yF_rel": 0.1348468446279546,
+      "se_yF_rel": 0.0059594448911272158,
+      "u_level_ratio": 1.0137760616478231,
+      "expected_ratio": 0.70710678118654757,
+      "observed_ratio": 0.71684792779576711,
+      "noise_ref": 0.031280562354492725,
+      "within_slack": true
+    }
+  ],
+  "model_form": {
+    "lbar_sphere_m": 1.3333333333333333,
+    "lbar_cylinder_m": 1.164773952981732,
+    "ratio": 0.873580464736299,
+    "rel_gap": 0.12641953526370098,
+    "closed_form_ratio": 0.8735804647362988,
+    "basis": [
+      "lbar = 4V/S (Cauchy, 凸体 + 各向同性均匀直线场); 球 4R/3, 等径高圆柱 4r/3",
+      "本项是几何理想化造成的**平均弦长**相对差, 不是 y_F 的模型形式项",
+      "换算到 y_F 需要逐事件输运重跑, 本函数不做该外推"
+    ]
+  },
+  "settings": {
+    "seed": 2.0260922E+7,
+    "nEv_per_sample": 150
+  }
+}

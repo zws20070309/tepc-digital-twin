@@ -1,0 +1,15 @@
+# TEPC 不确定度传播深度阶梯 (墙钟只作记录, 不作判据)
+# generated_utc : 2026-09-26T202822Z
+# seeds=24680 pairs=1 quick=false N_points=10000 tiers=screening,standard,publish
+# 开跑前环境: free_mb=2324 total_mb=15987 matlab_rows=2 source=win32_os_query (读数>2 即机器上不止一条链)
+# N  tier         pair leg  wall_s     y_F        y_D        nEff   uq_status   free_mb  rows
+# ------------------------------------------------------------------------------
+10000 screening       1   1     60.20  25.443232  42.612266   7458  DISABLED      2185    2
+10000 standard        1   2    169.46  25.443232  42.612266   7458  COMPLETE      2485    2
+10000 publish         1   3    504.63  25.443232  42.612266   7458  COMPLETE      2108    2
+10000 publish         1   4    496.66  25.443232  42.612266   7458  COMPLETE      2042    2
+10000 standard        1   5    198.29  25.443232  42.612266   7458  COMPLETE      1992    2
+10000 screening       1   6     63.03  25.443232  42.612266   7458  DISABLED      2046    2
+SUMMARY N=10000 tier=publish    legs=2 wall_min=496.66 wall_median=500.64 per_event=0.0501 yF_all_equal=true
+SUMMARY N=10000 tier=screening  legs=2 wall_min=60.20 wall_median=61.61 per_event=0.0062 yF_all_equal=true
+SUMMARY N=10000 tier=standard   legs=2 wall_min=169.46 wall_median=183.87 per_event=0.0184 yF_all_equal=true

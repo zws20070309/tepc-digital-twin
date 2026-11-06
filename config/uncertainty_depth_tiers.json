@@ -1,0 +1,134 @@
+{
+  "schema": "tepc-uncertainty-depth-tiers-v1",
+  "purpose": "不确定度传播深度档位表的唯一真相源。档位只改变'要不要算不确定度传播'与墙钟代价, 不改变任何已发布中心量 —— 该性质由 tests/unit/test_uncertainty_depth_tiers.m 的逐位锁承担 (逐位锁覆盖三档: 归档侧 tableDistinct 与 ladderRunsMatchTheirGroups 去重含 publish 的全部腿, 活体侧 tiersBitHarmless 四腿含 publish; 两侧均未覆盖发货 nEvents=10000), 不是这里的自述。",
+  "knobs_form": "array of {path, value}; 不用对象键, 因为带点的键名会被 jsondecode 改名",
+  "cost_provenance": "cost_ratio_measured 只来自 tools/uncertaintyDepthLadder.m 的归档产物 (每个数组元素自带 artifact 路径), 且**只在它自己声明的那个 N 上成立**。现在记 N=400、N=2500 与 N=10000 三个工作点, 同一个档在各点的比值不同 (screening 0.555→0.265→0.335, publish 2.256→3.205→2.723), 其中 N=2500 的旧读数 (standard 217.57 / publish 697.24 / screening 57.67) 已被同 seed 24680 的单链重测 (221145Z: standard 147.09 / publish 475.55 / screening 40.99) 判为受宿主干扰污染并被取代, 表里三条 N=2500 元素现指新产物, 旧产物 185522Z 保留作该结论的证据; 修正后三点的绝对墙钟随 N 单调、比值形状可引用 (screening 0.555→0.279→0.335, publish 2.256→3.233→2.723), 但那仍不是每事件代价的标度律, 所以\"档位的代价比值\"不是一个数而是一组带 N 标签的数; 往**任何新的 N** 都不许拿这条拟合外推: 它只在 400–2500 两点之间成立, 而 N=43000 的实测把它的高估幅度定在 2.4 倍 (见 docs/performance_tiers.md §1 给这条分解划适用范围那一段)。新工作点的三档代价必须由 tools/uncertaintyDepthLadder.m 实测并另存一条带 N 标签的元素, 不许在两已知点之间插值, 更不许把任一端的比值当常数。execute.m 的 NEvPerSample=max(300,min(N,2000)) 让 UQ 侧的每样本事件数在 N>2000 封顶。表里的数字与产物的对账由同一测试文件的 tableDistinct 用例逐 (档, N) 承担 —— 改数字必须同时改产物, 手写数字会被判红。",
+  "tiers": [
+    {
+      "id": "screening",
+      "label": "粗筛: 不算不确定度传播",
+      "knobs": [
+        {
+          "path": "uq.enabled",
+          "value": false
+        }
+      ],
+      "cost_ratio_measured": [
+        {
+          "N": 400,
+          "legs": 4,
+          "wall_min_s": 33.083357,
+          "wall_median_s": 33.48605845,
+          "ratio_vs_standard": 0.555119,
+          "artifact": "docs/test_evidence/uncertainty_depth_ladder_20260925T010100Z.json"
+        },
+        {
+          "N": 2500,
+          "legs": 2,
+          "wall_min_s": 40.8373267,
+          "wall_median_s": 40.99471105,
+          "ratio_vs_standard": 0.27870650172340444,
+          "artifact": "docs/test_evidence/uncertainty_depth_ladder_20260926T221145Z.json"
+        },
+        {
+          "N": 10000,
+          "legs": 2,
+          "wall_min_s": 60.2015378,
+          "wall_median_s": 61.61410775,
+          "ratio_vs_standard": 0.3350885644,
+          "artifact": "docs/test_evidence/uncertainty_depth_ladder_20260926T202822Z.json"
+        }
+      ],
+      "disclosure": "产物只可用于量级与趋势: uq_status=DISABLED 且无 uq.json, VALIDATED 模式被门禁阻断。"
+    },
+    {
+      "id": "standard",
+      "label": "标准: 发货档",
+      "knobs": [
+        {
+          "path": "uq.enabled",
+          "value": true
+        },
+        {
+          "path": "uq.nSamples",
+          "value": 32
+        }
+      ],
+      "cost_ratio_measured": [
+        {
+          "N": 400,
+          "legs": 4,
+          "wall_min_s": 60.2421924,
+          "wall_median_s": 60.3223177,
+          "ratio_vs_standard": 1,
+          "artifact": "docs/test_evidence/uncertainty_depth_ladder_20260925T010100Z.json"
+        },
+        {
+          "N": 2500,
+          "legs": 2,
+          "wall_min_s": 144.9832056,
+          "wall_median_s": 147.0891809,
+          "ratio_vs_standard": 1,
+          "artifact": "docs/test_evidence/uncertainty_depth_ladder_20260926T221145Z.json"
+        },
+        {
+          "N": 10000,
+          "legs": 2,
+          "wall_min_s": 169.4601162,
+          "wall_median_s": 183.87409865,
+          "ratio_vs_standard": 1,
+          "artifact": "docs/test_evidence/uncertainty_depth_ladder_20260926T202822Z.json"
+        }
+      ],
+      "disclosure": "uq.enabled 与 uq.nSamples 两条取发货 demo_only.json 的值 (本档只管这两条, uq 节的其余字段不由它覆写); 这一档存在的唯一判据是发布中心量逐位复现。"
+    },
+    {
+      "id": "publish",
+      "label": "发布: 加统计样本",
+      "knobs": [
+        {
+          "path": "uq.enabled",
+          "value": true
+        },
+        {
+          "path": "uq.nSamples",
+          "value": 128
+        }
+      ],
+      "cost_ratio_measured": [
+        {
+          "N": 400,
+          "legs": 4,
+          "wall_min_s": 134.9233931,
+          "wall_median_s": 136.0690939,
+          "ratio_vs_standard": 2.255701,
+          "artifact": "docs/test_evidence/uncertainty_depth_ladder_20260925T010100Z.json"
+        },
+        {
+          "N": 2500,
+          "legs": 2,
+          "wall_min_s": 472.7046747,
+          "wall_median_s": 475.5496632,
+          "ratio_vs_standard": 3.2330703066686257,
+          "artifact": "docs/test_evidence/uncertainty_depth_ladder_20260926T221145Z.json"
+        },
+        {
+          "N": 10000,
+          "legs": 2,
+          "wall_min_s": 496.6554881,
+          "wall_median_s": 500.6403298,
+          "ratio_vs_standard": 2.722734379,
+          "artifact": "docs/test_evidence/uncertainty_depth_ladder_20260926T202822Z.json"
+        }
+      ],
+      "disclosure": "128 样本仍低于 docs/uncertainty_budget.md 对正式评定的建议下限, 不得当法定不确定度使用。"
+    }
+  ],
+  "non_axes": [
+    "electronics.sampleTime_s 是成形离散偏差与噪声带宽的系统效应, 不是档位 (实测与机制见 docs/performance_tiers.md)",
+    "waveform.enabled 省不到逐事件的仪器链成本, 只省重算样本数与写盘",
+    "run.chunkSize 已证结果逐位无关, 拿它分档等于同一计算比三次",
+    "field.mode=fem_map 的网格层级不在发货路径上",
+    "transport 的 Bohr 涨落开关不是档位: 关掉它省不到时间, 且实测会移动逐事件气腔沉积 (1 MeV 时 +0.72%, 2.2 倍配对标准误; 0.05 MeV 时 +1.89%, 3.8 倍) —— 档位表的立表前提是所有档中心量逐位相同, 它过不了这条 (产物 docs/test_evidence/straggling_production_mix_20260925T182013Z.json, 生成器 tools/stragglingProductionMixProbe.m)"
+  ]
+}

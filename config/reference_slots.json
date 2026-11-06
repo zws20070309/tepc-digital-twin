@@ -1,0 +1,79 @@
+{
+  "schema": "tepc-reference-slots-v1",
+  "note": "本文件是数据槽位缺位状态的唯一真相源。它登记的是『哪一份外部数据不在仓库里』, 不是数据本身 —— 三条槽位今天全部 ABSENT, 相应的核数据/光子逐过程/材料配方本体缺位, 任何改动都不得把它们的状态改成 PRESENT 来让某项能力看起来完成。与 docs/reference_register.csv 的分工: 那张表记『取数来源』(有来源才有行), 本文件记『缺位状态与顶替它的占位值』; 两边不重复记同一件事。stand_in 字段是本文件存在的核心理由: 占位量级值今天确实参与了计算 (它改变了通道权重与光子的作用点分布), 假装它不存在比登记它更危险 —— 登记之后, 『顶替值必须带 ASSUMED 标签』与『缺位必须在能力登记表里被说出来』才是可被测试核的东西。",
+  "allowed_aux_files": [],
+  "unclaimed_anchor_files": [
+    "stopping_anchors.csv",
+    "pstar_water_proton_range.csv",
+    "icrp110_tissue_elemental_composition.csv",
+    "icrp116_neutron_skin_lens_coefficients.csv",
+    "lhasa_neutron_spectrum_digitized.csv",
+    "icrp103_neutron_wR_branches.csv",
+    "lhasa_neutron_spectrum_fullrange_digitized.csv"
+  ],
+  "aux_note": "allowed_aux_files 列出 config/reference/ 里允许存在但不属于任何槽位的文件。今天为空: 该目录里只有上表七个锚点 CSV。注意 src/+tepc/+validation/loadAnchors.m 会在 config/reference/anchors_manifest.json 存在时读它并校验锚点表哈希 —— 那是一份『代码邀请存在』的辅助文件, 一旦落地它就必须在这里登记, 否则它会被闭世界判据当成未登记文件。",
+  "unclaimed_note": "unclaimed_anchor_files 里的文件属于其他能力或纯参考数据, 不得被任何槽位声明为本槽位的数据本体: stopping_anchors.csv 与 pstar_water_proton_range.csv 是阻止本领与射程锚点 (归 D-06); icrp110_tissue_elemental_composition.csv 是组织元素配方参考 (今天没有代码读它); icrp116_neutron_skin_lens_coefficients.csv、lhasa_neutron_spectrum_digitized.csv、lhasa_neutron_spectrum_fullrange_digitized.csv 与 icrp103_neutron_wR_branches.csv 已被 src/+tepc/+analysis/organDoseFromField.m 与 radiationWeighting.m 消费 —— 『未声明为槽位本体』不等于『没有代码读』, 两者的判据不同。docs/counts.json 的 details.anchor_files 里每一项必须要么被恰好一个槽位声明、要么出现在本列表里, 两者不可同时成立也不可同时缺失。",
+  "slots": [
+    {
+      "id": "neutron_differential_cross_section",
+      "status": "ABSENT",
+      "grade": "C",
+      "owner_capability": "D-07",
+      "note": "中子逐道微分截面与角分布 (ENDF/TENDL 一类)。缺位的直接后果: 反冲谱的 H/C/O 通道占比由配置里的占位截面决定, 角分布按 CM 各向同性假设 (H 精确, C/O 为 ASSUMED)。",
+      "stand_in": [
+        {
+          "config_key": "source.channelSigma_barn",
+          "label_path": "source.channelSigma_barn._status",
+          "expected_label": "ASSUMED",
+          "consumers": [
+            "src/+tepc/+transport/AnalyticAdapter.m:335"
+          ],
+          "consumer_note": "该标签是本键下的同级字段 _status (不是子结构里的 status): 光子侧用的是子结构内的 status, 两族写法不同, 所以标签路径必须逐槽位登记而不是约定统一。 行号是**登记式**的: 在被登记文件上方插入/删除行都会让它漂移, 而 test_reference_slots_invariants 的 test_structure 会逐行核\"该行是否真的含这个键\" —— 本轮给 checkXopts 加逻辑标量分支时把 252 推到 272, 该锁当场判红, 这三处编号随之下调/上调。"
+        }
+      ]
+    },
+    {
+      "id": "photon_xcom_process_by_material",
+      "status": "ABSENT",
+      "grade": "C",
+      "owner_capability": "D-08",
+      "note": "光子逐过程 (相干/非相干/光电/电子对) 的微分截面与按材料的衰减系数表 (XCOM/EPDL 一类)。缺位的直接后果: 光子只有一条总的质量衰减系数与一个光电分支概率, 逐过程分解与材料无关的角分布都无从谈起。",
+      "stand_in": [
+        {
+          "config_key": "source.gamma_massatt_cm2_g",
+          "label_path": "source.gamma_massatt_cm2_g.status",
+          "expected_label": "ASSUMED",
+          "consumers": [
+            "src/+tepc/+transport/AnalyticAdapter.m:115"
+          ],
+          "consumer_note": "本键下的子字段 status 就是标签 (与中子侧的同级 _status 写法不同); 逐条登记而非统一约定。 行号是**登记式**的: 在被登记文件上方插入/删除行都会让它漂移, 而 test_reference_slots_invariants 的 test_structure 会逐行核\"该行是否真的含这个键\" —— 本轮给 checkXopts 加逻辑标量分支时把 252 推到 272, 该锁当场判红, 这三处编号随之下调/上调。"
+        },
+        {
+          "config_key": "source.gamma_photoelectric_frac",
+          "label_path": "source.gamma_photoelectric_frac.status",
+          "expected_label": "ASSUMED",
+          "consumers": [
+            "src/+tepc/+transport/AnalyticAdapter.m:143"
+          ],
+          "consumer_note": "只影响光电/康普顿分支比例, 即零沉积事件的份额。 行号是**登记式**的: 在被登记文件上方插入/删除行都会让它漂移, 而 test_reference_slots_invariants 的 test_structure 会逐行核\"该行是否真的含这个键\" —— 本轮给 checkXopts 加逻辑标量分支时把 252 推到 272, 该锁当场判红, 这三处编号随之下调/上调。"
+        }
+      ]
+    },
+    {
+      "id": "wall_a150_composition",
+      "status": "ABSENT",
+      "grade": "C",
+      "owner_capability": "D-06",
+      "note": "A-150 与组织等效材料的元素配方 (质量分数/摩尔分数)。注意只有『配方』缺位: 名义密度 transport.a150.density_g_cm3 是存在且已接线的 (几何/质量侧经 geometry/materials.json, 输运侧经 tepc.transport.wallDensity), 不得把它登记成缺位。缺配方的后果是壁能损只能按整体密度走通用阻止本领近似, 逐元素加权做不了, 因此『全能区壁材精度』这类结论被本条缺位挡住。",
+      "stand_in": []
+    },
+    {
+      "id": "device_pressure_envelope",
+      "status": "ABSENT",
+      "grade": "C",
+      "owner_capability": "D-03",
+      "note": "器件在束流水箱里允许的工作压力与压差包线（含标定时的气压漂移限值）没有任何可引用来源；缺位期间 device_v2.json 里的气压字段只能按名义值消费，不得当作被核对过的量。stand_in 留空是刻意的：发货配置里今天没有任何一个带 ASSUMED 标签的气压槽位可以顶替这份数据，要顶替先把它做成带标签的配置项，再来把本槽位翻成 PRESENT。",
+      "stand_in": []
+    }
+  ]
+}

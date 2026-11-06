@@ -1,0 +1,112 @@
+# NIST PSTAR 液态水 (H2O, rho=1.0 g/cm3) 质子射程与总阻止本领, 官方直取表, 88 点, 10 keV..100 MeV。
+# 取数: POST https://physics.nist.gov/cgi-bin/Star/ap_table.pl  字段 prog=PSTAR, matno=276(液态水),
+#       GraphType=None, ShowDefault=on  => 默认能量网格上的完整表; 原始 HTML 与解析件留底在
+#       shixian/审查/_工作底稿/staging_wR/nist_pstar_liquid_water_20261009.{html,csv}。
+# 取代 2026-09-20 那份 13 点表 (来源 hep.ucl.ac.uk/pbt/wiki/Proton_ranges, 第三方转 NIST PSTAR, B 级)。
+#   两表在 10-70 MeV 的 13 个重叠点逐点对账: 新/旧比值 0.9980-0.9989 (旧表偏高 0.1-0.2%), 13/13 点在 5% 内,
+#   => 旧表被官方源证实, 本表据以取代并把等级从 B 升为 A (直取官方, 未经第三方)。
+#
+# 列口径 (用错列会把记账差当成模型误差报给门禁, 所以三列都摆成一等公民):
+#   range_mm_water   = **投影射程** projected range, 与旧表同列同义 (mm 水);
+#   csda_mm_water    = **CSDA 连续慢化射程** (= 表里 csda_g_cm2 × 10, 因 rho=1 g/cm3);
+#   S_total_MeV_cm2_g= 总阻止本领 (电子+核), MeV cm2/g。
+#   两列射程在低能段分裂很大: 10 keV 处 CSDA 比投影射程高约 41%, 10 MeV 以上才收敛到 0.2% 内。
+#   validation/checkAnchors 的门禁比的是 R(E)=∫dE/S(E), 那是 CSDA 口径 => 必须用 csda_mm_water,
+#   且只在 E>=2 MeV 上比射程; 更低能量要比**逐点 S** (积分式比对在模型表域下限附近本来就不可比,
+#   因为模型只积 [10 keV, E] 而 NIST 从 0 积起 —— 实测 <80 keV 段拿积分式比对会报到 82%)。
+#   分带容差与实测偏差 (同次入库时量得, 逐点 S: 25.69% / 17.80% / 2.90%, 射程腿 E>=2 MeV: 1.25%;
+#   S 整体 x1.11 时射程腿跳到 11.03%, 所以这两条腿都有牙): 见 src/+tepc/+validation/checkAnchors.m 头注释。
+#
+# 为什么是 88 点而不是官方默认网格的全部 132 点: 本表取的是 **NIST 网格 ∩ 本实现表域 [0.01, 100] MeV**。
+#   丢掉的 44 点全部在域外 —— 11 点在 1-9 keV (低于模型栅格下限), 33 点在 125 MeV-10 GeV (高于上限);
+#   域内零丢失。入库值与原始解析件逐点核过: 88/88 点的 S_total 与 csda 完全相同 (0.00000% 差)。
+# 数据行全部 ASCII (便于按逗号切列的读取代码在 GBK 环境下也不出错); 说明只写在注释里。
+energy_MeV,range_mm_water,csda_mm_water,S_total_MeV_cm2_g,quantity,material,density_g_cm3,source,provenance_status,retrieved,url,notes
+0.01,0.0002545,0.0003599,432.9,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.0125,0.0003037,0.000415,474.5,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.015,0.0003499,0.0004657,511,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.0175,0.0003938,0.0005131,543.7,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.02,0.0004356,0.0005578,573.3,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.0225,0.0004757,0.0006005,600.1,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.025,0.0005144,0.0006413,624.5,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.0275,0.0005519,0.0006806,646.7,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.03,0.0005883,0.0007187,667.1,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.035,0.0006585,0.0007916,702.8,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.04,0.0007259,0.0008613,732.4,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.045,0.0007911,0.0009284,756.9,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.05,0.0008547,0.0009935,776.8,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.055,0.0009169,0.001057,792.7,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.06,0.0009782,0.00112,805,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.065,0.001039,0.001182,814.2,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.07,0.001099,0.001243,820.5,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.075,0.001159,0.001303,824.3,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.08,0.001218,0.001364,826,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.085,0.001278,0.001425,825.8,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.09,0.001338,0.001485,823.9,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.095,0.001398,0.001546,820.6,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.1,0.001458,0.001607,816.1,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.125,0.001767,0.00192,781.4,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.15,0.002094,0.002249,737.1,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.175,0.00244,0.002598,696.9,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.2,0.002806,0.002966,661.3,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.225,0.003191,0.003354,629.4,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.25,0.003596,0.003761,600.6,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.275,0.004019,0.004186,574.4,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.3,0.004462,0.004631,550.4,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.35,0.005404,0.005577,508,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.4,0.006422,0.006599,471.9,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.45,0.007515,0.007697,440.6,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.5,0.008683,0.008869,413.2,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.55,0.009926,0.01012,389.1,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.6,0.01124,0.01144,368,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.65,0.01263,0.01283,349.2,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.7,0.0141,0.0143,332.5,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.75,0.01563,0.01584,317.5,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.8,0.01724,0.01745,303.9,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.85,0.01891,0.01913,291.7,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.9,0.02066,0.02088,280.5,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+0.95,0.02247,0.0227,270.2,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+1,0.02435,0.02458,260.8,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+1.25,0.03472,0.03499,222.9,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+1.5,0.04669,0.04698,195.7,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+1.75,0.0602,0.06052,174.9,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+2,0.07519,0.07555,158.6,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+2.25,0.09164,0.09203,145.4,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+2.5,0.1095,0.1099,134.4,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+2.75,0.1288,0.1292,125.1,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+3,0.1494,0.1499,117.2,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+3.5,0.1946,0.1952,104.2,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+4,0.2451,0.2458,94.04,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+4.5,0.3007,0.3015,85.86,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+5,0.3613,0.3623,79.11,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+5.5,0.4268,0.4279,73.43,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+6,0.4972,0.4984,68.58,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+6.5,0.5724,0.5737,64.38,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+7,0.6522,0.6537,60.71,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+7.5,0.7368,0.7384,57.47,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+8,0.8259,0.8277,54.6,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+8.5,0.9196,0.9215,52.02,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+9,1.018,1.02,49.69,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+9.5,1.12,1.123,47.59,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+10,1.228,1.23,45.67,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+12.5,1.828,1.832,38.15,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+15,2.535,2.539,32.92,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+17.5,3.344,3.35,29.05,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+20,4.252,4.26,26.07,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+25,6.359,6.37,21.75,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+27.5,7.553,7.566,20.13,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+30,8.839,8.853,18.76,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+35,11.68,11.7,16.56,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+40,14.86,14.89,14.88,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+45,18.39,18.41,13.54,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+50,22.24,22.27,12.45,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+55,26.41,26.44,11.54,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+60,30.89,30.93,10.78,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+65,35.67,35.72,10.13,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+70,40.75,40.8,9.559,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+75,46.11,46.18,9.063,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+80,51.76,51.84,8.625,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+85,57.69,57.77,8.236,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+90,63.89,63.98,7.888,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+95,70.35,70.45,7.573,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes
+100,77.07,77.18,7.289,projected_range,liquid_water,1.0,NIST_PSTAR_ap_table.pl_matno276,A,2026-10-10,https://physics.nist.gov/cgi-bin/Star/ap_table.pl,see_header_notes

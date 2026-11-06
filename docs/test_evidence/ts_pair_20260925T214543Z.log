@@ -1,0 +1,5 @@
+# TEPC 电子学采样时间配对比照 (N=43000, seed=24680)
+delta_rel=0.005925  计数地板(两腿合成)=0.006427  delta/地板=0.92  resolved@2sigma=0
+# 判定分母是同批计数地板 CV/sqrt(nEff); summary.u_yF_rel 是合成不确定度, 不当分母。
+coarse_warnfree_upper    Ts=2e-08 wall=279.7 yF=25.5587054261 nEff=31859 u_yF_rel=0.146318
+shipped                  Ts=1e-08 wall=285.7 yF=25.4081593275 nEff=32160 u_yF_rel=0.147146

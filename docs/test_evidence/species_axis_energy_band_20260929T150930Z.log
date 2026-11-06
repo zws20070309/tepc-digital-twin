@@ -1,0 +1,14 @@
+能量带 (Esecondary_keV 加权分位) 对发布谱 y 的解释力 —— 离线重算产物
+来源: docs/test_evidence/species_axis_leg_pairing_20260929T150930Z.json 的 legs[MIX] (同 seed 12345, N=4000, mono_neutron)
+口径: y = EdepGas_keV / lbar_tissue_um (真值列, 不是仪器反演的发布 y); 统计权重 w=1 (事件等权)
+N_PUB 4000
+YF_TRUTH 19.41256772
+Q50_MEV 0.38527
+Q90_MEV 0.87784
+SHARES 0.5000 0.4000 0.1000
+BAND_MEANS 20.2118 19.4369 15.3194
+RB2 0.0062
+CONTRIB_OVER_YF 0.5206 0.4005 0.0789
+结论 RB2=0.0062: 带均值只解释 y 方差的 0.62%, 贡献份额与权重份额几乎相同
+=> 按次级能量分带的逐事件分解不携带信息, 不落地; 核种的作用在混合份额上 (见 channel_weight_leverage 日志)
+注: 带均值随能量下降 (20.21 -> 15.32), 因为腔薄, 高反冲能径迹穿出气腔, 单位径迹长度沉积反而少

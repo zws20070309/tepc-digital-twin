@@ -1,0 +1,76 @@
+TEPC 全树认证 (手工驱动分片) runId=z205hand  归档 UTC 2026-09-30T07:54:28.357Z
+驱动 shixian/临时/验证脚本/z121_certify.m ; 日志 z121_cert_log.txt ; 聚合 z125_final.cjs
+说明: suite_run 的主机闸门两次拒起批 (2 个 MATLAB 进程 / 空闲 1.0-1.4 GB), 故改用不自建新进程的
+      逐文件驱动; 分片只是预算行为, 判定按文件取最后一次 END, 与分片边界无关。
+切片数 6 ; CAP_STOP 次数 1 (CAP_STOP 后由下一分片补齐, 无文件缺失)
+树指纹 00002e7459aa41d7_64 / 00002e7459eee39d_64  ← 多值: 不得认证
+
+逐文件 (latest-wins, 64 个):
+  PASS      cases= 22 fail=0 inc=0 sec=  209.4  tests/integration/test_gui.m
+  PASS      cases=  5 fail=0 inc=0 sec=   68.1  tests/integration/test_gui_3d_tab.m
+  PASS      cases= 17 fail=0 inc=0 sec=  126.9  tests/integration/test_gui_3d_workbench.m
+  PASS      cases=  5 fail=0 inc=0 sec=   12.9  tests/integration/test_gui_honest_positioning.m
+  PASS      cases=  5 fail=0 inc=0 sec=    5.9  tests/integration/test_gui_tab_mapping.m
+  PASS      cases=  9 fail=0 inc=0 sec=  194.3  tests/integration/test_pipeline.m
+  PASS      cases=  2 fail=0 inc=0 sec=  493.0  tests/integration/test_pipeline_rerun_equivalence.m
+  PASS      cases=  8 fail=0 inc=0 sec=  483.9  tests/integration/test_release_transaction.m
+  PASS      cases=  3 fail=0 inc=0 sec=   31.3  tests/integration/test_report_gate_identity.m
+  PASS      cases=  9 fail=0 inc=0 sec=   47.1  tests/integration/test_report_semantics.m
+  PASS      cases=  2 fail=0 inc=0 sec=   56.3  tests/integration/test_run_chunk_invariance.m
+  PASS      cases=  3 fail=0 inc=0 sec=  108.6  tests/integration/test_run_drift_diagnostic.m
+  PASS      cases=  1 fail=0 inc=0 sec=  135.4  tests/integration/test_run_waveform_stage.m
+  PASS      cases=  1 fail=0 inc=0 sec=   48.7  tests/integration/test_simulink_gate.m
+  PASS      cases=  6 fail=0 inc=0 sec=  341.4  tests/unit/test_artifact_transaction.m
+  PASS      cases=  5 fail=0 inc=0 sec=    5.4  tests/unit/test_banned_claims_lexicon.m
+  PASS      cases= 16 fail=0 inc=0 sec=    5.5  tests/unit/test_config_validate.m
+  PASS      cases=  6 fail=0 inc=0 sec=    2.0  tests/unit/test_constants_registry.m
+  PASS      cases= 10 fail=0 inc=0 sec=    1.1  tests/unit/test_daq_statemachine.m
+  PASS      cases= 30 fail=0 inc=0 sec=    8.7  tests/unit/test_device_v2_manifest.m
+  PASS      cases=  5 fail=0 inc=0 sec=    1.2  tests/unit/test_directional_beam_chord.m
+  PASS      cases=  6 fail=0 inc=0 sec=   22.8  tests/unit/test_doc_counts.m
+  PASS      cases= 11 fail=0 inc=0 sec=   63.1  tests/unit/test_dose_normalization.m
+  PASS      cases=  5 fail=0 inc=0 sec=    0.6  tests/unit/test_drift_collect.m
+  PASS      cases= 24 fail=0 inc=0 sec=   12.3  tests/unit/test_electronics.m
+  PASS      cases=  4 fail=0 inc=0 sec=  121.0  tests/unit/test_false_trigger_rate.m
+  PASS      cases=  9 fail=0 inc=0 sec=   31.5  tests/unit/test_field_electrostatic_gate.m
+  PASS      cases= 15 fail=0 inc=0 sec=   35.9  tests/unit/test_field_fem_map.m
+  PASS      cases=  4 fail=0 inc=0 sec=    5.4  tests/unit/test_field_map_reciprocity.m
+  PASS      cases= 10 fail=0 inc=0 sec=    0.9  tests/unit/test_field_topology_guard.m
+  PASS      cases=  5 fail=0 inc=0 sec=    0.5  tests/unit/test_gate_layer_map.m
+  PASS      cases= 28 fail=0 inc=0 sec=  275.6  tests/unit/test_geometry_3d_contract.m
+  PASS      cases= 11 fail=0 inc=0 sec=    1.7  tests/unit/test_geometry_chord.m
+  PASS      cases=  9 fail=0 inc=0 sec=   56.7  tests/unit/test_geometry_clip.m
+  PASS      cases= 12 fail=0 inc=0 sec=    1.4  tests/unit/test_geometry_overlap.m
+  PASS      cases= 12 fail=0 inc=0 sec=  102.6  tests/unit/test_geometry_single_source.m
+  PASS      cases=  5 fail=0 inc=0 sec=    2.9  tests/unit/test_geometry_transport_identity.m
+  PASS      cases=  5 fail=0 inc=0 sec=    0.5  tests/unit/test_golden_baseline_fields.m
+  PASS      cases= 25 fail=0 inc=0 sec=    2.5  tests/unit/test_gui_components.m
+  PASS      cases=  5 fail=0 inc=0 sec=    5.3  tests/unit/test_gui_error_surface.m
+  PASS      cases= 10 fail=0 inc=0 sec=    2.0  tests/unit/test_gui_state.m
+  PASS      cases= 12 fail=0 inc=0 sec=    1.0  tests/unit/test_io_transaction.m
+  PASS      cases=  6 fail=0 inc=0 sec=    1.3  tests/unit/test_peak_polarity.m
+  PASS      cases=  8 fail=0 inc=0 sec=    7.0  tests/unit/test_position_spread.m
+  PASS      cases=  6 fail=0 inc=0 sec=    0.6  tests/unit/test_positioning_claims.m
+  PASS      cases=  6 fail=0 inc=0 sec=    0.6  tests/unit/test_published_fields_source.m
+  PASS      cases=  6 fail=0 inc=0 sec=    1.4  tests/unit/test_rate_sweep.m
+  PASS      cases=  8 fail=0 inc=0 sec=    1.0  tests/unit/test_reference_slots_invariants.m
+  PASS      cases=  6 fail=0 inc=0 sec=   70.4  tests/unit/test_report_diagnostic_figure.m
+  PASS      cases=  4 fail=0 inc=0 sec=   77.7  tests/unit/test_requested_realized_site_block.m
+  PASS      cases=  3 fail=0 inc=0 sec=    0.8  tests/unit/test_run_dirs_env.m
+  PASS      cases= 14 fail=0 inc=0 sec=   35.1  tests/unit/test_slx_config_identity.m
+  PASS      cases= 17 fail=0 inc=0 sec=   43.2  tests/unit/test_source_direction_identity.m
+  PASS      cases= 13 fail=0 inc=0 sec=    1.4  tests/unit/test_spectrum_dose.m
+  PASS      cases= 12 fail=0 inc=0 sec=    4.8  tests/unit/test_transport.m
+  PASS      cases=  7 fail=0 inc=0 sec=  446.5  tests/unit/test_uncertainty_depth_tiers.m
+  PASS      cases=  9 fail=0 inc=0 sec=   40.6  tests/unit/test_uq_budget_inertness.m
+  PASS      cases=  4 fail=0 inc=0 sec=   15.4  tests/unit/test_uq_convergence.m
+  PASS      cases=  8 fail=0 inc=0 sec=   93.5  tests/unit/test_uq_measurement.m
+  PASS      cases= 12 fail=0 inc=0 sec=  103.4  tests/unit/test_uq_validation.m
+  PASS      cases= 13 fail=0 inc=0 sec=    2.1  tests/unit/test_validation_gof_chord.m
+  PASS      cases=  7 fail=0 inc=0 sec=   50.9  tests/unit/test_wall_density_single_source.m
+  PASS      cases=  5 fail=0 inc=0 sec=    2.6  tests/unit/test_wall_effect_negative_control.m
+  PASS      cases=  8 fail=0 inc=0 sec=    7.3  tests/unit/test_waveform_replay.m
+
+合计 cases=579 (docs/counts.json 静态声明 579, 逐文件静态比对零差异) ; 文件墙钟之和 4141 s
+非绿文件=0
+NOT_CERTIFIED|bad=0|cases=579|fp_unique=false|

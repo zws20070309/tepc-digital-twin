@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------
+# Run artifacts and caches: not source, never part of a release
+# ---------------------------------------------------------------
+runs/
+slprj/
+**/slprj/
+*.slxc
+*.asv
+*.mexw64
+*.mexa64
+tests/golden/tmp/
+
+# ---------------------------------------------------------------
+# Exceptions: archived acceptance evidence and baselines MUST ship
+# ---------------------------------------------------------------
+!tests/golden/baseline_pre_r17.json
+!docs/test_evidence/**
+
+# ---------------------------------------------------------------
+# Review artifacts (per-tab GUI screenshots, review reports) live
+# outside the repository by convention (see README "Repository
+# layout"). They are not source and not logs.
+# ---------------------------------------------------------------
+*.docx
+*.pptx
+*.xlsx
+*.zip
+
+# ---------------------------------------------------------------
+# OS / editor noise
+# ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~

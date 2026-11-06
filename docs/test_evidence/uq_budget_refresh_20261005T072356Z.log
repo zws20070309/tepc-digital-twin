@@ -1,0 +1,10 @@
+uq_budget_refresh 20261005T072356Z
+recipe: config=config/defaults/demo_only.json sha16=26240b68c5e89bbd stream=Threefry seed=12345 runSeed=12345 N=4000
+y_F 口径: buildSpectrum(EdepGas_keV, R.lbar_tissue_um, weight, R.edges).yF_exact —— 真值列, 不是仪器反演发布值, 不可跨批引用
+context: P=1000 Pa T=293.15 K E0=1 MeV lbar_t=0.3539 um t_wall=0.003 m rho_wall=1.1240 mode=derived
+SELFCHECK same-recipe bitwise reproducible = 1
+NEUTRON yF_exact=37.79369890  escape=0  edepWall=1.67824e+06
+  rho_wall x3 : gas_col_bitwise=1  yF_bitwise=1  yF=37.79369890  escape=0
+  t_wall   x5 : gas_col_bitwise=1  yF_bitwise=1  yF=37.79369890  escape=0
+GAMMA   N=1500  mu/rho=0.08 cm2/g  rho x1/x2/x3 -> wall_born=[120 226 323]  gas_dep_ev=[20 15 18]  responds=1
+json = docs/test_evidence/uq_budget_refresh_20261005T072356Z.json

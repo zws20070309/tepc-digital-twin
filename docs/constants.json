@@ -1,0 +1,433 @@
+{
+  "schema": "tepc-constants-v1",
+  "generated_utc": "2026-09-20T10:08:52Z",
+  "revision": "2026-09-21",
+  "scope_note": "只登记散落在 src/ 代码字面量里的 ASSUMED/经验常数; 集中化 CODATA 与 tepc.units.convert 是纯折腾, 故本表刻意不含 CODATA 与单位换算值。已经由 config/defaults/*.json 以 {value,status,source} 形式集中携带的量 (W_eV=31.1, fano=0.20, 配置侧 diethorn_deltaV_V) 不重复登记为真相源, 只在 note 里指出其位置。无可核验 URL 的登记册条目保持降级, 本表不借它们升级任何条目。",
+  "status_vocabulary": [
+    "MEASURED",
+    "REFERENCE",
+    "ASSUMED"
+  ],
+  "wiring_note": "wired=false 表示该常数仍留在源码字面量里, 尚未通过 tepc.config.constants(const_id) 读取。tests/unit/test_constants_registry.m 断言: wired:true 的 id 必须在 src/ 里至少有一个调用点, 且每个 src/ 调用点对应的 id 必须已登记且 wired:true (双向集合相等)。接线时把 wired 改为 true 并填 wiring_done, 由该测试反向把关。",
+  "constants": [
+    {
+      "const_id": "detector.diethorn.deltaV_V",
+      "value": 36.5,
+      "units": "V",
+      "status": "ASSUMED",
+      "source_ref": "R08",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+detector/avalanche.m:10"
+      ],
+      "wired": true,
+      "wiring_done": "avalanche.m 默认分支改为 tepc.config.constants(...)",
+      "wiring_todo": "",
+      "measured_condition": "实测增益-高压曲线 (脉冲高度法, >=3 个 HV 点、每点重复 3 次), 由 ln G vs V 直线斜率反解 deltaV = ln2/slope 并给出覆盖因子 k=2 的相对不确定度; 届时 R08 由 B 升为 A 级来源, 本条目改 MEASURED。",
+      "note": "Diethorn (登记册 R08, 1956) alpha(E)=(ln2/deltaV)*E 的半增益电位; R08 明确标注 deltaV 未标定 -> ASSUMED, 不得升格。同一数值还以状态标签形式存在于 config/defaults/demo_only.json:43 (detector.diethorn_deltaV_V); resolve.m:43 与 validate.m:216 从 cfg 读取, 不含字面量, 故不列进 used_by。avalanche.m 的默认值是无人传参时的第二份拷贝 —— 这正是本表要消除的分歧。"
+    },
+    {
+      "const_id": "detector.polya.theta",
+      "value": 8,
+      "units": "dimensionless",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+detector/avalanche.m:14",
+        "src/+tepc/+run/execute.m:152"
+      ],
+      "wired": true,
+      "wiring_done": "avalanche.m theta 默认分支 + execute.m ctx.theta",
+      "wiring_todo": "",
+      "measured_condition": "单离子团脉冲高度谱的 Polya 分布拟合 (s 参数 = theta), 或已知 W/Fano 下的方差-均值比实测; 至少 1e4 脉冲, 报告拟合优度与置信区间后转 MEASURED。",
+      "note": "Polya(theta)=Gamma(theta, mean/theta) 的形状参数, 控制气体增益涨落宽度; 参考登记册里没有任何条目支撑它 (R08 只给增益模型, 不给涨落), 故 source_ref=none。execute.m 构造 ctx 时曾另写一份 8; 现在两个消费点都读注册表, 取值只剩这一处。"
+    },
+    {
+      "const_id": "detector.avalanche.rStartFactor",
+      "value": 10,
+      "units": "multiples of anode radius a",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+detector/avalanche.m:24",
+        "src/+tepc/+config/resolve.m:67",
+        "src/+tepc/+config/validate.m:283"
+      ],
+      "wired": true,
+      "wiring_done": "avalanche / resolve / validate 三处增益起点全部改读注册表",
+      "wiring_todo": "",
+      "measured_condition": "有效电离半径只能由实验确定: 测同一 HV 下不同阳极半径计数器的 G(rStart), 或对雪崩光子到达时间做门控测量, 反推电离起始半径/a 的倍数; 有实测图纸/数据前保持 ASSUMED。",
+      "note": "Diethorn 有效电离起点 = 10a (ASSUMED, 无实测佐证)。三处消费者 (真正算增益的 avalanche、给出 r0_m 的 resolve、算增益门禁的 validate) 现在都从本表取值: 曾经 validate 硬编码 10*fmc.a, 于是\"改文件即改值\"在增益门禁上是假的。测试对 wired=true 的条目反查 constants('id') 调用是否真的出现在被引用文件里。"
+    },
+    {
+      "const_id": "detector.avalanche.rStartClampUpperFracOfB",
+      "value": 0.999,
+      "units": "fraction of cathode radius b",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": 0,
+      "used_by": [
+        "src/+tepc/+detector/avalanche.m:29",
+        "src/+tepc/+config/resolve.m:69",
+        "src/+tepc/+config/validate.m:284",
+        "src/+tepc/+electronics/simulate.m:90"
+      ],
+      "wired": true,
+      "wiring_done": "avalanche / resolve / validate / simulate 的 b 侧上钳位统一读本表",
+      "wiring_todo": "",
+      "measured_condition": "非物理量, 是数值护栏, 不适用实测: 它需要的是唯一来源而不是标定值; 保持 ASSUMED 并随 ASSUMED 清单一起出现在报告里 (门禁 12)。",
+      "note": "越过阴极后真实场为 0 而 intE 仍按电极场积分 => 增益无界虚高, 故 r0 必须夹在 (a, 0.999b)。统一前四处各写一遍 0.999 与 (1-1e-3), 而这两者在双精度下相差 1 ulp —— 现在同一来源。"
+    },
+    {
+      "const_id": "detector.avalanche.rStartClampLowerFracOfA",
+      "value": 1.001,
+      "units": "multiples of anode radius a",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": 0,
+      "used_by": [
+        "src/+tepc/+config/resolve.m:68",
+        "src/+tepc/+config/validate.m:285",
+        "src/+tepc/+electronics/simulate.m:89"
+      ],
+      "wired": true,
+      "wiring_done": "resolve / validate / simulate 的 a 侧下钳位统一读本表",
+      "wiring_todo": "",
+      "measured_condition": "非物理量 (避免 rStart==a 时场积分退化), 不适用实测; 与上钳位条目同一纪律。",
+      "note": "保证雪崩起点严格大于阳极半径 (a*1.001)。统一前 resolve/simulate 写 (1+1e-3)、validate 写 1.001, 两者相差 1 ulp; 现在同一来源, 三处不可能再分叉。"
+    },
+    {
+      "const_id": "detector.spaceCharge.enabledDefault",
+      "value": false,
+      "units": "boolean",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+detector/avalanche.m:16",
+        "src/+tepc/+config/validate.m:159"
+      ],
+      "wired": false,
+      "wiring_done": "",
+      "wiring_todo": "avalanche.m:16 的 opts.spaceCharge = false 缺省换成读取本 id (validate.m:159 是拒绝开关的守卫, 不含数值字面量, 只作为语义证据列在 used_by)。",
+      "measured_condition": "当增益-电荷闭环 (逐事件离子电荷 -> G_eff) 真实实现, 且用电流模式下的 G(Q_ion) 实测曲线标定后, 本默认值才可升为 MEASURED; 现状是 validate 以 SPACE_CHARGE_UNIMPLEMENTED 直接拒绝 enabled=true, 因此默认必须保持 false。",
+      "note": "空间电荷抑制默认关闭。历史缺陷: 旧实现静默把 Q_ion_C 置 0 假装生效 (见 validate.m:156-161 注释), 现按未实现的选择必须显式拒绝处理。布尔量无法做数值反装饰核对, 故测试只核对 file:line 存在性。"
+    },
+    {
+      "const_id": "detector.spaceCharge.kScPerC",
+      "value": 0,
+      "units": "1/C",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+detector/avalanche.m:18"
+      ],
+      "wired": false,
+      "wiring_done": "",
+      "wiring_todo": "avalanche.m:18 的 opts.k_sc = 0 缺省换成读取本 id; 0 是未实现的哨兵值而不是拟合结果, 接线不得让它看起来像标定值 (note 保留说明)。",
+      "measured_condition": "在脉冲电流模式下测多事件累积电荷与增益压降, 拟合 G_eff = G0/(1 + k_sc*Q_ion_C) 的 k_sc (单位 1/C), 给出置信区间后方可 MEASURED; 在此之前必须与 enabledDefault=false 同时保持, 否则是静默空操作。",
+      "note": "G_eff = G0/(1+k_sc*Q_ion) 的耦合系数, 取 0 等于关掉空间电荷压制。与 enabledDefault 同链: 系数为 0 且开关为 false, 二者任一被单独改动都会造成看起来接入了但没生效。"
+    },
+    {
+      "const_id": "gas.pressureRef_Pa",
+      "value": 101325,
+      "units": "Pa",
+      "status": "REFERENCE",
+      "source_ref": "R07",
+      "revision": "2026-09-21",
+      "uncertainty_rel": 0,
+      "used_by": [
+        "src/+tepc/+config/resolve.m:54"
+      ],
+      "wired": false,
+      "wiring_done": "",
+      "wiring_todo": "resolve.m:54 的 p0 = 101325.0 换成读取本 id。",
+      "measured_condition": "不需要实测: 标准大气压按定义为 101325 Pa 精确值 (R07 CODATA 2018/SI 注释, A 级且有可核验 URL)。本表登记它只是因为它是迁移率 1/p 标度的参考点, 与两条 ASSUMED 迁移率绑定。",
+      "note": "1 atm 参考压, 用于 mob0*p0/p 的 1/p 标度。REFERENCE 的依据是登记册 R07 本身 (A 级, 有可核验 URL)。"
+    },
+    {
+      "const_id": "gas.mobilityElectron_m2Vs_at_1atm",
+      "value": 0.05,
+      "units": "m^2/(V s)",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+config/resolve.m:55"
+      ],
+      "wired": false,
+      "wiring_done": "",
+      "wiring_todo": "resolve.m:55 的 mob0_e = 0.05 换成读取本 id。",
+      "measured_condition": "在计数器工作气体 (甲烷基 TE 气) 与工作压力下测电子漂移速度 v_d(E/N), 由低场段 v_d = mu_e*E 斜率得 mu_e (1 atm 归一); 或引用 A 级漂移数据表并先在登记册新增可核验条目。",
+      "note": "低气压等效电子迁移率 @1atm, 只影响感应电流时序 (L1 漂移-收集), 不影响剂量。登记册无对应条目 -> source_ref=none; 1/p 标度本身也是 ASSUMED。"
+    },
+    {
+      "const_id": "gas.mobilityIon_m2Vs_at_1atm",
+      "value": 0.0002,
+      "units": "m^2/(V s)",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+config/resolve.m:56"
+      ],
+      "wired": false,
+      "wiring_done": "",
+      "wiring_todo": "resolve.m:56 的 mob0_i = 2.0e-4 换成读取本 id。",
+      "measured_condition": "同电子迁移率: 用双极板或计数器收集时间谱实测正离子迁移率 (甲烷基 TE 气, 已知 E/N 与温度), 报告气压归一值与不确定度; 或引入 A 级文献条目后引用之。",
+      "note": "正离子迁移率 @1atm (量级 2e-4 m^2/Vs 是常见计数气体经验值, 但仓库内无可核验来源, 不得升格)。它决定离子拖尾长度, 进而影响 pile-up 与成形峰时刻, 因此对整条链的时序结果敏感。"
+    },
+    {
+      "const_id": "detector.gain.proportionalRegionUpperBound",
+      "value": 10000,
+      "units": "dimensionless (electron gain)",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+config/validate.m:292"
+      ],
+      "wired": true,
+      "wiring_done": "validate.m 增益-量程门禁上界",
+      "wiring_todo": "",
+      "measured_condition": "对具体管子做 G-V 特性测量, 找出正比区上界 (进入有限正比/盖革前的 knee), 用实测 knee 替换经验上界; 需 >=1 根同型号管、多温度点。当前无实测, 标 ASSUMED。",
+      "note": "正比计数区经验上界 1e4 (validate.m 注释自陈无参考场数据佐证), 超过则淹没前放/ADC 量程 (发货设计点 G=136, range2Gain=32)。这是接线项 3/3 的代表。"
+    },
+    {
+      "const_id": "transport.a150.density_g_cm3",
+      "value": 1.124,
+      "units": "g/cm^3",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-22",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+transport/wallDensity.m:25"
+      ],
+      "wired": true,
+      "wiring_done": "tepc.transport.wallDensity 是全仓唯一读这条常数的地方 (csdaTransport 与 execute 的 summary 都经它取值); 源码与产物都不留 1.124 的第二份镜像",
+      "wiring_todo": "",
+      "measured_condition": "取实际壁材料的图纸/证书密度 (A-150 塑脂配方批次密度, 氦比重瓶或尺寸-质量法, 报告相对不确定度), 并作为配置字段而非代码缺省; 届时 MEASURED 且 source_ref 指向新增的材料证书条目。",
+      "note": "A-150 壁名义密度, 用于壁能损与逃逸份额。参考登记册里没有 A-150 条目 -> none; README 交付限制一节已把它列入 ASSUMED 清单。"
+    },
+    {
+      "const_id": "transport.bohr.coeffMeV2cm2PerG",
+      "value": 0.1569,
+      "units": "MeV^2 cm^2 / g",
+      "status": "ASSUMED",
+      "source_ref": "R10",
+      "revision": "2026-09-21",
+      "uncertainty_rel": 0.001,
+      "used_by": [
+        "src/+tepc/+transport/csdaTransport.m:33"
+      ],
+      "wired": true,
+      "wiring_done": "2026-09-24: csdaTransport 在循环外读一次本 id 得 bCoeff 并用于内联的 Omega^2, src/ 下不再有 0.1569 字面量; 重复实现 bohrStraggling.m 已移出仓库 (它用 abs(randn) 单边且缺 dE_mean, 接上会把平均沉积推高 +8~9%, 与 test_csda_straggling_is_two_sided 双侧判据矛盾)。系数不在热路径逐步查表是为了不把注册表查询放进每步循环 (上限 2e5 步), 一致性由该锁与 wired 集合相等锁保证。",
+      "wiring_todo": "",
+      "measured_condition": "系数本身是解析组合 4*pi*Na*re^2*(me*c^2)^2, 由 CODATA 精确值可直接算到 0.1569150 MeV^2 cm^2/g (2026-09-24 用 CODATA 常数独立复算确认; 本条目旧文写的 0.15686 第四位即为错, 已改), 无需实验; 登记值 0.1569 是其 4 位有效数字舍入, 相对偏差 -9.5e-5, 升精度到 0.1569150 属于**改发布值**须另走改数流程。但它只有在被替换成**实测能损涨落分布**(如 Si 探测器/气体离化室的重带电粒子能损谱宽度, 与 Bohr 预测逐点比对)后才能升为 MEASURED。登记册来源 R10 是教科书转载且无可核验链接, 无 URL 的条目不得标 REFERENCE, 故本条目只能保持 ASSUMED。",
+      "note": "Bohr 能损涨落 Omega^2 = bCoeff*(Z/A)*rho[g/cm3]*x[cm]*z^2, bCoeff 取本 id。来源 R10 (Leo 教材公式, B 级, doi_or_url 列是书名而非链接, 无可核验 URL) -> 保持 ASSUMED; uncertainty_rel=1e-3 只反映 4 位有效数字的舍入。适用域限制另议: 非相对论重带电粒子, 超出域时应显式报域外而不是继续套用。"
+    },
+    {
+      "const_id": "detector.drift.temperatureDefault_K",
+      "value": 293.15,
+      "units": "K",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+detector/driftCollect.m:14"
+      ],
+      "wired": false,
+      "wiring_done": "",
+      "wiring_todo": "旧描述已过时: driftCollect 现在缺 temperature_K 直接抛 tepc:drift:MissingTemperature, 并且只接受 [200,400] K —— 代码里不再有用 293.15 顶替配置的那一行。本条因此变成 未被任何代码取用的名义参考值: 保留它是为了 driftCollect 接进运行链时有一个明示的缺省与 缺省生效必须 warn 的要求; 在那之前 wired 保持 false 是对的。",
+      "measured_condition": "温度本身是可测量 (计数器恒温槽/温度计证书): 一旦调用链真的传 cfg.gas.temperature_K, 本缺省不再参与结果, 条目应改为引用实测记录 (MEASURED) 或直接删除该缺省值。",
+      "note": "名义 20 摄氏度 (293.15 K), 当前无代码取用。同一行还有 kB=1.380649e-23 与 e=1.602176634e-19 两个 CODATA 精确值 —— 刻意不登记 (集中化 CODATA 是折腾)。"
+    },
+    {
+      "const_id": "calibration.streamSeedBase",
+      "value": 2000000000,
+      "units": "dimensionless (RandStream seed offset)",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": 0,
+      "used_by": [
+        "src/+tepc/+run/execute.m:169"
+      ],
+      "wired": false,
+      "wiring_done": "",
+      "wiring_todo": "execute.m:169 的 int64(2e9) 换成 int64(tepc.config.constants('calibration.streamSeedBase')); 改动该值会改变刻度流样本 => 金基线 (tests/golden) 与门禁 8 会变, 必须在同一提交里重跑并更新基线。",
+      "measured_condition": "不适用测量: 这是刻度与测量共用同一族流但互不相交的流分离约定。要脱离 ASSUMED 需要把它写进 provenance 身份并在文档声明 (provenance 的哈希身份已含有效 seed), 而不是实测。",
+      "note": "电荷注入刻度使用与事件流不相交的独立子流 (seed 偏移 2e9), 避免与测量共用同一段随机数。整数值, 无物理不确定度。"
+    },
+    {
+      "const_id": "uq.defaultNSamples",
+      "value": 32,
+      "units": "dimensionless (MC samples)",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": null,
+      "used_by": [
+        "src/+tepc/+run/execute.m:854"
+      ],
+      "wired": false,
+      "wiring_done": "",
+      "wiring_todo": "execute.m:854 的 nS = 32 缺省换成读取本 id; 同时 minSamples 也要出现在 demo_only.json 与 config/schema/tepc-config-v1.json (后者无任何代码读取, 只能手改) —— 三处不得各说各话。",
+      "measured_condition": "非物理量。脱离 ASSUMED 的正确路径是收敛性证据: 对发布指标 y_F/Qbar 做样本数收敛扫描 (n=16/32/64/128), 证明 SE 进入预注册阈值, 并把选定的 n 记入 uq.json 与报告; 收敛研究完成前它仍是经验缺省。",
+      "note": "cfg.uq.nSamples 缺省时的 MC 传播样本数 (与门禁 14 相关的 uq.minSamples=32 同族)。"
+    },
+    {
+      "const_id": "uq.defaultSeed",
+      "value": 24680,
+      "units": "dimensionless (RandStream seed)",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": 0,
+      "used_by": [
+        "src/+tepc/+run/execute.m:856"
+      ],
+      "wired": false,
+      "wiring_done": "",
+      "wiring_todo": "execute.m:856 的 sU = 24680 缺省换成读取本 id (UQ 缺省 seed 一旦被改, uq.json 不再可复现, 需同步更新金基线)。",
+      "measured_condition": "不适用测量: 它是可复现性参数, 要求是被记录而不是被测量 —— 必须进 uq.json/provenance, 使任意一次 UQ 结果可回溯。",
+      "note": "cfg.uq.seed 缺省值。与 calibration.streamSeedBase 无关 (不同流), 不得互相推导。"
+    },
+    {
+      "const_id": "site.mismatchRelTol",
+      "value": 0.05,
+      "units": "dimensionless (relative)",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": 0,
+      "used_by": [
+        "src/+tepc/+geometry/siteConsistency.m:33",
+        "src/+tepc/+validation/runGate.m:131"
+      ],
+      "wired": true,
+      "wiring_done": "两处同读注册表: siteConsistency.m 的 if rel > tepc.config.constants('site.mismatchRelTol') 与 runGate.m 门禁第 10 项的 elseif rel <= tepc.config.constants('site.mismatchRelTol'); 告警与门禁文案里的阈值数值 (相对差上限) 由该值 sprintf 生成, 不再手写字面量",
+      "wiring_todo": "",
+      "measured_condition": "阈值本身不是物理量, 但它决定发布谱的系统性偏差量级: 需在 VV 计划里对发布 y 可接受偏差做预注册, 或用实测位径 (显微镜/图纸公差) 量化 requested 位点的可实现性后代替经验阈值。",
+      "note": "位点-压强等效一致性容差 (质量厚度映射 rho_g*lbar_g = rho_t*lbar_t): requested 模式下相对差 >5%% 降级 WARN, VALIDATED 模式 FAIL。核实记录: 读码确认 validate.m 内没有 0.05 字面量, 真实位置是 siteConsistency.m:33 与 runGate.m:117, 本表按核实结果登记。另有 runGate.m:9 (tol_cal 刻度自洽容差) 与 runGate.m:11 (anchor_rel 锚点容差) 两个同为 0.05 的数, 它们是门禁预注册容差 (属 docs/VV_plan.md, 不属物理常数), 故故意不登记。"
+    },
+    {
+      "const_id": "field.fem.convergenceMaxRelDelta",
+      "value": 0.05,
+      "units": "dimensionless (relative change between adjacent grid levels)",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": 0,
+      "used_by": [
+        "src/+tepc/+detector/fieldConvergence.m:47"
+      ],
+      "wired": true,
+      "wiring_done": "fieldConvergence.m 的收敛门禁读注册表; 代码里没有第二份 0.05 镜像",
+      "wiring_todo": "",
+      "measured_condition": "不适用实验测量: 它是数值验收阈值。脱离 ASSUMED 的正确路径是把判据从「经验倍数」换成「收敛阶证据」 —— 对同一组积分量做 >=4 级网格并用 Richardson 外推, 用外推极限值与观测到的 O(h) 阶常数给出可预测的上界, 届时该条目改 REFERENCE 并引用外推记录 (runs/ 下的收敛研究产物)。",
+      "note": "网格收敛门禁: 相邻层级之间三个积分量 (阳极通量 ∫r·E_r dz、径向场线积分 ∫|E|dr、权重势差 φ_w(2a)-φ_w(b/2)) 的最大相对变化上界 5%。预注册在实测之前; 实测 (a=50um, b=25.4mm, 700V, 层级 1→2→3) 的最大相对变化见交付报告与场图 evidence。阈值只对积分量有意义: 丝状阳极面的 E~1/r 发散, 逐点 max|E| 无网格无关极限, 拿它判收敛等于要求发散量收敛。"
+    },
+    {
+      "const_id": "field.fem.maxRelDevEmagAwayOfAnode",
+      "value": 0.005,
+      "units": "dimensionless (max relative deviation of |E| vs coaxial closed form, r >= 2a)",
+      "status": "ASSUMED",
+      "source_ref": "none",
+      "revision": "2026-09-21",
+      "uncertainty_rel": 0,
+      "used_by": [
+        "src/+tepc/+detector/fieldConvergence.m:48"
+      ],
+      "wired": true,
+      "wiring_done": "fieldConvergence.m 的同轴极限验证门禁读注册表 (只在 geometry='coax' 上作为求解器误差判据)",
+      "wiring_todo": "",
+      "measured_condition": "不适用实验测量: 这是有限元实现是否算对了的验收阈值, 需要的是更严的收敛证据而不是实验数据 —— 用 p 升级 (二次单元) 或网格翻倍序列把该偏差压到观测的收敛阶预测值以下, 并把阈值改写成由收敛阶推导的量, 届时转 REFERENCE。",
+      "note": "同轴极限验证门禁: 最细一层网格上, |E| 对闭式 E=V/(r·ln(b/a)) 在 r>=2a 子域 (离开阳极 1/r 奇点邻域) 的最大相对偏差上界 0.5%。为什么必须限定 r>=2a: 阳极面上解析场本身发散, 任何逐点比较都会随 h_min 收缩而持续变大, 只有在离奇点足够远的子域上逐点相对偏差才有网格无关的意义。球腔+中心丝几何下同一个量变成真实边值问题与理想同轴公式的物理差 (与网格无关), 故只报告不判门禁。"
+    }
+,
+    {
+        "const_id": "field.fem.maxRelDevCharge",
+        "value": 0.01,
+        "units": "dimensionless (relative residual of the anode line-integral charge vs closed-form capacitance x V0)",
+        "status": "ASSUMED",
+        "source_ref": "none",
+        "revision": "2026-09-21",
+        "uncertainty_rel": 0,
+        "used_by": [
+            "src/+tepc/+field/solveElectrostatic.m:804"
+        ],
+        "wired": true,
+        "wiring_done": "solveElectrostatic.m 的 charge_check.charge 与 gate.charge_ok 都读注册表 (同一次读取的局部变量, 代码里没有第二份 0.01 镜像); 未过时 gate=error 直接 error(tepc:field:AccuracyGateFailed)",
+        "wiring_todo": "",
+        "measured_condition": "不适用实验测量: 它是数值验收阈值。脱离 ASSUMED 的路径是把阈值由收敛证据给出 —— 对同一泛函做 >=4 级加密并用 Richardson 外推值替代闭式基准, 届时该条目改 REFERENCE 并引用 runs/ 下的收敛记录。",
+        "note": "静电场电荷线积分门禁: |int_anode eps0*dV/dr dl / (C'_ana*V0) - 1| <= 1%。实测 (a=12.5um, b=12.7mm, 700V, 三级 refineRatio=2, 丝边界 Hedge=hmin/8) 三级残差 = -1.73e-3, 2.20e-4, 1.00e-4 -> 最细层约一个数量级裕度。为什么这个量可以钉在导体表面而逐点判据不行: 它是整周积分, 近表面未分辨层的偏差在周向积分里被远端补偿; 同一条路上若把内圆留在求解域里 (decsg 的默认并集写法), 丝面节点梯度是内外两侧单元的平均值, 实测该残差变成 -4.76e-1 (被导体内的零场稀释掉一半)。 同一注册表值还用于 gate.two_solve_ok = |C(权重电位解)/C(电位解)-1|: 两次独立求解在同一条丝面围道上必须给出同一个电容量 (实测 a=50um/b=25.4mm 三级 4.44e-16, a=12.5um/b=12.7mm 三级 1.81e-14; 未分辨的粗网格上它仍是 6.77e-15 而对闭式的残差已到 1.31e-2)。这条判据不判绝对精度 —— 两次求解同时变坏时互差仍是 1e-15 —— 它判的是只污染一次求解的故障 (节点序错位、单边边界条件生效、围道取错边), 与对闭式的残差互补。"
+    },
+    {
+        "const_id": "field.fem.maxRelDevEmagResolved",
+        "value": 0.02,
+        "units": "dimensionless (max per-node relative deviation of |E| from the coaxial closed form inside r in [r_eval_factor*a, b])",
+        "status": "ASSUMED",
+        "source_ref": "none",
+        "revision": "2026-09-21",
+        "uncertainty_rel": 0,
+        "used_by": [
+            "src/+tepc/+field/solveElectrostatic.m:805"
+        ],
+        "wired": true,
+        "wiring_done": "solveElectrostatic.m 的 analytic_window.field_threshold_rel 与 gate.field_ok 读同一注册表条目",
+        "wiring_todo": "",
+        "measured_condition": "不适用实验测量: 判据要脱离 ASSUMED 需要逐点偏差随网格的收敛阶证据 (现序列层间不单调, 见 note), 以及把窗口下限 r_eval_factor*a 用实测的近丝未分辨层厚度代替。",
+        "note": "静电场逐点场强门禁: max_{节点, r in [1.5a, b]} |E_num-E_ana|/E_ana <= 2%。与 field.fem.maxRelDevEmagAwayOfAnode (另一条 2-D 轴对称路径上 r>=2a 的判据) 是不同的量, 阈值不共用也不互相换算。实测同一三级序列的 finest 层 = 1.06e-2 (层间 2.58e-2, 8.85e-3, 1.06e-2, 不单调), 偏差极值点离丝 12~110 倍丝径, 落在局部加密转入整体 Hmax 的过渡带上, 是梯度恢复噪声而不是近丝奇性。2% 这个数只有两条依据: 全域 (含 r<a 的导体内部节点) 的旧算法给出 1.4e1 = 1414% 必须被拒, 以及 1.5a~2a 之间恒有约 8% 的未分辨偏差不能进判据 —— 不是从收敛阶推出来的。"
+    },
+    {
+        "const_id": "field.fem.maxRelDevPotentialResolved",
+        "value": 0.01,
+        "units": "dimensionless (max per-node |V_num-V_ana|/V0 inside r in [r_eval_factor*a, b])",
+        "status": "ASSUMED",
+        "source_ref": "none",
+        "revision": "2026-09-21",
+        "uncertainty_rel": 0,
+        "used_by": [
+            "src/+tepc/+field/solveElectrostatic.m:806"
+        ],
+        "wired": true,
+        "wiring_done": "solveElectrostatic.m 的 analytic_window.potential_threshold_rel 与 gate.potential_ok 读同一注册表条目",
+        "wiring_todo": "",
+        "measured_condition": "不适用实验测量: 数值验收阈值; 升格条件与 field.fem.maxRelDevCharge 相同 (>=4 级 + 外推给出可预测上界)。",
+        "note": "静电位逐点门禁: max|V_num-V_ana|/V0 <= 1%, 与场强判据同一窗口。电位是二次元里收敛得最好的量 (被积的是它的一阶梯度), 实测三级 = 5.24e-5, 6.00e-6, 9.13e-6 -> 裕度三个量级; 权重电位 (第二次独立求解, 内边界=1) 在同一窗口实测 9.13e-6 量级, 已按同一阈值进门禁 (gate.weighting_ok, 实测 8.93e-06 / 阈值 1.0e-02)。"
+    },
+    {
+        "const_id": "field.fem.maxRelDeltaIntegral",
+        "value": 0.01,
+        "units": "dimensionless (relative change of an integral functional between adjacent refinement levels)",
+        "status": "ASSUMED",
+        "source_ref": "none",
+        "revision": "2026-09-21",
+        "uncertainty_rel": 0,
+        "used_by": [
+            "src/+tepc/+field/solveElectrostatic.m:807"
+        ],
+        "wired": true,
+        "wiring_done": "solveElectrostatic.m 的 electrostaticGate 读注册表算 delta_ok; Richardson/GCI 的百分数阈值在同一文件里另记 (buildConvergence 的 1, 见 note 与代码注释), 两条判据语义不同",
+        "wiring_todo": "",
+        "measured_condition": "不适用实验测量: 数值验收阈值。升格路径同 field.fem.maxRelDevCharge (>=4 级网格 + Richardson 外推)。",
+        "note": "静电场加密收敛门禁: 能量泛函 int|grad V|^2 dA、丝面电荷线积分、径向场线积分 (逐射线平均的 int|E|dr) 三个积分量, 在 refineRatio=2 的三级序列里相邻层相对变化 <= 1%。用相邻层一阶差分而不是 GCI<1% 作门禁, 是因为每层重新生网不保证单调 (实测雪崩积分层间有 5e-5 量级抖动 -> Richardson 的 d21*d32>0 前提破了, GCI 无定义), 而一阶差分仍可测; GCI 与 status 一并返回 (F.convergence.*.gci_percent/.status)。实测本序列的相邻层变化 (粗->细两对): 电荷 1.95e-3 与 1.20e-4, 能量 2.07e-3 与 7.0e-5, 雪崩积分 2.50e-4 与 5.0e-5 -> 门禁取的最大值 2.07e-3, 裕度约 5 倍。与 field.fem.convergenceMaxRelDelta (另一条路径的 5%) 不共用: 层级表不同, 网格也不同。"
+    }
+  ]
+}

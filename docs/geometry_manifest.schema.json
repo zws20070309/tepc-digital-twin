@@ -1,0 +1,261 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tepc://docs/geometry_manifest.schema.json",
+  "title": "TEPC 三维几何导出 manifest (schema tepc-geometry-manifest-1.0)",
+  "description": "由 tepc.geometry.exportGeometry 写出的审计清单的结构定义。字段清单与 src/+tepc/+geometry/exportGeometry.m 的 man./row. 赋值逐字对齐; 每一层都写 additionalProperties=false (零件条目除外, 见 parts 注释), 所以'代码加了字段忘了这里'与'这里凭空发明字段'两边都会红。校验器是 tests/unit/test_geometry_3d_contract.m 里的 validateJsonNode, 它只实现 type/const/enum/minimum/minItems/maxItems/pattern/properties/required/additionalProperties/items —— 因此本文件刻意不使用 $ref/allOf/anyOf/oneOf/not/if-then-else/format/multipleOf/uniqueItems/contains/propertyNames/dependencies/minLength/exclusiveMinimum, 用了就是假绿灯。",
+  "type": "object",
+  "required": [
+    "schema", "schema_file", "producer", "matlab_release",
+    "units_internal", "units_export", "unit_scale_from_m",
+    "geometry_type", "electrode_topology", "topology", "field_topology", "anode_type",
+    "source_config_sha256", "geometry_sha256", "sha256_source",
+    "audit_complete", "provenance_status",
+    "view", "camera", "resolution_n", "display_resolution_n",
+    "transport_grid", "site", "dims_m", "analytic", "field", "source",
+    "mesh_check", "envelope_gate_rel_tolerance",
+    "n_parts_exported", "parts", "assumed", "limits"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "tepc-geometry-manifest-1.0" },
+    "schema_file": { "const": "docs/geometry_manifest.schema.json" },
+    "producer": { "const": "tepc.geometry.exportGeometry" },
+    "matlab_release": { "type": "string", "pattern": ".+" },
+
+    "units_internal": {
+      "const": "SI",
+      "description": "meshSpec 内部一律 SI; 导出物按 units_export 乘 unit_scale_from_m。"
+    },
+    "units_export": {
+      "enum": ["mm", "m"],
+      "description": "exportGeometry 只接受这两个单位 (BadUnits 拦其余): STL/OBJ/PLY 格式本身不带单位, 单位必须同时出现在文件名后缀与本字段。"
+    },
+    "unit_scale_from_m": {
+      "type": "number", "minimum": 1,
+      "description": "1 m -> 导出单位的显式系数 (mm=1e3, m=1)。换算必须可复算, 不靠读者猜。"
+    },
+
+    "geometry_type": { "type": "string", "pattern": ".+" },
+    "electrode_topology": { "type": "string", "pattern": ".+" },
+    "topology": { "type": "string", "enum": ["cylinder", "sphere"], "description": "四元一致: == field_topology == field.kind == tepc.geometry.electrode(cfg).fieldKind" },
+    "field_topology": { "type": "string", "enum": ["cylinder", "sphere"] },
+    "anode_type": { "type": "string", "pattern": ".+" },
+
+    "source_config_sha256": { "type": "string", "pattern": "^([0-9a-f]{64})?$" },
+    "geometry_sha256": { "type": "string", "pattern": "^([0-9a-f]{64})?$" },
+    "sha256_source": { "type": "string", "pattern": ".+", "description": "哈希对象是什么口径 (本用例里 = manifest 自身字节), 否则哈希不可复算。" },
+    "audit_complete": { "type": "boolean" },
+    "provenance_status": { "type": "string", "enum": ["PROVENANCE_PRESENT", "PROVENANCE_MISSING", "3D_NOT_AUDITED"] },
+
+    "view": { "enum": ["exploded", "section", "overlay"] },
+    "camera": { "type": "array", "minItems": 2, "maxItems": 3, "items": { "type": "number" }, "description": "视图角: uiaxes 的 Camera 实测是 [方位角, 仰角] 两元素 (按 3 分量写 minItems 会被自己的校验器判红); 第三个元素允许是相机距离。" },
+    "resolution_n": { "type": "integer", "minimum": 3 },
+    "display_resolution_n": { "type": "integer", "minimum": 3 },
+
+    "transport_grid": {
+      "type": "object",
+      "required": ["kind", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "pattern": ".+", "description": "解析基线为 analytic_none: 展示网格不被输运消费, 这一栏就是为了防止'画了网格=有输运网格'的误读。" },
+        "note": { "type": "string" }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": ["requested_diameter_m", "realized_diameter_m", "relative_difference", "equivalence_mode", "mismatch"],
+      "additionalProperties": false,
+      "properties": {
+        "requested_diameter_m": { "type": "number", "minimum": 0 },
+        "realized_diameter_m": { "type": "number", "minimum": 0 },
+        "relative_difference": { "type": "number" },
+        "equivalence_mode": { "type": "string", "pattern": ".+" },
+        "mismatch": { "type": "boolean" }
+      }
+    },
+    "dims_m": {
+      "type": "object",
+      "required": ["gas_radius_m", "wall_thickness_m", "wall_outer_radius_m", "anode_radius_m",
+                   "anode_length_m", "bbox_radius_m", "world_envelope_half_m",
+                   "world_envelope_factor", "world_envelope_min_factor_of_bbox"],
+      "additionalProperties": false,
+      "properties": {
+        "gas_radius_m": { "type": "number", "minimum": 0 },
+        "wall_thickness_m": { "type": "number", "minimum": 0 },
+        "wall_outer_radius_m": { "type": "number", "minimum": 0 },
+        "anode_radius_m": { "type": "number", "minimum": 0 },
+        "anode_length_m": { "type": "number", "minimum": 0 },
+        "bbox_radius_m": { "type": "number", "minimum": 0 },
+        "world_envelope_half_m": { "type": "number", "minimum": 0 },
+        "world_envelope_factor": {
+          "type": "number", "minimum": 4,
+          "description": "真正的 >=5 硬门禁在 meshSpec 里执行 (world_envelope_min_factor_of_bbox); 这里只挡住结构性错值 (如 2 => 观察盒比敏感体积还小, 三维必然切掉零件)。"
+        },
+        "world_envelope_min_factor_of_bbox": { "type": "number", "minimum": 1 }
+      }
+    },
+    "analytic": {
+      "type": "object",
+      "required": ["V_m3", "S_m2", "lbar_gas_m", "mean_chord_4V_over_S_m"],
+      "additionalProperties": false,
+      "properties": {
+        "V_m3": { "type": "number", "minimum": 0 },
+        "S_m2": { "type": "number", "minimum": 0 },
+        "lbar_gas_m": { "type": "number", "minimum": 0 },
+        "mean_chord_4V_over_S_m": { "type": "number", "minimum": 0 }
+      }
+    },
+    "field": {
+      "type": "object",
+      "required": ["kind", "p", "K", "a_m", "b_m", "hv_V", "clip_m", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["cylinder", "sphere"] },
+        "p": { "type": "integer", "enum": [2, 3] },
+        "K": { "type": "number" },
+        "a_m": { "type": "number", "minimum": 0 },
+        "b_m": { "type": "number", "minimum": 0 },
+        "hv_V": { "type": "number" },
+        "clip_m": { "type": "number", "minimum": 0 },
+        "note": { "type": "string" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["type", "energy_MeV", "direction_unit", "cone_half_angle_deg", "status", "angular_model"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string", "pattern": ".+" },
+        "energy_MeV": { "type": "number", "minimum": 0 },
+        "direction_unit": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "number" } },
+        "cone_half_angle_deg": { "type": "number", "exclusiveMinimum": 0, "maximum": 90 },
+        "status": { "enum": ["ASSUMED", "MEASURED", "MEASURED_CONFIG", "REFERENCE"], "description": "MEASURED_CONFIG = 值逐字来自已登记配置 (source.direction / source.coneHalfAngle_deg, 唯一消费点 tepc.geometry.meshSpec)。ASSUMED 只在清单不生效 (缺失或描述另一台装置) 时才可达: 那时 meshSpec 用兜底常量并把它记进 spec.assumed; 清单声明 MEASURED_CONFIG 而配置缺字段是身份冲突, 直接报 ManifestMismatch。两种状态都合法, 但必须与配置实际状态一致。" },
+        "angular_model": { "type": "string", "pattern": ".+" }
+      }
+    },
+    "mesh_check": {
+      "type": "object",
+      "description": "tepc.geometry.checkMesh 的整表结论: 导出记录必须自带网格质量证据, 否则'闭合'只是口头承诺。",
+      "required": ["closed", "nonmanifold_edges", "zero_area_faces", "duplicate_vertices",
+                   "normals_consistent_outward", "min_skin_gap_m", "skin_gap_required_m",
+                   "skin_gap_ok", "max_radius_err_rel", "wall_thickness_err_rel",
+                   "dimension_tolerance_rel", "dimension_err_ok", "ok", "convexhull_note"],
+      "additionalProperties": false,
+      "properties": {
+        "closed": { "type": "boolean" },
+        "nonmanifold_edges": { "type": "integer", "minimum": 0 },
+        "zero_area_faces": { "type": "integer", "minimum": 0 },
+        "duplicate_vertices": { "type": "integer", "minimum": 0 },
+        "normals_consistent_outward": { "type": "boolean" },
+        "min_skin_gap_m": { "type": "number" },
+        "skin_gap_required_m": { "type": "number", "minimum": 0 },
+        "skin_gap_ok": { "type": "boolean" },
+        "max_radius_err_rel": { "type": "number", "minimum": 0 },
+        "wall_thickness_err_rel": { "type": "number", "minimum": 0 },
+        "dimension_tolerance_rel": { "type": "number", "minimum": 0 },
+        "dimension_err_ok": { "type": "boolean" },
+        "ok": { "type": "boolean" },
+        "convexhull_note": { "type": "string", "description": "凸包/多面体体积与解析值的偏差说明 (不得把近似当精确)。" }
+      }
+    },
+    "envelope_gate_rel_tolerance": { "type": "number", "minimum": 0 },
+    "n_parts_exported": { "type": "integer", "minimum": 0 },
+    "parts": {
+      "type": "array",
+      "minItems": 1,
+      "description": "每个导出零件一条。刻意 additionalProperties=true: 零件条目还会带 path_obj/sha256_obj/bytes_obj 等**按所选格式条件出现**的字段, 用 false 会把'只导 STL'判成违规; 但 identity 与审计字段仍在 required 里点名。",
+      "items": {
+        "type": "object",
+        "required": [
+          "part_id", "label", "material", "material_status",
+          "transport_role", "transport_mode", "transport_evidence",
+          "units_internal", "units_export", "unit_scale_from_m",
+          "resolution_n", "vertices", "faces",
+          "view", "camera", "matlab_release",
+          "source_config_sha256", "geometry_sha256", "sha256_source",
+          "topology", "electrode_topology", "sensitive_volume",
+          "check_mesh", "analytic_volume_m3", "analytic_area_m2",
+          "envelope_units", "envelope_expected_units", "envelope_rel_err",
+          "envelope_tolerance", "envelope_ok",
+          "path_stl", "sha256_stl", "bytes_stl"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "part_id": { "type": "string", "pattern": ".+" },
+          "label": { "type": "string" },
+          "material": { "type": "string" },
+          "material_status": { "type": "string", "pattern": "^(ASSUMED|MEASURED|MEASURED_CONFIG|REFERENCE)$", "description": "证据词表按 meshSpec 的**实际取值**写死: ASSUMED / MEASURED_CONFIG (值来自配置这一可追溯来源, 不是实验测量) / MEASURED / REFERENCE。前一轮这里写的是单字母 A/M/R —— 那是我从代码里'猜'的词表; 是校验器把真实清单值报出来才纠正 (合同必须由产物反推, 不能由阅读想象)。" },
+          "transport_role": { "type": "string", "pattern": ".+", "description": "该零件在输运里的真实角色 (none|wall-energy-loss|gas|...): 展示用零件必须写 none。" },
+          "transport_mode": { "type": "string", "pattern": ".+" },
+          "transport_evidence": { "type": "string", "description": "上述角色的依据出处; 无依据必须写 ASSUMED 而不是留空。" },
+          "units_internal": { "const": "SI" },
+          "units_export": { "enum": ["mm", "m"] },
+          "unit_scale_from_m": { "type": "number", "minimum": 1 },
+          "resolution_n": { "type": "integer", "minimum": 3 },
+          "vertices": { "type": "integer", "minimum": 3, "description": "整数: 1.5 个顶点是编码错误而不是精度问题 (负对照 b4)。" },
+          "faces": { "type": "integer", "minimum": 1 },
+          "view": { "enum": ["exploded", "section", "overlay"] },
+          "camera": { "type": "array", "minItems": 2, "maxItems": 3, "items": { "type": "number" } },
+          "matlab_release": { "type": "string", "pattern": ".+" },
+          "source_config_sha256": { "type": "string", "pattern": "^([0-9a-f]{64})?$" },
+          "geometry_sha256": { "type": "string", "pattern": "^([0-9a-f]{64})?$" },
+          "sha256_source": { "type": "string", "pattern": ".+" },
+          "topology": { "type": "string", "enum": ["cylinder", "sphere"] },
+          "electrode_topology": { "type": "string", "pattern": ".+" },
+          "sensitive_volume": { "type": "string", "pattern": ".+" },
+          "check_mesh": {
+            "type": "object",
+            "required": ["closed", "nonmanifold_edges", "zero_area_faces", "duplicate_vertices",
+                         "normals_outward", "free_boundary_edges", "volume_m3", "area_m2",
+                         "volume_rel_err", "radius_err_rel", "mesh_check_ok"],
+            "additionalProperties": false,
+            "properties": {
+              "closed": { "type": "boolean", "description": "布尔: 0/1 混进 JSON 就是门禁被绕过 (负对照 b8)。" },
+              "nonmanifold_edges": { "type": "integer", "minimum": 0 },
+              "zero_area_faces": { "type": "integer", "minimum": 0 },
+              "duplicate_vertices": { "type": "integer", "minimum": 0 },
+              "normals_outward": { "type": "boolean" },
+              "free_boundary_edges": { "type": "integer", "minimum": 0 },
+              "volume_m3": { "type": "number", "minimum": 0 },
+              "area_m2": { "type": "number", "minimum": 0 },
+              "volume_rel_err": { "type": "number", "minimum": 0 },
+              "radius_err_rel": { "type": "number", "minimum": 0 },
+              "mesh_check_ok": { "type": "boolean" }
+            }
+          },
+          "analytic_volume_m3": { "type": "number", "minimum": 0 },
+          "analytic_area_m2": { "type": "number", "minimum": 0 },
+          "envelope_units": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "number" }, "description": "导出单位下的实际 xyz 包络半宽 (3 分量)。" },
+          "envelope_expected_units": { "type": "number", "minimum": 0 },
+          "envelope_rel_err": { "type": "number", "minimum": 0 },
+          "envelope_tolerance": { "type": "number", "minimum": 0 },
+          "envelope_ok": { "type": "boolean" },
+          "path_stl": { "type": "string", "pattern": "_unit_(mm|m)\\.stl$", "description": "文件名必须带单位后缀: STL 本身不带单位。" },
+          "sha256_stl": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "'zz' 之类的占位哈希必须红 (负对照 b12)。" },
+          "bytes_stl": { "type": "integer", "minimum": 84 },
+          "path_obj": { "type": "string", "pattern": "_unit_(mm|m)\\.obj$" },
+          "sha256_obj": { "type": "string", "pattern": "^([0-9a-f]{64})?$" },
+          "bytes_obj": { "type": "integer", "minimum": 0 },
+          "path_ply": { "type": "string", "pattern": "_unit_(mm|m)\\.ply$" },
+          "sha256_ply": { "type": "string", "pattern": "^([0-9a-f]{64})?$" },
+          "bytes_ply": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "assumed": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": ".+" },
+      "description": "本清单里所有 ASSUMED 项的汇总。三维导出一定含 ASSUMED 成分 (壁/源/材料), 空清单等于宣称全部实测 —— 那是假话 (负对照 b11)。"
+    },
+    "limits": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string", "pattern": ".+" },
+      "description": "刻意的能力边界声明: 展示网格 != 输运网格; 3D 完成 != 物理验证。"
+    },
+    "manifest_path": { "type": "string", "description": "写盘后由 exportGeometry 贴在返回结构上的自指字段 (盘上清单里没有它, 所以不进 required)。" },
+    "manifest_bytes": { "type": "integer", "minimum": 0 },
+    "manifest_sha256": { "type": "string", "pattern": "^([0-9a-f]{64})?$" }
+  }
+}

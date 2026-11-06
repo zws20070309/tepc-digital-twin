@@ -1,0 +1,999 @@
+{
+  "schema": "tepc-latest-evidence-v1",
+  "generated_at": "2026-11-06T08:38:25Z",
+  "note": "运行环境与证据哈希索引; 计数来自 docs/counts.json (tools/genCounts.m 生成); 不含本文件自身哈希",
+  "repo_root": "D:\\Desktop\\网页\\仿真\\TEPC\\shixian\\tepc-digital-twin",
+  "matlab_version": "25.1.0.2943329 (R2025a)",
+  "matlab_release": "2025a",
+  "matlabroot": "D:\\matlab",
+  "os": "PCWIN64",
+  "os_arch": "win64",
+  "os_type": "(feature('OSType') 不可用)",
+  "installed_toolboxes": [
+    {
+      "name": "5G Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "AUTOSAR Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Aerospace Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Aerospace Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Antenna Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Audio Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Automated Driving Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Bioinformatics Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Bluetooth Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "C2000 Microcontroller Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Communications Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Computer Vision Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Control System Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Curve Fitting Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "DDS Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "DSP HDL Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "DSP System Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Data Acquisition Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Database Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Datafeed Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Deep Learning HDL Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Deep Learning Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Econometrics Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Embedded Coder",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Financial Instruments Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Financial Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Fixed-Point Designer",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Fuzzy Logic Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "GPU Coder",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Global Optimization Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "HDL Coder",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "HDL Verifier",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Image Acquisition Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Image Processing Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Industrial Communication Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Instrument Control Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "LTE Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Lidar Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "MATLAB",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "MATLAB Coder",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "MATLAB Compiler",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "MATLAB Compiler SDK",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "MATLAB Report Generator",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "MATLAB Test",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Mapping Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Medical Imaging Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Mixed-Signal Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Model Predictive Control Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Model-Based Calibration Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Motor Control Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Navigation Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Optimization Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Parallel Computing Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Partial Differential Equation Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Phased Array System Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Powertrain Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Predictive Maintenance Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "RF Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "RF PCB Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "RF Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "ROS Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Radar Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Reinforcement Learning Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Requirements Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Risk Management Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Robotics System Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Robust Control Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Satellite Communications Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Sensor Fusion and Tracking Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "SerDes Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Signal Integrity Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Signal Processing Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "SimBiology",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "SimEvents",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simscape",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simscape Battery",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simscape Driveline",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simscape Electrical",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simscape Fluids",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simscape Multibody",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink 3D Animation",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Check",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Coder",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Compiler",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Control Design",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Coverage",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Design Optimization",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Design Verifier",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Desktop Real-Time",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Fault Analyzer",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink PLC Coder",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Real-Time",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Report Generator",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Simulink Test",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "SoC Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Spreadsheet Link",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Stateflow",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Symbolic Math Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "System Composer",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "System Identification Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Text Analytics Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "UAV Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Vehicle Dynamics Blockset",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Vehicle Network Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Vision HDL Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "WLAN Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Wavelet Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Wireless HDL Toolbox",
+      "version": "25.1",
+      "release": "(R2025a)"
+    },
+    {
+      "name": "Wireless Testbench",
+      "version": "25.1",
+      "release": "(R2025a)"
+    }
+  ],
+  "counts_source": "docs/counts.json",
+  "counts_generated_at": "2026-10-10T13:29:02Z",
+  "test_functions": 617,
+  "gates": 16,
+  "h5_datasets": 23,
+  "anchor_rows_total": 1911,
+  "test_evidence_dir": "docs/test_evidence",
+  "n_files_tracked": 70,
+  "n_files_missing": 0,
+  "latest_log": "docs/test_evidence/runAllTests_20260923T161846Z.log",
+  "sha256": [
+    {
+      "path": "docs/constants.json",
+      "sha256": "f22b68ac5e0c7ed06537db5acff613a9e2f76db2372acd488012cb8c0e84320f",
+      "bytes": 30141,
+      "mtime_local": "2026-10-03 14:34:09"
+    },
+    {
+      "path": "docs/counts.json",
+      "sha256": "88ea4c9e19f59efea144146f041a294c0a2a7aeaf5606bdbacfa920e7b07d985",
+      "bytes": 8608,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "config/defaults/demo_only.json",
+      "sha256": "26240b68c5e89bbd0573c1d790832840a715ab7a174142f1371e4b81d37efff1",
+      "bytes": 9361,
+      "mtime_local": "2026-09-25 04:07:47"
+    },
+    {
+      "path": "config/reference_slots.json",
+      "sha256": "355623e159823eee57d5b37e77e207c6fcf6ef233ebaccf2d49b503d2ddb9b58",
+      "bytes": 6958,
+      "mtime_local": "2026-10-10 01:10:06"
+    },
+    {
+      "path": "config/uncertainty_depth_tiers.json",
+      "sha256": "d35992c61290db37f7356d6d6c62058b0e0a80941f1673118ad5edd3dd6279b8",
+      "bytes": 6926,
+      "mtime_local": "2026-09-27 06:23:53"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e33073e3feb3dc239dafc55194aed8ca8013f15dbc1cdc43fee205f818f84e2d",
+      "bytes": 15356,
+      "mtime_local": "2026-11-06 16:36:31"
+    },
+    {
+      "path": "docs/test_evidence/batch_release.log",
+      "sha256": "fcf64be029084ab28eb6b260397d5df7600f095095e2e4d86193162139dd9b7b",
+      "bytes": 628,
+      "mtime_local": "2026-09-19 22:12:37"
+    },
+    {
+      "path": "docs/test_evidence/channel_axis_production_readback_20260930T052200Z.log",
+      "sha256": "db14e2ce1328d4feafb397f10109c65486f9325d17d8d713eb9b1b2d197dd1cb",
+      "bytes": 1736,
+      "mtime_local": "2026-09-30 13:54:35"
+    },
+    {
+      "path": "docs/test_evidence/channel_weight_leverage_20260929T150930Z.log",
+      "sha256": "2b5ad3c94a52957f6f1a2ea68a9d5b6a501e4ac9c933c9d45dd8141f48b17a22",
+      "bytes": 896,
+      "mtime_local": "2026-09-29 23:10:33"
+    },
+    {
+      "path": "docs/test_evidence/gates_fast_20260921_after_comment_cleanup.log",
+      "sha256": "86cd61591814611cba400eda159911aa43eefeccf6c89836812715eef7778dcd",
+      "bytes": 195,
+      "mtime_local": "2026-09-21 16:47:10"
+    },
+    {
+      "path": "docs/test_evidence/instrument_variance_split_20260927T1415Z.log",
+      "sha256": "d081aeb7a769ab1704861268cbb69fd80022c5b8af8b9261804c6c3fad05ce88",
+      "bytes": 901,
+      "mtime_local": "2026-09-27 22:15:55"
+    },
+    {
+      "path": "docs/test_evidence/quickstart_20260921_after_comment_cleanup.log",
+      "sha256": "48b8541ba871506e6d3edb690dd023081c2d8112008d02b044f8879ad35d8994",
+      "bytes": 1057,
+      "mtime_local": "2026-11-06 16:31:55"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260921T105941Z.log",
+      "sha256": "15f4e9c22c8a26a4b59a54b5b8f04150185c618beca5a17082c435288232ae3c",
+      "bytes": 20558,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260921T115411Z.log",
+      "sha256": "666277f95dec08f135c6fdf7a24c7459b8ff690b5379157d059401a836e67a77",
+      "bytes": 21863,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260921T174249Z.log",
+      "sha256": "2601c162d2e8f446fcba70401ac051c22bf50f242b4993a07dc09c47bf80d12b",
+      "bytes": 33197,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260921_after_comment_cleanup.log",
+      "sha256": "aec8906a67ea678a0a6ccfd83ce27da3dcf65d75b1b495dc20728a7be4811ef7",
+      "bytes": 2839,
+      "mtime_local": "2026-09-21 16:47:10"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260921_after_reorg.log",
+      "sha256": "6cabe5e42e8bea232da3528484c76f6da4410456d4aac7bf7c76771ccc8c9ca8",
+      "bytes": 3142,
+      "mtime_local": "2026-09-21 10:01:02"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260921_final236.log",
+      "sha256": "aa01d4f229008189a85b3a809b071d515c7a49ee36510ff9a53cc895409ae449",
+      "bytes": 2785,
+      "mtime_local": "2026-09-21 10:37:38"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260921_v11_235pass_0fail.log",
+      "sha256": "bc7556d972edd55950967c61ea1d84777938373082938fe6613422e4f5237027",
+      "bytes": 3761,
+      "mtime_local": "2026-11-06 16:31:55"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260922T091447Z.log",
+      "sha256": "9fa6c6eccf20d3956656fddce2a090d9606e2bbfd7e4d73eb94c5d41f229d992",
+      "bytes": 39033,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260922T112810Z.log",
+      "sha256": "339f45e4824a8a2918b80c163a414e711974a8252591f528b7c8f3bc6c9d835f",
+      "bytes": 39994,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260923T035116Z.log",
+      "sha256": "3a21d75346a6558346608d828b8b43c38459564018df87531df8c6187dbbecfb",
+      "bytes": 41088,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260923T055759Z.log",
+      "sha256": "f565596ddc49e7e33ec59668d59685816809957104f6b6afa4916f03859352da",
+      "bytes": 42902,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260923T094828Z.log",
+      "sha256": "6b0b6486ed6377640e0892db0e52c71f36aa4425b7fee25102b98f1aacedb811",
+      "bytes": 44420,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260923T111159Z.log",
+      "sha256": "8afef1a2996fcef98fd9381f7df513f160e51b19aab7d1dfc85f421fa8152cc7",
+      "bytes": 44986,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260923T161846Z.log",
+      "sha256": "fa0bc753503adce6f691e0491ac6163133dbd5d2d874c6f874c0e589c97d504c",
+      "bytes": 45470,
+      "mtime_local": "2026-11-06 16:32:06"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260925T174708Z.log",
+      "sha256": "5542abc6a1d658a8cd971bf6188b0beb672890b4fa60b9fb6b3320351f70480f",
+      "bytes": 48814,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260925T211104Z.log",
+      "sha256": "a818907f4d80cb1c9a32428c73e2ed5230fe875785b065f1a387fc09890afd57",
+      "bytes": 49236,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260925T234820Z.log",
+      "sha256": "5f83eb2cbf38e4ae5160ce46f1097f51a1fee423f7baa843276d47d2501f11e1",
+      "bytes": 49622,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20260926T010650Z.log",
+      "sha256": "6ef6464654995de60dc9457c090b3bfc224f14f38a7e3742466a01e6bcc17cf5",
+      "bytes": 49622,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20261002T210358Z.log",
+      "sha256": "dcfcd4f351cf17241e90fe8c1916ca0e9d6bc66b59d8878b7340b89591d0228a",
+      "bytes": 51106,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/runAllTests_20261010T084453Z.log",
+      "sha256": "7aa70dee0d52e0714c33a9d086b3d20f4e54c15a4f39fb5f3383af6f4bae31d5",
+      "bytes": 53604,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_20260926T164355Z.log",
+      "sha256": "846190df26395cc0c49f12e5134dd0cfd723a1ff76a8d716685ade50474fd866",
+      "bytes": 7015,
+      "mtime_local": "2026-09-27 00:44:16"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final10_20260928T072448Z.log",
+      "sha256": "441bcb352eb4b2e1c752c1dd2bed3a4751437817141a656e462d1ea1dd09a815",
+      "bytes": 8319,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final11_20260928T090507Z.log",
+      "sha256": "0dae910e47babb014305fabb2c9ce8c0681e2acfa533675ff0472ea7304e5352",
+      "bytes": 8317,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final12_20260928T132243Z.log",
+      "sha256": "8042e99f4fb43f4ee627df16b00e613655916a5462416c6a5ca56a51f5bbf187",
+      "bytes": 11295,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final13_20260930T075428Z.log",
+      "sha256": "9ea329a547b1eb22d7dc6f2b1690249176c42e2bc0f61faac7148787a5d67680",
+      "bytes": 6298,
+      "mtime_local": "2026-09-30 15:54:28"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final14_20260930T075458Z.log",
+      "sha256": "f0dd8c02c4efbfbfccfc188ea30dcb19694e7742c01cb89f2ff905ab88e31b64",
+      "bytes": 7634,
+      "mtime_local": "2026-09-30 21:05:52"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final15_20261005T005307Z.log",
+      "sha256": "186a829efae935cbd4c7c732cf87bff0dc83d20883af479748ebb2fae362ba68",
+      "bytes": 9512,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final16_20261005T065902Z.log",
+      "sha256": "e6d1fd8c4b82b4ea68a320cc480ed60faa86403f35d3e1dfd75786dfabf775c4",
+      "bytes": 9592,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final2_20260926T2000Z.log",
+      "sha256": "74991604e08b0c9f7b5192d3cab81fcffcacf912a5b702fe3eafb825a5c0d8a2",
+      "bytes": 6807,
+      "mtime_local": "2026-09-27 04:00:41"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final3_20260926T2140Z.log",
+      "sha256": "cd8b442fe61faf2e81b46bebbe25c1adfae1f9ebbbd22ba178a72bffe4750bed",
+      "bytes": 6602,
+      "mtime_local": "2026-09-27 05:46:00"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final4_20260927T0242Z.log",
+      "sha256": "28754ea3814257ab989e8758c1a1fd9ef12045f513b674389494cee206503cc3",
+      "bytes": 6920,
+      "mtime_local": "2026-09-27 10:43:26"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final5_20260927T0913Z.log",
+      "sha256": "b67a73a7c8721600c8eb0cfd131096031a6ce993d0b6d09488b3bd0fc3320e6f",
+      "bytes": 79691,
+      "mtime_local": "2026-09-27 17:15:27"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final6_20260927T1137Z.log",
+      "sha256": "4aca973417f95877ab69ea87c84e4caad1264cd9d3f4c10a6ca3927e142cae29",
+      "bytes": 79187,
+      "mtime_local": "2026-09-27 19:38:37"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final7_integration_20260927T1326Z.log",
+      "sha256": "e9770280b097f3c907b4c87175706c6f0aaec29d426605d00efc053405693fc9",
+      "bytes": 78749,
+      "mtime_local": "2026-09-27 21:57:01"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final7_unit_20260927T1356Z.log",
+      "sha256": "c2580eb34f34a6705007256da4d79987221e0fbc4f81c2138a8c065f6b272f68",
+      "bytes": 66873,
+      "mtime_local": "2026-09-27 21:57:01"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final8_20260927T1602Z.log",
+      "sha256": "4e9964bf74f3ecf445cc6e37c4c6c157368d2513f60bbbd2b1a3279df21180fe",
+      "bytes": 78727,
+      "mtime_local": "2026-09-28 00:04:46"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final9_20260928T045232Z.log",
+      "sha256": "ab193f5c02b7a5cccea80ff54aaca8f8f44b8b0039554c58149c10ce9aeac3a2",
+      "bytes": 8744,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/shard_certification_final_20260926T1829Z.log",
+      "sha256": "f32a66005924b5d582d63b0ddc5612bea192e48eb7996a1dbd240bb0aac84861",
+      "bytes": 13220,
+      "mtime_local": "2026-09-27 02:36:12"
+    },
+    {
+      "path": "docs/test_evidence/species_axis_energy_band_20260929T150930Z.log",
+      "sha256": "1edd61e3fab5a599f33620bfeb04a3e71dc67e0002c090d7aa3c64516f410432",
+      "bytes": 879,
+      "mtime_local": "2026-09-29 23:25:27"
+    },
+    {
+      "path": "docs/test_evidence/species_axis_leg_pairing_20260929T150930Z.log",
+      "sha256": "06f47efea9ca925989904dd7212cfa5dc3fc1b26a5d54b08f18169a8b0a6a1a8",
+      "bytes": 1999,
+      "mtime_local": "2026-11-06 16:32:06"
+    },
+    {
+      "path": "docs/test_evidence/straggling_production_mix_20260925T182013Z.log",
+      "sha256": "3aac9644e11c4a57c06592002b25123072e31cdbdfcfbb577ee74e6d7eb3f2b0",
+      "bytes": 1676,
+      "mtime_local": "2026-09-26 02:20:13"
+    },
+    {
+      "path": "docs/test_evidence/ts_pair_20260925T214543Z.log",
+      "sha256": "8ff3cbf93e4b000899ee6e1751ddc220fb0da91b561b96c0b5af16facb7644bf",
+      "bytes": 446,
+      "mtime_local": "2026-09-26 05:45:43"
+    },
+    {
+      "path": "docs/test_evidence/uncertainty_depth_ladder_20260925T185522Z.log",
+      "sha256": "12944ceb073dd4ec8a4c324fc6ac40519e241c2f523ed8317abf482ebff4f3a7",
+      "bytes": 1361,
+      "mtime_local": "2026-09-26 02:55:22"
+    },
+    {
+      "path": "docs/test_evidence/uncertainty_depth_ladder_20260926T202822Z.log",
+      "sha256": "1fae2c280edebc3d03c16f197b74f03adff2ce7ff8faa244d8d1db9660daea79",
+      "bytes": 1365,
+      "mtime_local": "2026-09-27 04:28:22"
+    },
+    {
+      "path": "docs/test_evidence/uncertainty_depth_ladder_20260926T221145Z.log",
+      "sha256": "b546351d24843345c4c7f965d0af8bf15e1689d969ded6049d74939c78dfbc2a",
+      "bytes": 1361,
+      "mtime_local": "2026-09-27 06:11:45"
+    },
+    {
+      "path": "docs/test_evidence/uq_budget_refresh_20261005T072356Z.log",
+      "sha256": "b08ba76705785c2f56b2d8fcb477399ff2480450b666c76215769fb3d01dac45",
+      "bytes": 833,
+      "mtime_local": "2026-10-05 15:23:56"
+    },
+    {
+      "path": "docs/test_evidence/verify_reorg_A_20260921.log",
+      "sha256": "5ab0b96df92c2de85ea38039adc82958a0516ec635dae2d1e2810ef92954e753",
+      "bytes": 2073,
+      "mtime_local": "2026-11-06 16:32:06"
+    },
+    {
+      "path": "docs/test_evidence/verify_reorg_A_20260921_run1.log",
+      "sha256": "77521af8d35bc11b26c7bcbd671e0c0876324e144175e43596127620e6671561",
+      "bytes": 1590,
+      "mtime_local": "2026-11-06 16:31:55"
+    },
+    {
+      "path": "docs/test_evidence/lhs_ladder_20260923.json",
+      "sha256": "427fac53cf643e4deca01ff9f7eecefeaf798e46c9206debafdeee7e7482e4b9",
+      "bytes": 2180,
+      "mtime_local": "2026-09-23 16:58:26"
+    },
+    {
+      "path": "docs/test_evidence/source_manifest.json",
+      "sha256": "127edbdd9b60bfdecfefb4fb1ce6cbfc9945cb9664845005614905afdec945bc",
+      "bytes": 51818,
+      "mtime_local": "2026-11-06 16:38:25"
+    },
+    {
+      "path": "docs/test_evidence/species_axis_leg_pairing_20260929T150930Z.json",
+      "sha256": "20c71de5e829b9c104fa4ac36ecf00a4b44cf0a40bfb1fe607a1ee938442952f",
+      "bytes": 707644,
+      "mtime_local": "2026-11-06 16:32:06"
+    },
+    {
+      "path": "docs/test_evidence/straggling_production_mix_20260925T182013Z.json",
+      "sha256": "a5bd2b9625db83ad72610a8cdf0d0b9df4afa7dc1f2355d6851a5f3fac0e09ca",
+      "bytes": 3224,
+      "mtime_local": "2026-09-26 02:20:13"
+    },
+    {
+      "path": "docs/test_evidence/ts_pair_20260925T214543Z.json",
+      "sha256": "b3091efd49829f991cc7a7df1ad41165ed537cf89fb4981a558614e56ccb3b58",
+      "bytes": 1240,
+      "mtime_local": "2026-09-26 05:45:43"
+    },
+    {
+      "path": "docs/test_evidence/uncertainty_depth_ladder_20260925T010100Z.json",
+      "sha256": "a5f5f5d534c68e7f69abf4539282b190b2fbc4eaa35dee92d7ca48915beb6123",
+      "bytes": 30696,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/uncertainty_depth_ladder_20260925T185522Z.json",
+      "sha256": "7b6bd0397856124aa6f3961979ed272c4753d97ce86e5d56d848648c72faef47",
+      "bytes": 16508,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/uncertainty_depth_ladder_20260926T202822Z.json",
+      "sha256": "9bc98583daa772c65cfc98d96d01c632a028b31dfb0d53f0e0969ce20b5f3ffe",
+      "bytes": 16624,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/uncertainty_depth_ladder_20260926T221145Z.json",
+      "sha256": "21f9b9cc45f7425aaf6fc0c8b86a88fce712b13a5aca26f049be9fb62324e6ff",
+      "bytes": 16505,
+      "mtime_local": "2026-11-06 16:31:12"
+    },
+    {
+      "path": "docs/test_evidence/uq_budget_refresh_20261005T072356Z.json",
+      "sha256": "5f39d2bb52591c5c7143854ae9e3e8bed5440e5359dfec6232e102c345eed2b5",
+      "bytes": 1746,
+      "mtime_local": "2026-10-05 15:23:56"
+    }
+  ],
+  "sha256_excluded": [
+    "docs/test_evidence/latest_evidence.json"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "generated_utc": "20260925T214543Z",
+  "seed": 24680,
+  "N": 43000,
+  "shaping_s": 1E-6,
+  "ts_validate_warn_threshold_s": 2E-8,
+  "legs": [
+    {
+      "tag": "coarse_warnfree_upper",
+      "Ts_s": 2E-8,
+      "N": 43000,
+      "wall_s": 279.7185746,
+      "yF": 25.5587054261047,
+      "yD": 42.354551461524913,
+      "nEff": 31859,
+      "u_yF_rel": 0.14631775524100557,
+      "uq_status": "COMPLETE",
+      "config_sha256": "c9146a96da81b21a17e9870eaec7e89a3470c30d1cd21fa96260902739d3fdf6"
+    },
+    {
+      "tag": "shipped",
+      "Ts_s": 1E-8,
+      "N": 43000,
+      "wall_s": 285.7353671,
+      "yF": 25.408159327483805,
+      "yD": 42.30295355053395,
+      "nEff": 32160,
+      "u_yF_rel": 0.14714634812326577,
+      "uq_status": "COMPLETE",
+      "config_sha256": "8f1ed5937097c550647080dcf87e70a6da56f9138a2284909cc75664ebeb4428"
+    }
+  ],
+  "floor_rel_each": [
+    0.0045416686531769028,
+    0.0045470720012186477
+  ],
+  "floor_combined_rel": 0.0064267112849042988,
+  "delta_rel": 0.00592510841421134,
+  "resolved_2sigma": false,
+  "note": "两条腿同 seed 同配置, 只差 electronics.sampleTime_s; 判定用同批计数地板 CV/sqrt(nEff), 不用 summary.u_yF_rel (那是合成不确定度), 也不跨 run 拼。"
+}

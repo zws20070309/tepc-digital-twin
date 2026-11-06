@@ -1,0 +1,50 @@
+{
+  "schema": "tepc-banned-claims-v1",
+  "revision": "2026-09-21",
+  "enforcement_status": "SCANNED_IN_TEXT_PRODUCTS",
+  "scope_note": "本表登记当前交付口径下禁止出现的表述, 是唯一清单。禁止的理由不是文风, 而是仓库里没有支撑它的证据: 输运链是解析/经验路线而非蒙特卡罗输运, 无参考场标定数据故绝对剂量未经核验, 三维清单里含只用于显示的零件因而\"所有零件均参与输运\"不成立, 也没有任何一台真实装置的对表数据。enforcement_status=SCANNED_IN_TEXT_PRODUCTS 表示除词表自身的合法性测试外, tests/integration/test_report_semantics.m 的 productTexts 会把下面 applies_to 列出的文本逐份按 UTF-8 读进来做子串匹配; 实际覆盖面以那个函数的扫描集合为准, 状态与实现不一致时由 test_banned_claims_lexicon 判红。",
+  "applies_to": [
+    "README.md",
+    "docs/*.md",
+    "app/ 界面文案与横幅",
+    "src/+tepc/+report 产出的 HTML 报告",
+    "runs/*/results/ 下的 summary.json / gates.json / report.html / provenance.json / spectrum.csv (扫描集合 = 最新一次运行 + 所有 gates.json 里 released=true 的运行), 外加最新一次运行 runs/*/events/*.h5 的根属性文本 (只取属性, 不解析数据集; released=true 旧运行的 h5 属性不在集合内)"
+  ],
+  "self_exemption": [
+    "config/banned_claims.json",
+    "tests/unit/test_banned_claims_lexicon.m"
+  ],
+  "exemption_note": "词表自身必然逐字包含这些表述, 扫描时按 self_exemption 的路径排除; 排除表只放文件路径, 不放通配的正则, 以免把整个目录一起放过。",
+  "banned_claims": [
+    "已真实复现某现实 TEPC 装置",
+    "已完成蒙卡输运",
+    "绝对剂量已验证",
+    "三维模型中的所有零件均参与输运"
+  ],
+  "claim_notes": [
+    {
+      "id": "device_reproduced",
+      "claim": "已真实复现某现实 TEPC 装置",
+      "why_not": "仓库内没有该装置的实测响应数据: 尺寸、材料与气体组分取自设计参数与文献, 模型未经任何一台真实装置对表。",
+      "say_instead": "按设计参数建模的组织等效正比计数器响应模型; 参考场验证未评估"
+    },
+    {
+      "id": "mc_transport_done",
+      "claim": "已完成蒙卡输运",
+      "why_not": "现输运路线是解析/经验适配器 (固定子流 + 闭式轨道), 没有碰撞级步进, 也没有中性粒子输运。",
+      "say_instead": "解析/经验基线输运; 碰撞级与蒙卡输运未实现"
+    },
+    {
+      "id": "absolute_dose_validated",
+      "claim": "绝对剂量已验证",
+      "why_not": "缺参考场标定数据, 剂量链只能核内部自洽; 交付标签为 RESEARCH/DEMO, 绝对剂量发布被门禁阻断。",
+      "say_instead": "相对剂量与微剂量谱由模型给出; 绝对剂量须经参考场标定后方可发布"
+    },
+    {
+      "id": "all_parts_in_transport",
+      "claim": "三维模型中的所有零件均参与输运",
+      "why_not": "三维清单含仅供显示的零件 (display_only / 不参与输运的角色), 输运链只消费其中一部分实体。",
+      "say_instead": "按零件标注输运角色; 显示用零件不计入审计量"
+    }
+  ]
+}

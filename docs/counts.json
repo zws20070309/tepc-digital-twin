@@ -1,0 +1,362 @@
+{
+  "schema": "tepc-counts-v1",
+  "generated_utc": "2026-10-10T13:29:02Z",
+  "matlab_release": "R2025a",
+  "command": "cd tests; runAllTests",
+  "regen_command": "cd <repo>/tests; matlab -batch \"addpath ../src; addpath ../app; addpath ../tools; genCounts\"",
+  "method": "static inspection only (no test executed)",
+  "counts": {
+    "test_functions": 617,
+    "test_files": 69,
+    "test_functions_excluded_multiarg": 0,
+    "gates": 16,
+    "gates_additem_statements": 25,
+    "h5_datasets": 23,
+    "ui_test_functions": 2,
+    "ui_test_files": 1,
+    "anchor_rows_total": 1911,
+    "anchor_rows_icrp103_neutron_wR_branches": 3,
+    "anchor_rows_icrp110_tissue_elemental_composition": 106,
+    "anchor_rows_icrp116_neutron_skin_lens_coefficients": 1156,
+    "anchor_rows_lhasa_neutron_spectrum_digitized": 120,
+    "anchor_rows_lhasa_neutron_spectrum_fullrange_digitized": 436,
+    "anchor_rows_pstar_water_proton_range": 88,
+    "anchor_rows_stopping_anchors": 2
+  },
+  "details": {
+    "test_files": [
+      {
+        "file": "test_gui.m",
+        "test_functions": 23
+      },
+      {
+        "file": "test_gui_3d_tab.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_gui_3d_workbench.m",
+        "test_functions": 18
+      },
+      {
+        "file": "test_gui_honest_positioning.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_gui_tab_mapping.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_pipeline.m",
+        "test_functions": 9
+      },
+      {
+        "file": "test_pipeline_rerun_equivalence.m",
+        "test_functions": 2
+      },
+      {
+        "file": "test_release_transaction.m",
+        "test_functions": 8
+      },
+      {
+        "file": "test_report_gate_identity.m",
+        "test_functions": 3
+      },
+      {
+        "file": "test_report_semantics.m",
+        "test_functions": 9
+      },
+      {
+        "file": "test_run_chunk_invariance.m",
+        "test_functions": 2
+      },
+      {
+        "file": "test_run_drift_diagnostic.m",
+        "test_functions": 3
+      },
+      {
+        "file": "test_run_threshold_disclosure.m",
+        "test_functions": 4
+      },
+      {
+        "file": "test_run_waveform_stage.m",
+        "test_functions": 1
+      },
+      {
+        "file": "test_simulink_gate.m",
+        "test_functions": 1
+      },
+      {
+        "file": "test_artifact_transaction.m",
+        "test_functions": 6
+      },
+      {
+        "file": "test_banned_claims_lexicon.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_config_validate.m",
+        "test_functions": 16
+      },
+      {
+        "file": "test_constants_registry.m",
+        "test_functions": 6
+      },
+      {
+        "file": "test_daq_statemachine.m",
+        "test_functions": 10
+      },
+      {
+        "file": "test_device_v2_manifest.m",
+        "test_functions": 30
+      },
+      {
+        "file": "test_directional_beam_chord.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_doc_counts.m",
+        "test_functions": 6
+      },
+      {
+        "file": "test_dose_normalization.m",
+        "test_functions": 11
+      },
+      {
+        "file": "test_drift_collect.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_electronics.m",
+        "test_functions": 24
+      },
+      {
+        "file": "test_false_trigger_rate.m",
+        "test_functions": 4
+      },
+      {
+        "file": "test_field_electrostatic_gate.m",
+        "test_functions": 9
+      },
+      {
+        "file": "test_field_fem_map.m",
+        "test_functions": 15
+      },
+      {
+        "file": "test_field_map_reciprocity.m",
+        "test_functions": 4
+      },
+      {
+        "file": "test_field_topology_guard.m",
+        "test_functions": 10
+      },
+      {
+        "file": "test_gate_failability.m",
+        "test_functions": 7
+      },
+      {
+        "file": "test_gate_layer_map.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_geometry_3d_contract.m",
+        "test_functions": 28
+      },
+      {
+        "file": "test_geometry_chord.m",
+        "test_functions": 11
+      },
+      {
+        "file": "test_geometry_clip.m",
+        "test_functions": 9
+      },
+      {
+        "file": "test_geometry_overlap.m",
+        "test_functions": 12
+      },
+      {
+        "file": "test_geometry_single_source.m",
+        "test_functions": 12
+      },
+      {
+        "file": "test_geometry_transport_identity.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_golden_baseline_fields.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_gui_components.m",
+        "test_functions": 25
+      },
+      {
+        "file": "test_gui_error_surface.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_gui_state.m",
+        "test_functions": 10
+      },
+      {
+        "file": "test_io_transaction.m",
+        "test_functions": 12
+      },
+      {
+        "file": "test_organ_dose_from_field.m",
+        "test_functions": 11
+      },
+      {
+        "file": "test_peak_polarity.m",
+        "test_functions": 6
+      },
+      {
+        "file": "test_position_spread.m",
+        "test_functions": 8
+      },
+      {
+        "file": "test_positioning_claims.m",
+        "test_functions": 6
+      },
+      {
+        "file": "test_published_fields_source.m",
+        "test_functions": 6
+      },
+      {
+        "file": "test_radiation_weighting.m",
+        "test_functions": 4
+      },
+      {
+        "file": "test_rate_sweep.m",
+        "test_functions": 6
+      },
+      {
+        "file": "test_reference_slots_invariants.m",
+        "test_functions": 8
+      },
+      {
+        "file": "test_report_diagnostic_figure.m",
+        "test_functions": 8
+      },
+      {
+        "file": "test_requested_realized_site_block.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_run_dirs_env.m",
+        "test_functions": 3
+      },
+      {
+        "file": "test_slx_config_identity.m",
+        "test_functions": 14
+      },
+      {
+        "file": "test_source_direction_identity.m",
+        "test_functions": 17
+      },
+      {
+        "file": "test_spectrum_dose.m",
+        "test_functions": 13
+      },
+      {
+        "file": "test_transport.m",
+        "test_functions": 14
+      },
+      {
+        "file": "test_uncertainty_depth_tiers.m",
+        "test_functions": 7
+      },
+      {
+        "file": "test_uq_budget_inertness.m",
+        "test_functions": 9
+      },
+      {
+        "file": "test_uq_convergence.m",
+        "test_functions": 4
+      },
+      {
+        "file": "test_uq_measurement.m",
+        "test_functions": 8
+      },
+      {
+        "file": "test_uq_stage_heartbeat.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_uq_validation.m",
+        "test_functions": 12
+      },
+      {
+        "file": "test_validation_gof_chord.m",
+        "test_functions": 13
+      },
+      {
+        "file": "test_wall_density_single_source.m",
+        "test_functions": 7
+      },
+      {
+        "file": "test_wall_effect_negative_control.m",
+        "test_functions": 5
+      },
+      {
+        "file": "test_waveform_replay.m",
+        "test_functions": 8
+      }
+    ],
+    "ui_test_files_detail": {
+      "file": "test_gui_chip_band.m",
+      "test_functions": 2
+    },
+    "anchor_files": [
+      {
+        "file": "icrp103_neutron_wR_branches.csv",
+        "rows": 3
+      },
+      {
+        "file": "icrp110_tissue_elemental_composition.csv",
+        "rows": 106
+      },
+      {
+        "file": "icrp116_neutron_skin_lens_coefficients.csv",
+        "rows": 1156
+      },
+      {
+        "file": "lhasa_neutron_spectrum_digitized.csv",
+        "rows": 120
+      },
+      {
+        "file": "lhasa_neutron_spectrum_fullrange_digitized.csv",
+        "rows": 436
+      },
+      {
+        "file": "pstar_water_proton_range.csv",
+        "rows": 88
+      },
+      {
+        "file": "stopping_anchors.csv",
+        "rows": 2
+      }
+    ],
+    "gate_names": [
+      "ASSUMED 参数发布限制",
+      "UQ 完成度",
+      "events.h5 回读重算",
+      "int f dy 归一",
+      "seed 一致性",
+      "仪器反演-真值谱偏差",
+      "位点-压强一致性",
+      "分箱矩-精确矩一致",
+      "参数域守卫",
+      "参考场验证",
+      "参考数据域与来源",
+      "无效测量零权重",
+      "权重账自洽",
+      "能量账本闭合",
+      "配置哈希与产物可追溯",
+      "阻止本领外部锚点"
+    ],
+    "numbered_gate_comments": 16,
+    "h5create_statements": 1,
+    "h5_map_rows": 23,
+    "root": "<repo>"
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "matlab_release": "2025a",
+  "created_utc": "2026-09-20 09:35:23",
+  "config_file_sha256": "46f1e6a5a705a48bbdf8ee44f113b3981d6fe92523151effaa8705bbdb6a5fd7",
+  "radii": {
+    "a_m": 4.9999999999999996E-5,
+    "b_m": 0.0254,
+    "hv_V": 700
+  },
+  "field": {
+    "cylinder": {
+      "K": 0.16050124029960103,
+      "p": 2,
+      "E_at_a": 2.2470151171792974E+6,
+      "E_at_b": 4423.2669512087114,
+      "intE_a_rStart": 258.69743432464156,
+      "G_analytic": 136.01301895613094,
+      "phiw_a": 1,
+      "phiw_b": 0
+    },
+    "sphere": {
+      "K": 5.0098619329388562E-5,
+      "p": 3,
+      "E_at_a": 1.402758535704406E+7,
+      "E_at_b": 54.357219400992413,
+      "intE_a_rStart": 631.24260355029594,
+      "G_analytic": 160734.25591879041,
+      "phiw_a": 1,
+      "phiw_b": 0
+    }
+  },
+  "resolve": [
+    {
+      "G_mean": 136.01301895613094,
+      "rho_g": 0.010450118862012872,
+      "lbar_gas_mm": 33.86666666666666,
+      "lbar_tissue_um": 0.3539106921268359,
+      "r0_m": 0.0005,
+      "field_kind": "cylinder",
+      "siteMode": "derived",
+      "site_requested_um": 2,
+      "site_realized_um": 0.53086603819025391,
+      "config_resolved_notes": "rho_g=1.0450e-02 kg/m3, lbar_gas=33.87 mm, lbar_t=0.3539 um (位点模式 derived)"
+    },
+    {
+      "G_mean": 136.01301895613094,
+      "rho_g": 0.010450118862012872,
+      "lbar_gas_mm": 33.86666666666666,
+      "lbar_tissue_um": 0.3539106921268359,
+      "r0_m": 0.0005,
+      "field_kind": "cylinder",
+      "siteMode": "derived",
+      "site_requested_um": 2,
+      "site_realized_um": 0.53086603819025391,
+      "config_resolved_notes": "D_t_eq=0.531 um (请求 2.000 um, 相对差 73.5%)"
+    },
+    {
+      "G_mean": 136.01301895613094,
+      "rho_g": 0.010450118862012872,
+      "lbar_gas_mm": 33.86666666666666,
+      "lbar_tissue_um": 0.3539106921268359,
+      "r0_m": 0.0005,
+      "field_kind": "cylinder",
+      "siteMode": "derived",
+      "site_requested_um": 2,
+      "site_realized_um": 0.53086603819025391,
+      "config_resolved_notes": "G_mean=136.0 @ 700 V (Diethorn deltaV=36.5 V, ASSUMED)"
+    },
+    {
+      "G_mean": 136.01301895613094,
+      "rho_g": 0.010450118862012872,
+      "lbar_gas_mm": 33.86666666666666,
+      "lbar_tissue_um": 0.3539106921268359,
+      "r0_m": 0.0005,
+      "field_kind": "cylinder",
+      "siteMode": "derived",
+      "site_requested_um": 2,
+      "site_realized_um": 0.53086603819025391,
+      "config_resolved_notes": "mu_e=5.066e+00 mu_i=2.027e-02 m2/Vs @ 1000 Pa (ASSUMED, 1/p 缩放)"
+    }
+  ],
+  "shaper": {
+    "Nwin": 1400,
+    "Ts": 1E-8,
+    "hpeak": 4.9755806503123812E+13,
+    "hidx": 2,
+    "hsign": 1,
+    "h_min": -6.801278346896792E+12,
+    "h_max": 4.9755806503123812E+13,
+    "neg_over_pos": 0.13669315854562197,
+    "sum_h": 5.9050642533744141E+10,
+    "mean_h": 4.2179030381245814E+7
+  },
+  "noise": {
+    "sigma_peak_V": 0.001270402902813226
+  },
+  "deadtime": {
+    "tau_s": 1E-5,
+    "mode": "nonparalyzable",
+    "scan": [
+      {
+        "r_in_cps": 1000,
+        "m_obs_cps": 90800,
+        "m_theory_cps": 990.09900990099,
+        "rel_err": 90.708
+      },
+      {
+        "r_in_cps": 10000,
+        "m_obs_cps": 99000,
+        "m_theory_cps": 9090.90909090909,
+        "rel_err": 9.89
+      },
+      {
+        "r_in_cps": 50000,
+        "m_obs_cps": 100000,
+        "m_theory_cps": 33333.333333333336,
+        "rel_err": 2
+      },
+      {
+        "r_in_cps": 100000,
+        "m_obs_cps": 100000,
+        "m_theory_cps": 50000,
+        "rel_err": 1
+      }
+    ]
+  },
+  "calibration": {
+    "beta": [
+      14.658646583427016,
+      1.591434584119544E+17
+    ],
+    "sigma_res": 28.112831866405553,
+    "FS_code": 524288,
+    "V_per_C": 1.942796775444241E+13,
+    "threshold_V": 0.02,
+    "domain_C": [
+      1.2566452038925934E-17,
+      3.2448067032428157E-12
+    ]
+  },
+  "summary": {
+    "config_sha256": "23dcbec1491e2d8696253c42885fd32655116993bed85a9eec06c3ea184a2589",
+    "seed": 12345,
+    "yF_keV_um": 24.526878836406294,
+    "yD_keV_um": 41.545741775730555,
+    "Qbar": 10.766836800254355,
+    "intFdy": 0.99999999999999989,
+    "intDdy": 1.0009901366507863,
+    "liveFrac": 1,
+    "nEff": 1476,
+    "D_gas_Gy": 2.8024026976839791E-6,
+    "D_gas_per_event_Gy": 1.4012013488419896E-9,
+    "D_tissue_Gy": 26204.704727212484,
+    "D_tissue_per_event_Gy": 13.102352363606242,
+    "dose_rate_uGy_h": 501.38131368990122,
+    "H_micro_Sv": 282141.77919675061,
+    "t_obs_s": 20.121710634597051,
+    "instr_bias_yF": 0.021153872302944077,
+    "instr_res_fwhm_over_yF": 0.12337243540348175,
+    "n_meas_valid": 1476,
+    "zeroDep_fraction": 0,
+    "overflow_count": 0,
+    "underflow_threshold_count": 483,
+    "deadRejected": 0,
+    "pileupCount": 0,
+    "u_yF_rel": 0.14255083928730317,
+    "u_nSamples": 32,
+    "u_nFailed": 0,
+    "G_mean": 136.01301895613094,
+    "lbar_tissue_um": 0.3539106921268359,
+    "site_realized_d_tissue_um": 0.53086603819025391,
+    "label": "RESEARCH/DEMO",
+    "mode": "RESEARCH_DEMO"
+  },
+  "spectrum": {
+    "SW_valid": 1476,
+    "SW_inBins": 1476,
+    "underflowWeight": 0,
+    "overflowWeight": 0,
+    "renormInRange": false,
+    "yF_exact": 24.526878836406294,
+    "yD_exact": 41.545741775730555,
+    "first_bins": {
+      "f": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "d": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "counts_raw": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "gates": {
+    "n": 14,
+    "statuses": [
+      "PASS",
+      "PASS",
+      "PASS",
+      "PASS",
+      "PASS",
+      "PASS",
+      "PASS",
+      "WARN",
+      "PASS",
+      "PASS",
+      "WARN",
+      "WARN",
+      "PASS",
+      "NOT_EVALUATED"
+    ],
+    "names": [
+      "int f dy 归一",
+      "分箱矩-精确矩一致",
+      "能量账本闭合",
+      "events.h5 回读重算",
+      "无效测量零权重",
+      "权重账自洽",
+      "seed 一致性",
+      "仪器反演-真值谱偏差",
+      "阻止本领外部锚点",
+      "位点-压强一致性",
+      "参数域守卫",
+      "ASSUMED 参数发布限制",
+      "配置哈希与产物可追溯",
+      "参考场验证"
+    ]
+  },
+  "gates_fields": [
+    "items",
+    "nFail",
+    "nWarn",
+    "nNotEvaluated",
+    "computational_gates_passed",
+    "release_eligible",
+    "watermark",
+    "released",
+    "logPath",
+    "backend_id"
+  ],
+  "released": false,
+  "run_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_r17_baseline_runs\\runs\\20260920_173524641-d091bbe7e1fb",
+  "run_schema_note": "pre-R17"
+}

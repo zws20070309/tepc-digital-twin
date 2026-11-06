@@ -1,0 +1,30 @@
+TEPC 数字孪生 quickstart (root: <repo>)
+[  2.0%] 配置校验通过
+[  5.0%] 写出配置身份与哈希
+[  8.0%] 阻止本领表与电子学系数
+[ 10.0%] 电荷注入刻度 (与测量共用同一仪器链)
+[ 14.0%] 事件生成开始
+[ 26.0%] chunk 1/5
+[ 38.0%] chunk 2/5
+[ 50.0%] chunk 3/5
+[ 62.0%] chunk 4/5
+[ 74.0%] chunk 5/5
+[ 80.0%] 合并事件并分析
+[ 90.0%] 写出 spectrum.csv / summary.json
+[ 92.0%] 不确定度传播 (32 样本)
+[ 95.0%] 红线门禁 (第一轮)
+[ 97.0%] 诊断图与 HTML 报告
+[ 98.0%] 发布门禁与状态
+[100.0%] 完成
+报告: <repo>\runs\20260921_155638273-d091bbe7e1fb\results\report.html
+
+===== DEMO 摘要 =====
+runID: 20260921_155638273-d091bbe7e1fb
+yF = 25.27 keV/um, yD = 42.29 keV/um
+D_gas 1.470e-09 Gy/事件, 累计 1.470e-05 Gy; D_tissue 1.368e+01 Gy/事件, 累计 1.368e+05 Gy (N=10000) (RESEARCH/DEMO, 禁绝对发布)
+剂量率(演示, 未标定) = 534.6 uGy/h
+事件: 10000, 零沉积 0.0%, 死时间拒绝 4, liveFrac 0.999
+门禁: VALID(FOR DEMO, WARN) (16 项)
+输出目录: <repo>\runs\20260921_155638273-d091bbe7e1fb
+
+打开报告: <repo>\runs\20260921_155638273-d091bbe7e1fb\results\report.html

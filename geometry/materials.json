@@ -1,0 +1,76 @@
+{
+  "schema": "tepc-materials-v1",
+  "schema_version": "1.0",
+  "units_internal": "SI",
+  "export_units": "mm",
+  "unit_scale_from_m": 1000.0,
+  "materials_sha256": "computed_at_load",
+  "geometry_sha256": "computed_at_load",
+  "value_status_vocabulary": ["MEASURED_CONFIG", "REFERENCE", "ASSUMED"],
+  "note": "材料与几何的分工: geometry/device_v2.json 只回答 '多大、在哪、参与哪条链', 本表回答 '是什么、多重'。零件表用 material_id 单向指向本表, 本表不反向登记零件清单 —— 反向索引由 tepc.geometry.deviceSpec 在读取时从 parts.material_id 聚合出来, 抄一份进文件就会有第二份真相。单位纪律与几何表相同: 长度/密度按 SI 登记, 非 SI 单位只出现在带后缀的字段名里 (density_g_cm3), 且同一材料只填一种密度写法, 不做两处换算并存 (两处写法必然在某次换算时分叉)。哈希: materials_sha256 覆盖本表 materials 数组的规范化序列化, geometry_sha256 是配对几何表的哈希 (用于把 '几何 + 材料' 绑成一次版本), 两者都由读取方计算, 此处是哨兵字符串 computed_at_load。value_status 的含义: MEASURED_CONFIG = 数值逐字来自已登记的配置或常数表字段; REFERENCE = 定义值或外部标准; ASSUMED = 名义值/经验值/占位, 未经证书或实测支撑。本表刻意不含的元素构成: 仓库内既没有 A-150 的配方表也没有组织等效材料的组分表, 编一份出来会把 '材料与腔壁成分假设' 伪装成数据 —— 它们只在阻止本领/能损表里以整体密度进入结果, 需要材料证书后才能填。",
+  "materials": [
+    {
+      "material_id": "gas_te_methane_based",
+      "state": "gas",
+      "composition_molfrac": { "CH4": 0.64, "CO2": 0.32, "N2": 0.04 },
+      "elements": null,
+      "density_kg_m3": null,
+      "density_g_cm3": null,
+      "temperature_K": 293.15,
+      "pressure_Pa": 1000.0,
+      "compressibility_Z": 1.0,
+      "value_status": "MEASURED_CONFIG",
+      "source_document": "config/defaults/demo_only.json",
+      "sha256_source": "computed_at_load",
+      "note": "组分摩尔分数、温度、压强、压缩因子四项逐字取自 gas 块 (composition_molfrac / temperature_K=293.15 / pressure_Pa=1000.0 / compressibility_Z=1.0), 求和 = 1.0 由密度函数硬校验, 不满足即报错而不是归一化。density_kg_m3 填 null 而非算好的值: 气体密度是导出量 rho = p*M/(Z*R*T), 由 tepc.geometry.gasDensity 在运行时用摩尔质量 (元素标准原子量按分子式合成) 与 CODATA 气体常数算, 温压或组分一改它就变; 把某一组温压下的快照钉进静态表, 会让 '改了配置密度没跟上' 变成静默错误。消费者: gas_cavity 的弦长/能量沉积换算、位点等效的质量厚度 rho_g*lbar_g、以及达到请求位点所需压强的反解。同族的 W 值 31.1 eV 标 REFERENCE、Fano 因子 0.20 标 ASSUMED, 两者都留在配置里由气体统计消费, 不在本表重复登记。"
+    },
+    {
+      "material_id": "a150",
+      "state": "solid",
+      "composition_molfrac": null,
+      "elements": null,
+      "density_kg_m3": null,
+      "density_g_cm3": 1.124,
+      "value_status": "ASSUMED",
+      "source_document": "docs/constants.json (const_id=transport.a150.density_g_cm3)",
+      "sha256_source": "computed_at_load",
+      "note": "名义密度 1.124 g/cm3 以 g/cm3 登记 (表头规则: 每种材料只填一种单位形式)。本条是常数条目 transport.a150.density_g_cm3 的同值镜像: 输运侧的壁能损与逃逸份额经唯一取数点 tepc.transport.wallDensity 读那条常数 (src/+tepc/+transport/wallDensity.m:25), 输运代码不持有字面量; 本文件里的值供几何/质量侧按材料登记取用 (deviceSpec 换成 kg/m3 给零件), 两者的相等关系由 tests/unit/test_wall_density_single_source.m 锁定, 改一处即红。升 MEASURED_CONFIG 的前置条件不只是拿到材料证书, 还包括把两处来源合成一处。elements 与 composition_molfrac 填 null: 仓库里没有 A-150 的树脂配方, 也没有可核验的材料表条目; 现实现的壁能损走通用阻止本领近似 + 这一个整体密度, 不做逐元素组分加权, 因此缺配方不影响当前链路, 但会挡住 全能区壁材精度 这类声明。消费者: wall 与 cathode 两个零件。"
+    },
+    {
+      "material_id": "tissue_equivalent",
+      "state": "liquid_water_equivalent",
+      "composition_molfrac": null,
+      "elements": null,
+      "density_kg_m3": 1000.0,
+      "density_g_cm3": null,
+      "value_status": "MEASURED_CONFIG",
+      "source_document": "config/defaults/demo_only.json",
+      "sha256_source": "computed_at_load",
+      "note": "density_kg_m3=1000.0 取自 site.tissueDensity_kg_m3, 是软组织的水近似值: 它在本项目里只承担一个角色 —— 质量厚度映射 rho_g*lbar_g = rho_t*lbar_t 里的 rho_t, 从而把气体的平均弦长换算成等效位点直径。density_g_cm3 留 null 以免同一数值两份写法。state 记为液态水近似是命名约定: 该 '材料' 不对应任何真实体元, 等效位点只是标记体积 (见几何表的 equivalent_site_realized / equivalent_site_requested, 两者 transport_stage 都是 not_used)。composition_molfrac 与 elements 填 null: 配置只给了一个密度, 没有 ICRU 组织组分; 若后续要用逐元素阻止本领, 必须新增材料证书来源并升格 value_status。"
+    },
+    {
+      "material_id": "void",
+      "state": "vacuum",
+      "composition_molfrac": null,
+      "elements": null,
+      "density_kg_m3": null,
+      "density_g_cm3": null,
+      "value_status": "ASSUMED",
+      "source_document": "none",
+      "sha256_source": "computed_at_load",
+      "note": "世界边界之外与源锥内部的占位介质, 不是被登记的材料: 配置与常数表里都没有它的任何数值, 因此密度留 null 而不是填 0 —— 0 是 '已按定义算过' 的样子, 而现链路上外部蒙卡后端尚未接入, 边界条件本身还没被任何求解器消费过。它服务 world_envelope 与 source_cone 两个零件, 两者的 transport_stage 都是 not_used: 解析基线的凸体弦长走 4V/S 闭式与各向同性轮廓, 不在盒子里步进, 所以 '真空' 假设当前不影响任何审计量。接入外部 MC 时, 该条目要么由后端的真实介质定义替换, 要么显式声明为真空边界并记录射程判据。"
+    },
+    {
+      "material_id": "unspecified_in_config",
+      "state": null,
+      "composition_molfrac": null,
+      "elements": null,
+      "density_kg_m3": null,
+      "density_g_cm3": null,
+      "value_status": "ASSUMED",
+      "source_document": "none",
+      "sha256_source": "computed_at_load",
+      "note": "显式的未知占位, 当前唯一使用者是 anode: 配置里关于阳极只有一个半径字段 geometry.anodeRadius_um, 没有材料、没有引线/馈通尺寸, 图形层的 ASSUMED 清单同样记着 'anode.material 未指定'。这条目存在的意义是让 '不知道' 在数据里长成一行可筛选的记录, 而不是被一个看起来合理的近似材料 (石墨、钨、铝任一个) 悄悄填掉 —— 阳极材料一旦被写上一个具体值, 丝面能量沉积、二次电子发射与热负荷这类推断就会继承一个凭空的假设。阳极半径只进场模型与增益 (field_model_only), 因此材料未知不影响当前结果; 若将来要算丝的能量沉积或热, 前置条件是配置先有阳极材料字段并登记证书来源。"
+    }
+  ]
+}

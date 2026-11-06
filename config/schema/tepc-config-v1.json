@@ -1,0 +1,133 @@
+{
+  "$schema_name": "tepc-config",
+  "schemaVersion": "1.0",
+  "_doc": "TEPC 纯 MATLAB 解析代理模型 (Fast Surrogate) 配置 schema v1。null = 必须由用户填写（strict 模式拒绝解析）。每个物理参数带 status: MEASURED|REFERENCE|ASSUMED|FITTED。 重要: 本文件是**文档模板, 不是校验器** —— 全仓没有任何代码读它, 真正的必填项与取值域判据在 src/+tepc/+config/validate.m 里 (发货配置若与它不一致, 以 validate.m 为准)。它因此可能落后于 defaults: 被锁住的只有『发货配置里的每个顶层节都必须在这里有一节』(tests/unit/test_config_validate.m 的 test_schema_documents_every_shipped_section), 节内的键集合不要求相等。",
+  "run": {
+    "nEvents": 10000,
+    "chunkSize": 2000,
+    "mode": "RESEARCH_DEMO",
+    "_mode_enum": ["RESEARCH_DEMO", "VALIDATED"],
+    "uncertaintyDepth": "standard",
+    "_uncertaintyDepth_note": "不确定度传播深度档, 取值域由 config/uncertainty_depth_tiers.json 定义 (screening|standard|publish); 缺省即 standard = 发货值。档位不改任何已发布中心量, 只决定算不算不确定度传播。"
+  },
+  "geometry": {
+    "type": "sphere",
+    "_type_enum": ["sphere", "cylinder_endless", "cylinder_finite", "slab"],
+    "electrodeTopology": "axialWire",
+    "_electrodeTopology_enum": ["axialWire", "centerSphere"],
+    "gasRadius_mm": 25.4,
+    "wallThickness_mm": 3.0,
+    "wallMaterial": "A150",
+    "anodeRadius_um": 50.0,
+    "cylinderLength_mm": null
+  },
+  "site": {
+    "targetDiameter_um": 2.0,
+    "tissueDensity_kg_m3": 1000.0
+  },
+  "gas": {
+    "composition_molfrac": { "CH4": 0.64, "CO2": 0.32, "N2": 0.04 },
+    "pressure_Pa": 1000.0,
+    "temperature_K": 293.15,
+    "compressibility_Z": 1.0,
+    "W_eV": { "value": null, "status": "REFERENCE", "source": "" },
+    "fano": { "value": null, "status": "ASSUMED", "source": "" }
+  },
+  "field": {
+    "mode": "analytic",
+    "_mode_enum": ["analytic", "fem_map"],
+    "_mode_note": "analytic = E=V/(r ln(b/a)) 闭式 (tepc.detector.fieldModel); fem_map = 2-D 轴对称有限元场图 (tepc.detector.solveElectrostatic 产出, 由 field.mapFile 指向 .mat)。词表唯一来源是 tepc.detector.fieldModeOf, 值域外一律报错, 不静默退回解析场。field.kind (电极拓扑 cylinder|sphere) 与此正交, 不得互相顶替。",
+    "hv_V": null,
+    "mapFile": null
+  },
+  "source": {
+    "type": "mono_neutron",
+    "_type_enum": ["mono_neutron", "mono_gamma", "mixed", "analytic_site"],
+    "energy_MeV": 1.0,
+    "fluence_m2": 1.0e6,
+    "arrivalModel": "poisson",
+    "_arrivalModel_enum": ["poisson", "fixed"],
+    "rate_cps": 100.0,
+    "direction": [0, 0, -1],
+    "coneHalfAngle_deg": 15,
+    "classPrior": null,
+    "neutronChannels": { "elastic_H": 1.0, "elastic_C": 1.0, "elastic_O": 1.0 },
+    "channelSigma_barn": { "H": 4.2, "C": 1.5, "O": 1.6, "_status": "ASSUMED" },
+    "gamma_massatt_cm2_g": { "value": 0.08, "status": "ASSUMED" },
+    "gamma_photoelectric_frac": { "value": 0.003, "status": "ASSUMED" }
+  },
+  "detector": {
+    "gainMode": "analytic_diethorn",
+    "_gainMode_enum": ["analytic_diethorn", "fixed"],
+    "gainFixed": null,
+    "diethorn_deltaV_V": { "value": null, "status": "ASSUMED", "source": "" },
+    "spaceCharge": { "enabled": false, "k_sc": 0.0 }
+  },
+  "electronics": {
+    "sampleTime_s": 1.0e-8,
+    "Cf_F": 1.0e-12,
+    "Rf_Ohm": 5.0e8,
+    "shaperType": "cr_rc",
+    "_shaperType_enum": ["cr_rc", "double_exp", "trapezoid"],
+    "shaping_s": 1.0e-6,
+    "shaperOrder": 1,
+    "noise": {
+      "en_white_nV_per_rootHz": 4.0,
+      "en_1f_corner_Hz": 100.0,
+      "en_1f_amp_nV": 20.0,
+      "in_pA_per_rootHz": 0.5
+    },
+    "trigger": {
+      "threshold_V": null,
+      "hysteresis_V": 0.005,
+      "preTrigSamples": 64,
+      "pileUpReject_s": null
+    },
+    "adc": {
+      "bits": 14,
+      "fullScale_V": 2.0,
+      "inl_lsb": 0.5,
+      "clockJitter_s": 1.0e-11,
+      "range2Gain": 32.0
+    },
+    "deadTime_s": 1.0e-5,
+    "deadTimeMode": "nonparalyzable",
+    "_deadTimeMode_enum": ["nonparalyzable", "paralyzable"]
+  },
+  "analysis": {
+    "linealEnergyDefinition": "epsilon_over_mean_chord",
+    "yMin_keV_um": 0.01,
+    "yMax_keV_um": 500.0,
+    "nBins": 120,
+    "binSpacing": "log",
+    "qualityFactor": {
+      "version": "icrp60_let_on_y",
+      "file": "config/quality-factor/icrp60_let_on_y.csv",
+      "approxFlag": "QF_APPROX_Y_AS_LET"
+    },
+    "h10File": null
+  },
+  "uq": {
+    "enabled": false,
+    "nSamples": 200,
+    "seed": 24680,
+    "variables": {
+      "W_rel":       { "dist": "normal",  "mean": 0.0, "sd": 0.02 },
+      "fano":        { "dist": "uniform", "lo": 0.15, "hi": 0.25 },
+      "gainScale":   { "dist": "normal",  "mean": 0.0, "sd": 0.03 },
+      "stopScale":   { "dist": "normal",  "mean": 0.0, "sd": 0.05 },
+      "pressure_rel":{ "dist": "normal",  "mean": 0.0, "sd": 0.005 },
+      "adcCal_rel":  { "dist": "normal",  "mean": 0.0, "sd": 0.01 }
+    },
+    "correlations": { "pressure_rel-gainScale": 0.0 }
+  },
+  "provenance": {
+    "seed": 12345,
+    "parameterStatusPolicy": "strict"
+  },
+  "waveform": {
+    "enabled": false,
+    "nSub": 100,
+    "_note": "事件波形落盘开关 (默认关闭)。打开时另立 events/waveforms.h5, 不并入 events.h5 的 23 数据集; 子集只由 (seed, nSub, 事件数) 决定, 落盘标量可由盘上 int16 样本按 v=double(samples)*scale_V 复算。整块进配置身份哈希, 所以翻开关会改变 run 身份。"
+  }
+}

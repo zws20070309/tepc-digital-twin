@@ -1,0 +1,585 @@
+{
+  "generated_utc": "2026-09-25T010100Z",
+  "seeds": 24680,
+  "pairs": 2,
+  "tiers": [
+    "screening",
+    "standard",
+    "publish"
+  ],
+  "note": "墙钟只作记录, 不作判据 (同配置两腿实测离散 ±24%)。中心量若跨档不同即为缺陷。",
+  "summary_by_N_tier": [
+    {
+      "N": 400,
+      "tier": "publish",
+      "n_legs": 4,
+      "wall_min_s": 134.9233931,
+      "wall_median_s": 136.06909389999998,
+      "yF_all_equal": true,
+      "yF_values": [
+        25.368973389393243,
+        25.368973389393243,
+        25.368973389393243,
+        25.368973389393243
+      ]
+    },
+    {
+      "N": 400,
+      "tier": "screening",
+      "n_legs": 4,
+      "wall_min_s": 33.083357,
+      "wall_median_s": 33.48605845,
+      "yF_all_equal": true,
+      "yF_values": [
+        25.368973389393243,
+        25.368973389393243,
+        25.368973389393243,
+        25.368973389393243
+      ]
+    },
+    {
+      "N": 400,
+      "tier": "standard",
+      "n_legs": 4,
+      "wall_min_s": 60.2421924,
+      "wall_median_s": 60.3223177,
+      "yF_all_equal": true,
+      "yF_values": [
+        25.368973389393243,
+        25.368973389393243,
+        25.368973389393243,
+        25.368973389393243
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "N": 400,
+      "tier": "screening",
+      "pair": 1,
+      "order": 1,
+      "wall_s": 33.6018206,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "DISABLED",
+      "config_sha256": "0f34045f5923fbcad1607fa953aa6e1977de74e10616f2640444358de1c74139",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_084541_132",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_1\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "standard",
+      "pair": 1,
+      "order": 2,
+      "wall_s": 60.6290244,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "COMPLETE",
+      "config_sha256": "8f1ed5937097c550647080dcf87e70a6da56f9138a2284909cc75664ebeb4428",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_084614_770",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_2\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "publish",
+      "pair": 1,
+      "order": 3,
+      "wall_s": 136.2238565,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "COMPLETE",
+      "config_sha256": "80b011720c131299f33a916b073b3c47f816edbdc57aa28c53a9e4781ca0ccde",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_084715_462",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_3\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "publish",
+      "pair": 1,
+      "order": 4,
+      "wall_s": 136.7571888,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "COMPLETE",
+      "config_sha256": "80b011720c131299f33a916b073b3c47f816edbdc57aa28c53a9e4781ca0ccde",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_084931_750",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_4\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "standard",
+      "pair": 1,
+      "order": 5,
+      "wall_s": 60.3770141,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "COMPLETE",
+      "config_sha256": "8f1ed5937097c550647080dcf87e70a6da56f9138a2284909cc75664ebeb4428",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_085148_558",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_5\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "screening",
+      "pair": 1,
+      "order": 6,
+      "wall_s": 33.7412347,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "DISABLED",
+      "config_sha256": "0f34045f5923fbcad1607fa953aa6e1977de74e10616f2640444358de1c74139",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_085248_985",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_1_6\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "screening",
+      "pair": 2,
+      "order": 1,
+      "wall_s": 33.083357,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "DISABLED",
+      "config_sha256": "0f34045f5923fbcad1607fa953aa6e1977de74e10616f2640444358de1c74139",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_085322_786",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_1\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "standard",
+      "pair": 2,
+      "order": 2,
+      "wall_s": 60.2421924,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "COMPLETE",
+      "config_sha256": "8f1ed5937097c550647080dcf87e70a6da56f9138a2284909cc75664ebeb4428",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_085355_938",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_2\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "publish",
+      "pair": 2,
+      "order": 3,
+      "wall_s": 135.9143313,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "COMPLETE",
+      "config_sha256": "80b011720c131299f33a916b073b3c47f816edbdc57aa28c53a9e4781ca0ccde",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_085456_232",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_3\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "publish",
+      "pair": 2,
+      "order": 4,
+      "wall_s": 134.9233931,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "COMPLETE",
+      "config_sha256": "80b011720c131299f33a916b073b3c47f816edbdc57aa28c53a9e4781ca0ccde",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_085712_214",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_4\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "standard",
+      "pair": 2,
+      "order": 5,
+      "wall_s": 60.2676213,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "COMPLETE",
+      "config_sha256": "8f1ed5937097c550647080dcf87e70a6da56f9138a2284909cc75664ebeb4428",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_085927_189",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_5\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    },
+    {
+      "N": 400,
+      "tier": "screening",
+      "pair": 2,
+      "order": 6,
+      "wall_s": 33.3702963,
+      "yF_keV_um": 25.368973389393243,
+      "yD_keV_um": 42.339875470481395,
+      "nEff": 301,
+      "uq_status": "DISABLED",
+      "config_sha256": "0f34045f5923fbcad1607fa953aa6e1977de74e10616f2640444358de1c74139",
+      "free_mb": null,
+      "run_dir": {
+        "runID": "20260925_090027_523",
+        "root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6",
+        "project_root": "<repo>",
+        "output_root": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs",
+        "runs_base": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6",
+        "explicit_path": true,
+        "logs": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\logs",
+        "raw": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\raw",
+        "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\input",
+        "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\events",
+        "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\results",
+        "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\figures",
+        "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\partial",
+        "work": {
+          "input": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\_work\\input",
+          "events": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\_work\\events",
+          "results": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\_work\\results",
+          "figures": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\_work\\figures",
+          "partial": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\_work\\partial"
+        },
+        "workRoot": "C:\\Users\\<user>\\AppData\\Local\\Temp\\tepc_depthladder_20080\\runs\\l_400_2_6\\_work",
+        "publish": [
+          "input",
+          "events",
+          "results",
+          "figures",
+          "partial"
+        ],
+        "committed": true
+      }
+    }
+  ]
+}

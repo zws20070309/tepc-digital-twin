@@ -1,0 +1,11 @@
+正在运行 test_doc_counts
+.....
+已完成 test_doc_counts
+__________
+
+正在运行 test_constants_registry
+......
+已完成 test_constants_registry
+__________
+
+GATES_FAST PASS=11 FAIL=0 TOTAL=11

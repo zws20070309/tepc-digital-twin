@@ -1,0 +1,141 @@
+正在运行 test_gui
+.......... .......... 正在使用 'Processes' 配置文件启动并行池(parpool)...
+已连接到具有 1 个工作进程的并行池。
+.
+已完成 test_gui
+__________
+
+正在运行 test_gui_3d_tab
+....
+已完成 test_gui_3d_tab
+__________
+
+正在运行 test_gui_tab_mapping
+.....
+已完成 test_gui_tab_mapping
+__________
+
+正在运行 test_pipeline
+.......... .
+已完成 test_pipeline
+__________
+
+正在运行 test_release_transaction
+........
+已完成 test_release_transaction
+__________
+
+正在运行 test_simulink_gate
+.
+已完成 test_simulink_gate
+__________
+
+正在运行 test_artifact_transaction
+......
+已完成 test_artifact_transaction
+__________
+
+正在运行 test_config_validate
+..........
+已完成 test_config_validate
+__________
+
+正在运行 test_constants_registry
+..[test_constants_registry] 引用行号待更新 (非失败):
+  calibration.streamSeedBase: src/+tepc/+run/execute.m:93 行号已漂移 (值仍在该文件中, 请更新 used_by 行号)
+  uq.defaultNSamples: src/+tepc/+run/execute.m:370 行号已漂移 (值仍在该文件中, 请更新 used_by 行号)
+  uq.defaultSeed: src/+tepc/+run/execute.m:372 行号已漂移 (值仍在该文件中, 请更新 used_by 行号)
+....
+已完成 test_constants_registry
+__________
+
+正在运行 test_daq_statemachine
+..........
+已完成 test_daq_statemachine
+__________
+
+正在运行 test_doc_counts
+....
+已完成 test_doc_counts
+__________
+
+正在运行 test_electronics
+.......... .......... ....
+已完成 test_electronics
+__________
+
+正在运行 test_false_trigger_rate
+[pileup/chunkSize=100] dead=2406 pile=460 acc=2134 n=5000 zeroW=3419
+[pileup/chunkSize=2000] dead=2406 pile=460 acc=2134 n=5000 zeroW=3419
+.[exact-moment] relErr(impulse)=1.110e-16 relErr(event)=0.000e+00 peak=1.4994895789e-01 ipk=6 Ts=1.00e-08 peak/(q*hpeak)=0.3905
+.[ftr/iid] sigma=1.230615e-03 u=4.40 n=100000 M=400 p_emp=0.4250 p_signed_theory=0.4180 p_rect_theory=0.6613 p_emp_rect=0.6275 se=0.0247 u_shipped=16.25
+.[ftr/shaped] sigma=1.948946e-03 thr=6.626416e-03 p_signed=0.4108 p_rect=0.5525 ratio=1.345 iid1=0.3761 iid2=0.6108 se=0.0078 disc=567/4000
+.
+已完成 test_false_trigger_rate
+__________
+
+正在运行 test_field_topology_guard
+..........
+已完成 test_field_topology_guard
+__________
+
+正在运行 test_geometry_3d_contract
+.......... .......... .......
+已完成 test_geometry_3d_contract
+__________
+
+正在运行 test_geometry_chord
+..........
+已完成 test_geometry_chord
+__________
+
+正在运行 test_gui_error_surface
+.....
+已完成 test_gui_error_surface
+__________
+
+正在运行 test_io_transaction
+.......... ..
+已完成 test_io_transaction
+__________
+
+正在运行 test_peak_polarity
+......
+已完成 test_peak_polarity
+__________
+
+正在运行 test_position_spread
+........
+已完成 test_position_spread
+__________
+
+正在运行 test_spectrum_dose
+.......... ...
+已完成 test_spectrum_dose
+__________
+
+正在运行 test_transport
+.......... .
+已完成 test_transport
+__________
+
+正在运行 test_uq_measurement
+.......
+已完成 test_uq_measurement
+__________
+
+正在运行 test_uq_validation
+.......... ..
+已完成 test_uq_validation
+__________
+
+
+==== 测试汇总: 235 通过 / 0 失败 / 0 未决 / 235 总计 ====
+
+ans =
+
+  logical
+
+   1
+
+SUITE_EXIT=0

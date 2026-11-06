@@ -1,0 +1,42 @@
+正在运行 test_electronics
+........
+已完成 test_electronics
+__________
+
+正在运行 test_geometry_chord
+.....
+已完成 test_geometry_chord
+__________
+
+正在运行 test_spectrum_dose
+......
+已完成 test_spectrum_dose
+__________
+
+正在运行 test_transport
+.......
+已完成 test_transport
+__________
+
+正在运行 test_uq_validation
+....
+已完成 test_uq_validation
+__________
+
+正在运行 test_pipeline
+......
+已完成 test_pipeline
+__________
+
+正在运行 test_simulink_gate
+.
+已完成 test_simulink_gate
+__________
+
+正在运行 test_gui
+.....
+已完成 test_gui
+__________
+
+
+==== 测试汇总: 42 通过 / 0 失败 / 42 总计 ====

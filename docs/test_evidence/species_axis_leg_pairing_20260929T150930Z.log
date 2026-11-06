@@ -1,0 +1,18 @@
+TREE_ROOT <repo>
+ADAPTER <repo>\src\+tepc\+transport\AnalyticAdapter.m
+N_PER_LEG 4000
+SEED 12345 LBAR_UM 0.3539106921 SRC mono_neutron E_N_MeV 1 STRAGGLE default(true)
+LEG H N 4000 ELAPSED_S 22.32 NOK 4000 NZERO 0 yF 23.45366685 yD 37.25927039 nEff 4000 u_floor 0.0121309 se_mean 0.284549 esc_keV 0 wall_keV 1982611.7 ledgerAbsErr_keV_scaleA 2.274e-13 ledgerAbsErr_scaleB_x1e3 9.99e+05
+LEG C N 4000 ELAPSED_S 28.26 NOK 4000 NZERO 0 yF 3.631492103 yD 11.52382333 nEff 4000 u_floor 0.0233093 se_mean 0.0846583 esc_keV 0 wall_keV 567397.9 ledgerAbsErr_keV_scaleA 5.684e-14 ledgerAbsErr_scaleB_x1e3 2.837e+05
+LEG O N 4000 ELAPSED_S 19.90 NOK 4000 NZERO 0 yF 2.118620442 yD 9.925735173 nEff 4000 u_floor 0.0303521 se_mean 0.0643126 esc_keV 0 wall_keV 443409.35 ledgerAbsErr_keV_scaleA 2.842e-14 ledgerAbsErr_scaleB_x1e3 2.212e+05
+LEG MIX N 4000 ELAPSED_S 20.15 NOK 4000 NZERO 0 yF 19.41256772 yD 36.10656603 nEff 4000 u_floor 0.0146625 se_mean 0.284673 esc_keV 0 wall_keV 1700855.9 ledgerAbsErr_keV_scaleA 2.274e-13 ledgerAbsErr_scaleB_x1e3 9.986e+05
+PAIR H-C nPair 4000 meanDiff 19.82217475 se 0.258819 t 76.587 relToAyF 0.845163 |AyF_floor 0.0121309 ratio 69.670 beats2se 1
+PAIR H-O nPair 4000 meanDiff 21.33504641 se 0.274038 t 77.854 relToAyF 0.909668 |AyF_floor 0.0121309 ratio 74.988 beats2se 1
+PAIR C-O nPair 4000 meanDiff 1.512871661 se 0.0690432 t 21.912 relToAyF 0.416598 |AyF_floor 0.0233093 ratio 17.873 beats2se 1
+EMAX_MeV 1 0.28402367 0.22145329 EFF_H 0.71597633 EFF_C 0.22029988
+MIX ok 4000 pureH 2329 -> N_H 3252.9 | pureC 300 -> N_C 1361.78 | N_O_by_diff -614.681
+ANALYTIC_p 0.81355932 0.10895884 0.07748184 EXPECTED_N 3254.24 435.84 309.93 (vs measured 3252.90 1361.78 -614.68)
+MIX_INTERNAL pureH vs pureC n 2329 300 meanH 19.50507585 meanC 20.3879982 diff -0.8829223517 se 1.0911 t -0.809
+PERMUTATION obs -0.8829223517 null_mean -0.0772 null_sd 0.804854 two_sided_p 0.3400
+GATE_SUMMARY pairs_beats2se 3/3 | min_ratio_to_count_floor 17.873 | permutation_p 0.3400
+DONE JSON <local-path>

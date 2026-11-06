@@ -1,0 +1,42 @@
+#101 路线 B 生产回读: 发布谱两层成因分解 (发货 demo_only, N=300, seed 4242, 默认档)
+# 口径: 发布量 y = epsilon_meas/lbar_tissue (仪器反演后), 权重 w_stat_pub —— 与 D-07 那批真值列 EdepGas/lbar 不同口径
+# 生成: 直接调 tepc.run.execute 后读 summary 标量, 非人工抄录; 生成器同目录 z116_final.m
+
+[L1/L2 谱形分解 form_*]
+  form_flag = ok
+  form_class_count_l1 = 3
+  form_class_count_l2 = 4
+  form_share_w_sum = 1
+  form_resid_group = 0
+  form_resid_bands = 3.552713679e-15
+  form_l1_uncovered = 0
+  form_yF_exact = 25.77912601
+  form_yF_binned_rel_diff = 0.001808838804
+  form_top_contrib_class = yF_to_q90
+  form_top_contrib_over_yF = 0.4214464113
+  form_tail_share_w = 0.01287553648
+  form_bulk_share_w = 0.5965665236
+
+[核种道分解 chan_*]
+  chan_flag = ok
+  chan_n_published = 233
+  chan_n_unlabelled = 0
+  chan_labelled_share_w = 1
+  chan_share_w_sum = 1
+  chan_resid_bands = 7.105427358e-15
+  chan_uncovered = 0
+  chan_top_code = 1
+  chan_top_share_w = 0.9442060086
+  chan_top_y_mean = 26.94850638
+  chan_top_contrib_over_yF = 0.9870366292
+  yF_keV_um = 25.77912601
+
+[道表 chan_table]
+  code 1 n 220 share_w 0.94420601 y_mean 26.948506 contrib 25.444942
+  code 2 n 10 share_w 0.042918455 y_mean 6.4763133 contrib 0.27795336
+  code 3 n 3 share_w 0.012875536 y_mean 4.3672749 contrib 0.056231007
+
+[判据所在用例] tests/unit/test_transport.m::test_channel_column_recorded_and_pure
+  码集⊆{0,1,2,3}; 发货混合里三类都出现; Esecondary>碳上限者必为氢道;
+  混合源腿里光子事件 (primaryClass==2) 全记 0 且中子事件全记 1..3;
+  events.h5 写出/读回该列逐位相同 (tests/integration/test_pipeline.m::test_hdf5_roundtrip)

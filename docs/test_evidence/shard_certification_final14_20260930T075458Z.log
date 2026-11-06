@@ -1,0 +1,79 @@
+TEPC 全树认证归档 (手工驱动, 单树) — 生成 2026-09-30T13:05:52.414Z
+驱动 z121_certify.m ; 日志 z121_cert_log.txt ; runId=z205hand ; 窗口起点 "BEGIN_SLICE 2026-09-30 15:54:58"
+聚合 z139_final.cjs ; 树身份 = 递归内容哈希 (z138_treehash.cjs, 作用域 src/config/tests/tools/app/geometry + README + docs/counts.json + tepc_3d_workbench.m)
+驱动 fp 值仅信息: 00002e7459aa41d7_64 / 00002e7459eee39d_64 —— 老 fingerprint() 只数顶层散文件, 不能当身份。
+窗口行数=134 ; 分片=8 (闭合 8) ; CAP_STOP=2 ; 窗口闭合=是
+树对账: n_files=224/224 bytes=2726911/2726911 hash=bbd485330934e56a ⇒ 同一棵树
+说明: 起点侧另有 mtime 证据 —— 窗口起跑前最后一次仓库改动 15:53:18 (test_gui_components.m 计数 pin),
+      窗口内文件在 15:54:58 之后才开跑, 且到 START 取哈希时作用域内无任何更新 ⇒ 起点即定稿树。
+
+逐文件 (窗口内最后一次 END, 64 个):
+  PASS       cases= 22 fail=0 inc=0 sec=  233.4 静态= 22  tests/integration/test_gui.m
+  PASS       cases=  5 fail=0 inc=0 sec=   92.2 静态=  5  tests/integration/test_gui_3d_tab.m
+  PASS       cases= 17 fail=0 inc=0 sec=  215.2 静态= 17  tests/integration/test_gui_3d_workbench.m
+  PASS       cases=  5 fail=0 inc=0 sec=   20.7 静态=  5  tests/integration/test_gui_honest_positioning.m
+  PASS       cases=  5 fail=0 inc=0 sec=    9.6 静态=  5  tests/integration/test_gui_tab_mapping.m
+  PASS       cases=  9 fail=0 inc=0 sec=  338.4 静态=  9  tests/integration/test_pipeline.m
+  PASS       cases=  2 fail=0 inc=0 sec= 1946.0 静态=  2  tests/integration/test_pipeline_rerun_equivalence.m
+  PASS       cases=  8 fail=0 inc=0 sec= 3796.3 静态=  8  tests/integration/test_release_transaction.m
+  PASS       cases=  3 fail=0 inc=0 sec=  200.7 静态=  3  tests/integration/test_report_gate_identity.m
+  PASS       cases=  9 fail=0 inc=0 sec=  386.4 静态=  9  tests/integration/test_report_semantics.m
+  PASS       cases=  2 fail=0 inc=0 sec=  393.6 静态=  2  tests/integration/test_run_chunk_invariance.m
+  PASS       cases=  3 fail=0 inc=0 sec=  794.2 静态=  3  tests/integration/test_run_drift_diagnostic.m
+  PASS       cases=  1 fail=0 inc=0 sec=  724.4 静态=  1  tests/integration/test_run_waveform_stage.m
+  PASS       cases=  1 fail=0 inc=0 sec=  185.3 静态=  1  tests/integration/test_simulink_gate.m
+  PASS       cases=  6 fail=0 inc=0 sec= 1270.9 静态=  6  tests/unit/test_artifact_transaction.m
+  PASS       cases=  5 fail=0 inc=0 sec=   26.4 静态=  5  tests/unit/test_banned_claims_lexicon.m
+  PASS       cases= 16 fail=0 inc=0 sec=    6.9 静态= 16  tests/unit/test_config_validate.m
+  PASS       cases=  6 fail=0 inc=0 sec=    5.8 静态=  6  tests/unit/test_constants_registry.m
+  PASS       cases= 10 fail=0 inc=0 sec=    2.8 静态= 10  tests/unit/test_daq_statemachine.m
+  PASS       cases= 30 fail=0 inc=0 sec=   27.4 静态= 30  tests/unit/test_device_v2_manifest.m
+  PASS       cases=  5 fail=0 inc=0 sec=    2.6 静态=  5  tests/unit/test_directional_beam_chord.m
+  PASS       cases=  6 fail=0 inc=0 sec=   88.6 静态=  6  tests/unit/test_doc_counts.m
+  PASS       cases= 11 fail=0 inc=0 sec=  290.9 静态= 11  tests/unit/test_dose_normalization.m
+  PASS       cases=  5 fail=0 inc=0 sec=    1.6 静态=  5  tests/unit/test_drift_collect.m
+  PASS       cases= 24 fail=0 inc=0 sec=   37.0 静态= 24  tests/unit/test_electronics.m
+  PASS       cases=  4 fail=0 inc=0 sec=  456.3 静态=  4  tests/unit/test_false_trigger_rate.m
+  PASS       cases=  9 fail=0 inc=0 sec=  102.2 静态=  9  tests/unit/test_field_electrostatic_gate.m
+  PASS       cases= 15 fail=0 inc=0 sec=  137.3 静态= 15  tests/unit/test_field_fem_map.m
+  PASS       cases=  4 fail=0 inc=0 sec=   17.1 静态=  4  tests/unit/test_field_map_reciprocity.m
+  PASS       cases= 10 fail=0 inc=0 sec=    3.5 静态= 10  tests/unit/test_field_topology_guard.m
+  PASS       cases=  5 fail=0 inc=0 sec=    1.9 静态=  5  tests/unit/test_gate_layer_map.m
+  PASS       cases= 28 fail=0 inc=0 sec= 1218.9 静态= 28  tests/unit/test_geometry_3d_contract.m
+  PASS       cases= 11 fail=0 inc=0 sec=    5.0 静态= 11  tests/unit/test_geometry_chord.m
+  PASS       cases=  9 fail=0 inc=0 sec=  541.8 静态=  9  tests/unit/test_geometry_clip.m
+  PASS       cases= 12 fail=0 inc=0 sec=    7.1 静态= 12  tests/unit/test_geometry_overlap.m
+  PASS       cases= 12 fail=0 inc=0 sec=  483.7 静态= 12  tests/unit/test_geometry_single_source.m
+  PASS       cases=  5 fail=0 inc=0 sec=   19.2 静态=  5  tests/unit/test_geometry_transport_identity.m
+  PASS       cases=  5 fail=0 inc=0 sec=    2.7 静态=  5  tests/unit/test_golden_baseline_fields.m
+  PASS       cases= 25 fail=0 inc=0 sec=   22.6 静态= 25  tests/unit/test_gui_components.m
+  PASS       cases=  5 fail=0 inc=0 sec=   24.8 静态=  5  tests/unit/test_gui_error_surface.m
+  PASS       cases= 10 fail=0 inc=0 sec=    8.9 静态= 10  tests/unit/test_gui_state.m
+  PASS       cases= 12 fail=0 inc=0 sec=    3.2 静态= 12  tests/unit/test_io_transaction.m
+  PASS       cases=  6 fail=0 inc=0 sec=    5.0 静态=  6  tests/unit/test_peak_polarity.m
+  PASS       cases=  8 fail=0 inc=0 sec=   28.4 静态=  8  tests/unit/test_position_spread.m
+  PASS       cases=  6 fail=0 inc=0 sec=    2.6 静态=  6  tests/unit/test_positioning_claims.m
+  PASS       cases=  6 fail=0 inc=0 sec=    2.5 静态=  6  tests/unit/test_published_fields_source.m
+  PASS       cases=  6 fail=0 inc=0 sec=    4.0 静态=  6  tests/unit/test_rate_sweep.m
+  PASS       cases=  8 fail=0 inc=0 sec=    3.4 静态=  8  tests/unit/test_reference_slots_invariants.m
+  PASS       cases=  6 fail=0 inc=0 sec=  373.5 静态=  6  tests/unit/test_report_diagnostic_figure.m
+  PASS       cases=  4 fail=0 inc=0 sec=  305.3 静态=  4  tests/unit/test_requested_realized_site_block.m
+  PASS       cases=  3 fail=0 inc=0 sec=    2.9 静态=  3  tests/unit/test_run_dirs_env.m
+  PASS       cases= 14 fail=0 inc=0 sec=   96.6 静态= 14  tests/unit/test_slx_config_identity.m
+  PASS       cases= 17 fail=0 inc=0 sec=  211.3 静态= 17  tests/unit/test_source_direction_identity.m
+  PASS       cases= 13 fail=0 inc=0 sec=    7.8 静态= 13  tests/unit/test_spectrum_dose.m
+  PASS       cases= 12 fail=0 inc=0 sec=   38.0 静态= 12  tests/unit/test_transport.m
+  PASS       cases=  7 fail=0 inc=0 sec= 1142.6 静态=  7  tests/unit/test_uncertainty_depth_tiers.m
+  PASS       cases=  9 fail=0 inc=0 sec=   19.8 静态=  9  tests/unit/test_uq_budget_inertness.m
+  PASS       cases=  4 fail=0 inc=0 sec=   47.4 静态=  4  tests/unit/test_uq_convergence.m
+  PASS       cases=  8 fail=0 inc=0 sec=  296.4 静态=  8  tests/unit/test_uq_measurement.m
+  PASS       cases= 12 fail=0 inc=0 sec=  536.5 静态= 12  tests/unit/test_uq_validation.m
+  PASS       cases= 13 fail=0 inc=0 sec=   13.7 静态= 13  tests/unit/test_validation_gof_chord.m
+  PASS       cases=  7 fail=0 inc=0 sec=  312.7 静态=  7  tests/unit/test_wall_density_single_source.m
+  PASS       cases=  5 fail=0 inc=0 sec=   26.9 静态=  5  tests/unit/test_wall_effect_negative_control.m
+  PASS       cases=  8 fail=0 inc=0 sec=   16.7 静态=  8  tests/unit/test_waveform_replay.m
+
+合计 cases=579 ; counts.json counts={"test_functions":579,"test_files":64,"test_functions_excluded_multiarg":0,"gates":16,"gates_additem_statements":25,"h5_datasets":23,"anchor_rows_total":15,"anchor_rows_pstar_water_proton_range":13,"anchor_rows_stopping_anchors":2}
+文件墙钟之和 17648 s
+非绿/不一致=0
+CERTIFIED|z205hand|64files|579cases|0fail|0inc|tree=bbd485330934e56a|ALL_GREEN|
