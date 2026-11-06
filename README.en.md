@@ -40,7 +40,7 @@ splicing — deliberately not a collision-by-collision Monte Carlo.
 
 | | |
 |---|---|
-| Language | MATLAB (pure `.m`, no MEX, no Java, no compiled artifacts) |
+| Language | MATLAB (pure `.m`, no MEX, no compiled artifacts; SHA-256 is pure MATLAB, no Java) |
 | Releases | Built and verified on **R2025a**; requires **R2023b+** |
 | Required toolboxes | Simulink (reference electronics model), Parallel Computing Toolbox (background GUI runs, process pool), PDE Toolbox (optional FEM field map) |
 | Not required | Statistics Toolbox — LHS, Poisson, quantiles, bootstrap and `norminv` are implemented in-repo |
@@ -243,6 +243,18 @@ publications remains with their respective owners; no source document is redistr
 | [`docs/reference_register.csv`](docs/reference_register.csv) | Provenance and status of every constant |
 | [`docs/constants.json`](docs/constants.json) | Versioned constants registry (single source of truth) |
 | [`config/banned_claims.json`](config/banned_claims.json) | Claims that must not appear, with the reason and the replacement wording |
+
+## Checking that you are not reading a stale description
+
+Every "current state" number in this repository can be recomputed on the spot:
+
+| You want to know | How to check |
+|---|---|
+| How many tests, gates and datasets there really are | `matlab -batch "addpath tools src; genCounts('WriteFile', false)"` |
+| The real status of a capability | the `status` field in `config/capability_register.json`, or `docs/positioning.md` |
+| Which sentences are banned, and why | `claim_notes` in `config/banned_claims.json` |
+| Which run a result came from | `docs/test_evidence/latest_evidence.json` (environment + SHA-256 of every log and manifest) |
+| Where a constant came from | `docs/reference_register.csv` and `docs/constants.json` |
 
 ## Citation
 
