@@ -37,7 +37,7 @@
 
 | | |
 |---|---|
-| 语言 | MATLAB（纯 `.m`，无 MEX、无 Java、无编译产物） |
+| 语言 | MATLAB（纯 `.m`，无 MEX、无编译产物；SHA-256 为纯 MATLAB 实现，不依赖 Java） |
 | 版本 | 在 **R2025a** 上开发与验证；要求 **R2023b+** |
 | 必需工具箱 | Simulink（电子学对照模型）、Parallel Computing Toolbox（GUI 后台运行 / 进程池）、PDE Toolbox（可选，FEM 场图） |
 | 不需要 | Statistics Toolbox —— LHS、泊松、分位数、bootstrap、`norminv` 全部仓库内自实现 |
@@ -235,6 +235,18 @@ GitHub Actions 的托管机器上没有 MATLAB 许可证，跑不了上面这条
 | [`docs/reference_register.csv`](docs/reference_register.csv) | 每个常数的来源与状态登记 |
 | [`docs/constants.json`](docs/constants.json) | 版本化常数注册表（唯一真相源） |
 | [`config/banned_claims.json`](config/banned_claims.json) | 当前口径下禁止出现的表述、理由与替代说法 |
+
+## 如何核对你不是在读一份过时描述
+
+本仓库的每个"当前状态"数字都能当场复算，不必信任本文：
+
+| 你想知道的 | 怎么查 |
+|---|---|
+| 测试到底有多少项、门禁几项、数据集几个 | `matlab -batch "addpath tools src; genCounts('WriteFile', false)"` |
+| 某个能力到底处于什么状态 | `config/capability_register.json` 的 `status` 字段，或读 `docs/positioning.md` |
+| 哪些话不许说、为什么 | `config/banned_claims.json` 的 `claim_notes` |
+| 一条结论出自哪次运行 | `docs/test_evidence/latest_evidence.json`（环境 + 各日志与清单的 SHA-256） |
+| 某个常数的来源 | `docs/reference_register.csv` 与 `docs/constants.json` |
 
 ## 引用
 
