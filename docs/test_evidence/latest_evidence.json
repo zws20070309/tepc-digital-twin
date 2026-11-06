@@ -1,11 +1,11 @@
 {
   "schema": "tepc-latest-evidence-v1",
-  "generated_at": "2026-11-06T08:38:25Z",
+  "generated_at": "2026-11-06T08:52:06Z",
   "note": "运行环境与证据哈希索引; 计数来自 docs/counts.json (tools/genCounts.m 生成); 不含本文件自身哈希",
-  "repo_root": "D:\\Desktop\\网页\\仿真\\TEPC\\shixian\\tepc-digital-twin",
+  "repo_root": "<local-path>",
   "matlab_version": "25.1.0.2943329 (R2025a)",
   "matlab_release": "2025a",
-  "matlabroot": "D:\\matlab",
+  "matlabroot": "<matlabroot>",
   "os": "PCWIN64",
   "os_arch": "win64",
   "os_type": "(feature('OSType') 不可用)",
@@ -562,7 +562,7 @@
     }
   ],
   "counts_source": "docs/counts.json",
-  "counts_generated_at": "2026-10-10T13:29:02Z",
+  "counts_generated_at": "2026-11-06T08:51:58Z",
   "test_functions": 617,
   "gates": 16,
   "h5_datasets": 23,
@@ -570,7 +570,7 @@
   "test_evidence_dir": "docs/test_evidence",
   "n_files_tracked": 70,
   "n_files_missing": 0,
-  "latest_log": "docs/test_evidence/runAllTests_20260923T161846Z.log",
+  "latest_log": "docs/test_evidence/batch_release.log",
   "sha256": [
     {
       "path": "docs/constants.json",
@@ -580,9 +580,9 @@
     },
     {
       "path": "docs/counts.json",
-      "sha256": "88ea4c9e19f59efea144146f041a294c0a2a7aeaf5606bdbacfa920e7b07d985",
-      "bytes": 8608,
-      "mtime_local": "2026-11-06 16:31:12"
+      "sha256": "03b2c8ec8fb54b145afe102f5a06c65d2a8b4072bbf02db117c13bb4811b65df",
+      "bytes": 8663,
+      "mtime_local": "2026-11-06 16:51:58"
     },
     {
       "path": "config/defaults/demo_only.json",
@@ -598,21 +598,21 @@
     },
     {
       "path": "config/uncertainty_depth_tiers.json",
-      "sha256": "d35992c61290db37f7356d6d6c62058b0e0a80941f1673118ad5edd3dd6279b8",
-      "bytes": 6926,
-      "mtime_local": "2026-09-27 06:23:53"
+      "sha256": "d3d7012e289c04a122290bca7167b75998b1e5cc4bee92c38f83b0e1a55b49f3",
+      "bytes": 6792,
+      "mtime_local": "2026-11-06 16:49:48"
     },
     {
       "path": "README.md",
-      "sha256": "e33073e3feb3dc239dafc55194aed8ca8013f15dbc1cdc43fee205f818f84e2d",
-      "bytes": 15356,
-      "mtime_local": "2026-11-06 16:36:31"
+      "sha256": "53c145e06bfa6f4b987ae361d122eaff3f37b28735ed3c4c286b4cf3f6c4678a",
+      "bytes": 16085,
+      "mtime_local": "2026-11-06 16:50:50"
     },
     {
       "path": "docs/test_evidence/batch_release.log",
-      "sha256": "fcf64be029084ab28eb6b260397d5df7600f095095e2e4d86193162139dd9b7b",
-      "bytes": 628,
-      "mtime_local": "2026-09-19 22:12:37"
+      "sha256": "d192cfe4e9fcdada52433e9b66e867dfe063c435b275ec6a5f17616dbfce7227",
+      "bytes": 652,
+      "mtime_local": "2026-11-06 16:49:49"
     },
     {
       "path": "docs/test_evidence/channel_axis_production_readback_20260930T052200Z.log",
@@ -628,9 +628,9 @@
     },
     {
       "path": "docs/test_evidence/gates_fast_20260921_after_comment_cleanup.log",
-      "sha256": "86cd61591814611cba400eda159911aa43eefeccf6c89836812715eef7778dcd",
-      "bytes": 195,
-      "mtime_local": "2026-09-21 16:47:10"
+      "sha256": "aa4bb23f14297e88fa72b19bf629f4c6dd3c965fd3d41073c00d9755233e9374",
+      "bytes": 198,
+      "mtime_local": "2026-11-06 16:49:49"
     },
     {
       "path": "docs/test_evidence/instrument_variance_split_20260927T1415Z.log",
@@ -640,9 +640,9 @@
     },
     {
       "path": "docs/test_evidence/quickstart_20260921_after_comment_cleanup.log",
-      "sha256": "48b8541ba871506e6d3edb690dd023081c2d8112008d02b044f8879ad35d8994",
-      "bytes": 1057,
-      "mtime_local": "2026-11-06 16:31:55"
+      "sha256": "713244d7de023f95971717e470cb4523804a6ac3a32b2dd5f20226453a8b047d",
+      "bytes": 1164,
+      "mtime_local": "2026-11-06 16:49:49"
     },
     {
       "path": "docs/test_evidence/runAllTests_20260921T105941Z.log",
@@ -664,27 +664,27 @@
     },
     {
       "path": "docs/test_evidence/runAllTests_20260921_after_comment_cleanup.log",
-      "sha256": "aec8906a67ea678a0a6ccfd83ce27da3dcf65d75b1b495dc20728a7be4811ef7",
-      "bytes": 2839,
-      "mtime_local": "2026-09-21 16:47:10"
+      "sha256": "90b1fc72ea5305d12892713577d42afec7d250c4423466ca9ba147684ecc5197",
+      "bytes": 2929,
+      "mtime_local": "2026-11-06 16:49:49"
     },
     {
       "path": "docs/test_evidence/runAllTests_20260921_after_reorg.log",
-      "sha256": "6cabe5e42e8bea232da3528484c76f6da4410456d4aac7bf7c76771ccc8c9ca8",
-      "bytes": 3142,
-      "mtime_local": "2026-09-21 10:01:02"
+      "sha256": "1bafa484538f90d09ea6591088751f63c24c04bcc70f8a814b132989b1d46c2b",
+      "bytes": 3272,
+      "mtime_local": "2026-11-06 16:49:49"
     },
     {
       "path": "docs/test_evidence/runAllTests_20260921_final236.log",
-      "sha256": "aa01d4f229008189a85b3a809b071d515c7a49ee36510ff9a53cc895409ae449",
-      "bytes": 2785,
-      "mtime_local": "2026-09-21 10:37:38"
+      "sha256": "cc4d6ef9993271b309b433de5be035a19b65da3cb4448c68abe6e597b69c8286",
+      "bytes": 2858,
+      "mtime_local": "2026-11-06 16:49:49"
     },
     {
       "path": "docs/test_evidence/runAllTests_20260921_v11_235pass_0fail.log",
-      "sha256": "bc7556d972edd55950967c61ea1d84777938373082938fe6613422e4f5237027",
-      "bytes": 3761,
-      "mtime_local": "2026-11-06 16:31:55"
+      "sha256": "fe791f89cd2381523a071ee321697e97f29de77051b3727464d9debb4b8e15ea",
+      "bytes": 3924,
+      "mtime_local": "2026-11-06 16:49:49"
     },
     {
       "path": "docs/test_evidence/runAllTests_20260922T091447Z.log",
@@ -922,15 +922,15 @@
     },
     {
       "path": "docs/test_evidence/verify_reorg_A_20260921.log",
-      "sha256": "5ab0b96df92c2de85ea38039adc82958a0516ec635dae2d1e2810ef92954e753",
-      "bytes": 2073,
-      "mtime_local": "2026-11-06 16:32:06"
+      "sha256": "99d46a21a46c09d59e3c7a1186859bca0e704d94a87b8f535aed4fb89590246a",
+      "bytes": 2032,
+      "mtime_local": "2026-11-06 16:49:49"
     },
     {
       "path": "docs/test_evidence/verify_reorg_A_20260921_run1.log",
-      "sha256": "77521af8d35bc11b26c7bcbd671e0c0876324e144175e43596127620e6671561",
-      "bytes": 1590,
-      "mtime_local": "2026-11-06 16:31:55"
+      "sha256": "7ea87f763d8fa4cd30aa0eb41d5863f53ddeab1f295ee0230460af6e84a2ae51",
+      "bytes": 1685,
+      "mtime_local": "2026-11-06 16:49:49"
     },
     {
       "path": "docs/test_evidence/lhs_ladder_20260923.json",
@@ -940,9 +940,9 @@
     },
     {
       "path": "docs/test_evidence/source_manifest.json",
-      "sha256": "127edbdd9b60bfdecfefb4fb1ce6cbfc9945cb9664845005614905afdec945bc",
-      "bytes": 51818,
-      "mtime_local": "2026-11-06 16:38:25"
+      "sha256": "b118dcd78e25eab41c61388a90633c4b0cdf608142e25513492ff4ea63b5fd44",
+      "bytes": 52041,
+      "mtime_local": "2026-11-06 16:52:06"
     },
     {
       "path": "docs/test_evidence/species_axis_leg_pairing_20260929T150930Z.json",

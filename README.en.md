@@ -96,12 +96,17 @@ That single call produces the full evidence set under `runs/<timestamp>-<id>/`:
 
 ```
 runs/<run>/
-├── events/events.h5        % fixed-schema event batch + root attributes
-├── results/spectrum.csv    % 12-column weighted microdosimetric spectrum
-├── results/summary.json    % yF / yD / Qbar / dose lines / flags / limits
-├── results/gates.json      % 16 gates, each with a recomputable value
-├── results/provenance.json % versions, seed, hashes, per-parameter status
-├── results/report.html     % self-contained validation report
+├── events/events.h5               % fixed-schema event batch + root attributes
+├── input/config_resolved.json     % resolved effective configuration
+├── input/config_identity.json     % configuration identity hash
+├── results/spectrum.csv           % 12-column weighted microdosimetric spectrum
+├── results/summary.json           % yF / yD / Qbar / dose lines / flags / limits
+├── results/gates.json             % 16 gates, each with a recomputable value
+├── results/provenance.json        % versions, seed, hashes, per-parameter status
+├── results/uq.json                % uncertainty propagation result
+├── results/artifact_manifest.json % sha256 manifest of every artifact
+├── results/report.html            % self-contained validation report
+├── logs/STATUS.json               % run state-machine record
 └── figures/diagnostic.png
 ```
 
@@ -174,6 +179,12 @@ Counts are always **generated**, never hand-copied:
 ```matlab
 cd <repo>/tests; matlab -batch "addpath ../src; addpath ../app; addpath ../tools; genCounts"
 ```
+
+GitHub-hosted runners have no MATLAB licence, so they cannot run the command above. The repository
+therefore also ships a licence-free self-check, `python tools/check_repository.py`: JSON parses,
+UTF-8 without BOM, LF endings, the banned-claim lexicon, relative README links. It is a
+**secondary** check only — **the authoritative gate remains `runAllTests`**. See
+`CONTRIBUTING.md` for the workflow snippet that wires it into CI.
 
 ## Honest limitations
 

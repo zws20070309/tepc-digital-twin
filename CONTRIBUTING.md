@@ -56,6 +56,50 @@ cd tests_ui; runUiTests
   fix is reverted.
 * Markdown and MATLAB sources are UTF-8 without BOM and use LF line endings.
 
+## Continuous integration
+
+The authoritative gate is the MATLAB suite:
+
+```bash
+cd tests && matlab -batch "runAllTests"
+```
+
+GitHub-hosted runners have no MATLAB licence, so CI can only enforce the licence-free subset.
+`tools/check_repository.py` covers that subset (JSON validity, UTF-8 without BOM, LF endings, the
+banned-claim lexicon, relative README links) and needs nothing beyond Python 3.8+:
+
+```bash
+python tools/check_repository.py
+```
+
+To wire it into GitHub Actions, add this file as `.github/workflows/repo-checks.yml`
+(it is not committed by default, because creating workflow files requires a token with the
+`workflow` scope):
+
+```yaml
+name: repository checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python tools/check_repository.py
+```
+
+If you do have a MATLAB licence on a self-hosted runner, run the real suite instead and treat the
+Python check as a fast pre-filter.
+
 ## Reporting bugs
 
 Include the MATLAB release, the OS, the exact command, the run directory

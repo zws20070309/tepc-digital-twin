@@ -90,12 +90,17 @@ tepc_quickstart      % 建路径 → 跑 10000 事件 demo（固定 seed）→ �
 
 ```
 runs/<run>/
-├── events/events.h5        % 固定 schema 的事件批 + 根属性
-├── results/spectrum.csv    % 12 列带权微剂量谱
-├── results/summary.json    % yF / yD / Qbar / 剂量链 / 标志 / 限制声明
-├── results/gates.json      % 16 项门禁，每项带可复算的 value
-├── results/provenance.json % 版本 / seed / 哈希 / 逐参数状态表
-├── results/report.html     % 自包含的验证报告
+├── events/events.h5               % 固定 schema 的事件批 + 根属性
+├── input/config_resolved.json     % 派生后的生效配置
+├── input/config_identity.json     % 配置身份哈希
+├── results/spectrum.csv           % 12 列带权微剂量谱
+├── results/summary.json           % yF / yD / Qbar / 剂量链 / 标志 / 限制声明
+├── results/gates.json             % 16 项门禁，每项带可复算的 value
+├── results/provenance.json        % 版本 / seed / 哈希 / 逐参数状态表
+├── results/uq.json                % 不确定度传播结果
+├── results/artifact_manifest.json % 每个产物的 sha256 清单
+├── results/report.html            % 自包含的验证报告
+├── logs/STATUS.json               % 运行状态机记录
 └── figures/diagnostic.png
 ```
 
@@ -167,6 +172,11 @@ cd tests_ui; runUiTests                % UI 用例 2 例（真实 uifigure + 真
 ```matlab
 cd <repo>/tests; matlab -batch "addpath ../src; addpath ../app; addpath ../tools; genCounts"
 ```
+
+GitHub Actions 的托管机器上没有 MATLAB 许可证，跑不了上面这条命令。仓库因此另外提供一条
+不依赖 MATLAB 的自检：`python tools/check_repository.py` —— JSON 可解析、UTF-8 无 BOM、LF 行尾、
+禁语词表、README 相对链接。它只是一个**辅助**检查，**权威门禁仍然是 `runAllTests`**；
+把它接进 CI 的方法（workflow 片段）见 `CONTRIBUTING.md`。
 
 不确定度传播覆盖 9 个不确定度源，清单在 `tepc.uq.mappedVariables`，逐项由单测核对
 （表里登记了却没实现的、实现了却没登记，两个方向都判红）。

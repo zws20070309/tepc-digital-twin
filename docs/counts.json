@@ -1,6 +1,6 @@
 {
   "schema": "tepc-counts-v1",
-  "generated_utc": "2026-10-10T13:29:02Z",
+  "generated_utc": "2026-11-06T08:51:58Z",
   "matlab_release": "R2025a",
   "command": "cd tests; runAllTests",
   "regen_command": "cd <repo>/tests; matlab -batch \"addpath ../src; addpath ../app; addpath ../tools; genCounts\"",
@@ -357,6 +357,6 @@
     "numbered_gate_comments": 16,
     "h5create_statements": 1,
     "h5_map_rows": 23,
-    "root": "<repo>"
+    "root": "<local-path>"
   }
 }

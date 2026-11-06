@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-06T083825Z",
+  "generated": "2026-11-06T085206Z",
   "generated_note": "由 tools/writeLatestEvidence.m 生成; 清单自身与 latest_evidence.json 不进表",
-  "n_files": 240,
+  "n_files": 241,
   "files": [
     {
       "path": "src/+tepc/Project.m",
@@ -53,9 +53,9 @@
     },
     {
       "path": "src/+tepc/+analysis/qualityFactor.m",
-      "sha256": "ea5350001727f08ccd40257c66c0fd78eecaaa4ccf0f873f44e34dfedd1cf2ec",
-      "bytes": 2429,
-      "mtime_local": "21-9月-2026 15:33:59"
+      "sha256": "525da75d86562d26ddc8dbc9a7faa38ab8564ca0f0dc943a4dad143e191ffa2b",
+      "bytes": 2366,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+analysis/radiationWeighting.m",
@@ -125,9 +125,9 @@
     },
     {
       "path": "src/+tepc/+config/resolve.m",
-      "sha256": "6258ef3ed985aab0e7fbe76f0e66ab56aba6db1ad51b72207f71872fbe50ee95",
-      "bytes": 5331,
-      "mtime_local": "21-9月-2026 19:39:35"
+      "sha256": "4b145ef15f7304e24a364257716b0382389c3bfbafe467b70074bd36156bfffd",
+      "bytes": 5228,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+config/statusScan.m",
@@ -155,9 +155,9 @@
     },
     {
       "path": "src/+tepc/+detector/avalanche.m",
-      "sha256": "c45586896a4f3cc317330f164d73b37c97313ff9d4ccd981cf39f2ef13d16d41",
-      "bytes": 2863,
-      "mtime_local": "21-9月-2026 19:38:15"
+      "sha256": "c1ab484b49a62322549e52716621234b1c8230c2693852d1f8e8657fd45c826a",
+      "bytes": 2802,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+detector/driftCollect.m",
@@ -203,9 +203,9 @@
     },
     {
       "path": "src/+tepc/+detector/ramoCurrent.m",
-      "sha256": "3a56f975e44262eba60addbf3e1d63f65aed73870040b8f5fedf81242cb005f7",
-      "bytes": 2325,
-      "mtime_local": "21-9月-2026 19:38:24"
+      "sha256": "1e0def0e1c9e5d9d026851dff4ed96389c381e9c810927c5cb832853fd57ac1b",
+      "bytes": 2277,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+detector/ramoWaveform.m",
@@ -305,9 +305,9 @@
     },
     {
       "path": "src/+tepc/+electronics/simulate.m",
-      "sha256": "5713747b110b05273fb0be56acb81beb8b65a31c764f0b4d144e33f1c84f3a86",
-      "bytes": 13035,
-      "mtime_local": "21-9月-2026 19:39:13"
+      "sha256": "2fc11efd39cd1e5d57cb549ee475c38806444b79dda55fe93de31c56266a0ef2",
+      "bytes": 12805,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+electronics/waveTailTau.m",
@@ -401,9 +401,9 @@
     },
     {
       "path": "src/+tepc/+geometry/sampleChord.m",
-      "sha256": "ea9a7db07fe66ed5962a509104e14fa3f02505ce8fd580294bebd31eb049df3a",
-      "bytes": 12414,
-      "mtime_local": "26-9月-2026 07:49:53"
+      "sha256": "7dff1d7632d8c7418cd5802d1005f0513ce02d144fbd48ada11827eab68ff086",
+      "bytes": 12188,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+geometry/siteConsistency.m",
@@ -419,9 +419,9 @@
     },
     {
       "path": "src/+tepc/+geometry/traceSpec.m",
-      "sha256": "9ad6e597184ff34f820427c559be16664194dbf799eadc34a7dd0ce93950c987",
-      "bytes": 7907,
-      "mtime_local": "26-9月-2026 05:13:27"
+      "sha256": "65e39107d925e440df9f6494c8b2a6e4c298300ca4d4cd7d9fc2f97dd6f8561b",
+      "bytes": 7735,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+io/artifactManifest.m",
@@ -443,9 +443,9 @@
     },
     {
       "path": "src/+tepc/+io/hashFile.m",
-      "sha256": "7f7fd83d07ae871882e230e537fd1a1a4d7213ec24f8c807f434d74b08f60990",
-      "bytes": 750,
-      "mtime_local": "21-9月-2026 15:30:57"
+      "sha256": "4a420ff05d05e7ecdd730bc7070e372e6f7811134e5c66b26ad539990f3947e2",
+      "bytes": 737,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+io/hashText.m",
@@ -515,9 +515,9 @@
     },
     {
       "path": "src/+tepc/+io/sha256pm.m",
-      "sha256": "909b0b98d4f0438eaf9efc30699ccd825edb2b36a0e0ac10d5e8da2b6ab421aa",
-      "bytes": 3182,
-      "mtime_local": "19-9月-2026 19:55:32"
+      "sha256": "ea255634701db27fc9b6d9d4158989a7de83b0b1fb2ffe83802b389e01381143",
+      "bytes": 3117,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+io/waveformSubset.m",
@@ -623,9 +623,9 @@
     },
     {
       "path": "src/+tepc/+simulink/buildElectronicsModel.m",
-      "sha256": "3a1dd82b5b058e9ff7c563c80b1c75346fcea3992eda963b8ddc5f53f9998716",
-      "bytes": 5420,
-      "mtime_local": "21-9月-2026 22:01:15"
+      "sha256": "0e25fa776b75d5ded526066934667d69b739da944b78586c8083f14bc99aa30a",
+      "bytes": 5311,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+simulink/checkParamIdentity.m",
@@ -683,9 +683,9 @@
     },
     {
       "path": "src/+tepc/+transport/csdaRange.m",
-      "sha256": "3bcda30fb5805c174b57245817804d55199610303041df59f749972b26882baa",
-      "bytes": 2414,
-      "mtime_local": "10-10月-2026 10:31:30"
+      "sha256": "e836066a670d5e6471b8f4a9b258d7e0e353e1d82efba1f9bce008359f00ea00",
+      "bytes": 2360,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+transport/csdaTransport.m",
@@ -713,15 +713,15 @@
     },
     {
       "path": "src/+tepc/+transport/stopAt.m",
-      "sha256": "1eab1b549aab96859b459be2d26b69f959a187aa2309ba0db7a06478b286cd94",
-      "bytes": 1438,
-      "mtime_local": "21-9月-2026 15:34:11"
+      "sha256": "873c0a3d4eff7bf1634373954476ae8c16f34cf40e1078c224ce93239c7d22a1",
+      "bytes": 1402,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+transport/stoppingPower.m",
-      "sha256": "07650e81a6113e5d40ec4e5db002f6d4128961c6d4806e8590bd1339f5e4eb9b",
-      "bytes": 11127,
-      "mtime_local": "10-10月-2026 11:01:40"
+      "sha256": "c330cad0b99d32b8b3e423b3601c2d19653e2892f027fded3fa454ddbe045757",
+      "bytes": 10937,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "src/+tepc/+transport/wallDensity.m",
@@ -803,15 +803,15 @@
     },
     {
       "path": "src/+tepc/+validation/runGate.m",
-      "sha256": "e5b1de0cc3b426916dcfafc85c23dc07c569242082fb313b5a60e94bf05eadda",
-      "bytes": 21520,
-      "mtime_local": "10-10月-2026 10:57:46"
+      "sha256": "6933c779803c00d6bb60ba06ae19dcf99c77d226951710d7141f07274aba1a4e",
+      "bytes": 21152,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "app/AppController.m",
-      "sha256": "ed5c0f1616b6866527c29246438d81944b32c2afa60a9ac29fad0501025b63bd",
-      "bytes": 15364,
-      "mtime_local": "21-9月-2026 15:43:20"
+      "sha256": "73e5660f701a3d24d9c9d68450b7accf0a18479206d23516bb4afb71ee47b592",
+      "bytes": 15013,
+      "mtime_local": "06-11月-2026 16:49:48"
     },
     {
       "path": "app/AppState.m",
@@ -899,9 +899,9 @@
     },
     {
       "path": "tests/integration/test_gui_tab_mapping.m",
-      "sha256": "1e5874ed35860d3f3b2641a3efcaa1c430b8cabfb5e0a3126dd8133530ef8888",
-      "bytes": 9062,
-      "mtime_local": "04-10月-2026 12:18:17"
+      "sha256": "2f9dadba2d87e31cf2ae5d156015f3220e70e6f313a507d43607769c6aee025c",
+      "bytes": 8873,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "tests/integration/test_pipeline.m",
@@ -989,9 +989,9 @@
     },
     {
       "path": "tests/unit/test_daq_statemachine.m",
-      "sha256": "9a182d46841b40787b05c6434addc965e22018e33fcd45588f9dff68d86795f4",
-      "bytes": 6003,
-      "mtime_local": "21-9月-2026 15:33:28"
+      "sha256": "3614d1cdcea6821098bd4d0d40d394b0b2f8e5d85834f0f8ed411798f67fedb4",
+      "bytes": 5882,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "tests/unit/test_device_v2_manifest.m",
@@ -1085,9 +1085,9 @@
     },
     {
       "path": "tests/unit/test_geometry_clip.m",
-      "sha256": "9f4b0d6047d269f2a2cd06ed1bebe345ef337054150026ddb5e9acdd4a18233a",
-      "bytes": 30521,
-      "mtime_local": "22-9月-2026 12:18:01"
+      "sha256": "4ea9dac0c07d3c16b346317b11e80b3dae93fcdd0d1b57ea3f6232060b00fdf7",
+      "bytes": 29959,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "tests/unit/test_geometry_overlap.m",
@@ -1145,9 +1145,9 @@
     },
     {
       "path": "tests/unit/test_peak_polarity.m",
-      "sha256": "2edb29c07fb6ba2a9446f4abdeab1a4a6852c6e94bfdb8a649b45679ead66e11",
-      "bytes": 6152,
-      "mtime_local": "05-10月-2026 00:19:27"
+      "sha256": "e6501545c149f99fd6b5701caf082d308e5ed55fe4bbe75ca385f8f14aa841e2",
+      "bytes": 6037,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "tests/unit/test_position_spread.m",
@@ -1157,9 +1157,9 @@
     },
     {
       "path": "tests/unit/test_positioning_claims.m",
-      "sha256": "34245887f36e47e593923b7469bf3c1016b4623e177e6c41b75f0626b13b1cba",
-      "bytes": 11351,
-      "mtime_local": "26-9月-2026 03:27:33"
+      "sha256": "05bc166f4c6212033de509345211e40e0c3e3995b4687218a8587d72fe4a77ab",
+      "bytes": 11110,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "tests/unit/test_published_fields_source.m",
@@ -1235,9 +1235,9 @@
     },
     {
       "path": "tests/unit/test_uq_budget_inertness.m",
-      "sha256": "baf77196c90dc686ccaedc7f036b0eb4a9b096648da097388912708e6b50fb3c",
-      "bytes": 17054,
-      "mtime_local": "03-10月-2026 01:57:07"
+      "sha256": "98e45ab62d7b9728ce0903ba5a630bc33ff3d98522aad18f34f3acf939cf0624",
+      "bytes": 16758,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "tests/unit/test_uq_convergence.m",
@@ -1288,6 +1288,12 @@
       "mtime_local": "24-9月-2026 22:05:14"
     },
     {
+      "path": "tools/check_repository.py",
+      "sha256": "b93dcbcf57ff088a1873b4e24fca82106b69cc92538546ca1e1aa8e103aa1e1a",
+      "bytes": 3967,
+      "mtime_local": "06-11月-2026 16:49:33"
+    },
+    {
       "path": "tools/genCounts.m",
       "sha256": "930665dbe8cc65433e172ea5b147430fe220d0dcb154cbe3c5064e2fd872c9cf",
       "bytes": 9527,
@@ -1301,9 +1307,9 @@
     },
     {
       "path": "tools/stragglingProductionMixProbe.m",
-      "sha256": "60a9290230a79ae5dde9f313fb5c4589377356c4945c88497e64e3dbd43a3d49",
-      "bytes": 14156,
-      "mtime_local": "05-10月-2026 11:54:49"
+      "sha256": "e73cfb552b54533c1246ad042f6c4f20526d19cfdcbf2281d38ce41db1d8dc88",
+      "bytes": 13936,
+      "mtime_local": "06-11月-2026 16:49:49"
     },
     {
       "path": "tools/uncertaintyDepthLadder.m",
@@ -1349,9 +1355,9 @@
     },
     {
       "path": "config/uncertainty_depth_tiers.json",
-      "sha256": "d35992c61290db37f7356d6d6c62058b0e0a80941f1673118ad5edd3dd6279b8",
-      "bytes": 6926,
-      "mtime_local": "27-9月-2026 06:23:53"
+      "sha256": "d3d7012e289c04a122290bca7167b75998b1e5cc4bee92c38f83b0e1a55b49f3",
+      "bytes": 6792,
+      "mtime_local": "06-11月-2026 16:49:48"
     },
     {
       "path": "config/defaults/demo_only.json",
@@ -1433,9 +1439,9 @@
     },
     {
       "path": "README.md",
-      "sha256": "e33073e3feb3dc239dafc55194aed8ca8013f15dbc1cdc43fee205f818f84e2d",
-      "bytes": 15356,
-      "mtime_local": "06-11月-2026 16:36:31"
+      "sha256": "53c145e06bfa6f4b987ae361d122eaff3f37b28735ed3c4c286b4cf3f6c4678a",
+      "bytes": 16085,
+      "mtime_local": "06-11月-2026 16:50:50"
     },
     {
       "path": "tepc_3d_workbench.m",

@@ -1,145 +1,145 @@
-CHECKCODE src/+tepc/+uq/propagateMC.m -> 0 Ìõ (·ÇÓï·¨)
-CHECKCODE src/+tepc/+validation/runGate.m -> 8 Ìõ (·ÇÓï·¨)
-CHECKCODE tools/genCounts.m -> 2 Ìõ (·ÇÓï·¨)
-CHECKCODE tests/unit/test_uq_measurement.m -> 0 Ìõ (·ÇÓï·¨)
-CHECKCODE tests/unit/test_uq_validation.m -> 1 Ìõ (·ÇÓï·¨)
-CHECKCODE tests/unit/test_doc_counts.m -> 6 Ìõ (·ÇÓï·¨)
-CHECKCODE src/+tepc/+run/execute.m -> 10 Ìõ (·ÇÓï·¨)
-CHECKCODE app/TEPCApp.m -> 16 Ìõ (·ÇÓï·¨)
-CHECKCODE tests/integration/test_gui.m -> 2 Ìõ (·ÇÓï·¨)
+CHECKCODE src/+tepc/+uq/propagateMC.m -> 0 æ¡ (éè¯­æ³•)
+CHECKCODE src/+tepc/+validation/runGate.m -> 8 æ¡ (éè¯­æ³•)
+CHECKCODE tools/genCounts.m -> 2 æ¡ (éè¯­æ³•)
+CHECKCODE tests/unit/test_uq_measurement.m -> 0 æ¡ (éè¯­æ³•)
+CHECKCODE tests/unit/test_uq_validation.m -> 1 æ¡ (éè¯­æ³•)
+CHECKCODE tests/unit/test_doc_counts.m -> 6 æ¡ (éè¯­æ³•)
+CHECKCODE src/+tepc/+run/execute.m -> 10 æ¡ (éè¯­æ³•)
+CHECKCODE app/TEPCApp.m -> 16 æ¡ (éè¯­æ³•)
+CHECKCODE tests/integration/test_gui.m -> 2 æ¡ (éè¯­æ³•)
 SYNTAX_ERRORS=0
-genCounts: Ğ´Èë <repo>\docs\counts.json (test_functions=235 gates=16 h5_datasets=22 anchors=15)
+genCounts: å†™å…¥ <repo>\docs\counts.json (test_functions=235 gates=16 h5_datasets=22 anchors=15)
 GENCOUNTS test_functions=235 gates=16 h5=22 anchors=15
-ÕıÔÚÔËĞĞ test_gui
-.......... .......... ÕıÔÚÊ¹ÓÃ 'Processes' ÅäÖÃÎÄ¼şÆô¶¯²¢ĞĞ³Ø(parpool)...
-ÒÑÁ¬½Óµ½¾ßÓĞ 1 ¸ö¹¤×÷½ø³ÌµÄ²¢ĞĞ³Ø¡£
+æ­£åœ¨è¿è¡Œ test_gui
+.......... .......... æ­£åœ¨ä½¿ç”¨ 'Processes' é…ç½®æ–‡ä»¶å¯åŠ¨å¹¶è¡Œæ± (parpool)...
+å·²è¿æ¥åˆ°å…·æœ‰ 1 ä¸ªå·¥ä½œè¿›ç¨‹çš„å¹¶è¡Œæ± ã€‚
 .
-ÒÑÍê³É test_gui
+å·²å®Œæˆ test_gui
 __________
 
-ÕıÔÚÔËĞĞ test_gui_3d_tab
+æ­£åœ¨è¿è¡Œ test_gui_3d_tab
 ....
-ÒÑÍê³É test_gui_3d_tab
+å·²å®Œæˆ test_gui_3d_tab
 __________
 
-ÕıÔÚÔËĞĞ test_gui_tab_mapping
+æ­£åœ¨è¿è¡Œ test_gui_tab_mapping
 .....
-ÒÑÍê³É test_gui_tab_mapping
+å·²å®Œæˆ test_gui_tab_mapping
 __________
 
-ÕıÔÚÔËĞĞ test_pipeline
+æ­£åœ¨è¿è¡Œ test_pipeline
 .......... .
-ÒÑÍê³É test_pipeline
+å·²å®Œæˆ test_pipeline
 __________
 
-ÕıÔÚÔËĞĞ test_release_transaction
+æ­£åœ¨è¿è¡Œ test_release_transaction
 ........
-ÒÑÍê³É test_release_transaction
+å·²å®Œæˆ test_release_transaction
 __________
 
-ÕıÔÚÔËĞĞ test_simulink_gate
+æ­£åœ¨è¿è¡Œ test_simulink_gate
 .
-ÒÑÍê³É test_simulink_gate
+å·²å®Œæˆ test_simulink_gate
 __________
 
-ÕıÔÚÔËĞĞ test_artifact_transaction
+æ­£åœ¨è¿è¡Œ test_artifact_transaction
 ......
-ÒÑÍê³É test_artifact_transaction
+å·²å®Œæˆ test_artifact_transaction
 __________
 
-ÕıÔÚÔËĞĞ test_config_validate
+æ­£åœ¨è¿è¡Œ test_config_validate
 ..........
-ÒÑÍê³É test_config_validate
+å·²å®Œæˆ test_config_validate
 __________
 
-ÕıÔÚÔËĞĞ test_constants_registry
-..[test_constants_registry] ÒıÓÃĞĞºÅ´ı¸üĞÂ (·ÇÊ§°Ü):
-  calibration.streamSeedBase: src/+tepc/+run/execute.m:93 ĞĞºÅÒÑÆ¯ÒÆ (ÖµÈÔÔÚ¸ÃÎÄ¼şÖĞ, Çë¸üĞÂ used_by ĞĞºÅ)
-  uq.defaultNSamples: src/+tepc/+run/execute.m:370 ĞĞºÅÒÑÆ¯ÒÆ (ÖµÈÔÔÚ¸ÃÎÄ¼şÖĞ, Çë¸üĞÂ used_by ĞĞºÅ)
-  uq.defaultSeed: src/+tepc/+run/execute.m:372 ĞĞºÅÒÑÆ¯ÒÆ (ÖµÈÔÔÚ¸ÃÎÄ¼şÖĞ, Çë¸üĞÂ used_by ĞĞºÅ)
+æ­£åœ¨è¿è¡Œ test_constants_registry
+..[test_constants_registry] å¼•ç”¨è¡Œå·å¾…æ›´æ–° (éå¤±è´¥):
+  calibration.streamSeedBase: src/+tepc/+run/execute.m:93 è¡Œå·å·²æ¼‚ç§» (å€¼ä»åœ¨è¯¥æ–‡ä»¶ä¸­, è¯·æ›´æ–° used_by è¡Œå·)
+  uq.defaultNSamples: src/+tepc/+run/execute.m:370 è¡Œå·å·²æ¼‚ç§» (å€¼ä»åœ¨è¯¥æ–‡ä»¶ä¸­, è¯·æ›´æ–° used_by è¡Œå·)
+  uq.defaultSeed: src/+tepc/+run/execute.m:372 è¡Œå·å·²æ¼‚ç§» (å€¼ä»åœ¨è¯¥æ–‡ä»¶ä¸­, è¯·æ›´æ–° used_by è¡Œå·)
 ....
-ÒÑÍê³É test_constants_registry
+å·²å®Œæˆ test_constants_registry
 __________
 
-ÕıÔÚÔËĞĞ test_daq_statemachine
+æ­£åœ¨è¿è¡Œ test_daq_statemachine
 ..........
-ÒÑÍê³É test_daq_statemachine
+å·²å®Œæˆ test_daq_statemachine
 __________
 
-ÕıÔÚÔËĞĞ test_doc_counts
+æ­£åœ¨è¿è¡Œ test_doc_counts
 ....
-ÒÑÍê³É test_doc_counts
+å·²å®Œæˆ test_doc_counts
 __________
 
-ÕıÔÚÔËĞĞ test_electronics
+æ­£åœ¨è¿è¡Œ test_electronics
 .......... .......... ....
-ÒÑÍê³É test_electronics
+å·²å®Œæˆ test_electronics
 __________
 
-ÕıÔÚÔËĞĞ test_false_trigger_rate
+æ­£åœ¨è¿è¡Œ test_false_trigger_rate
 [pileup/chunkSize=100] dead=2406 pile=460 acc=2134 n=5000 zeroW=3419
 [pileup/chunkSize=2000] dead=2406 pile=460 acc=2134 n=5000 zeroW=3419
 .[exact-moment] relErr(impulse)=1.110e-16 relErr(event)=0.000e+00 peak=1.4994895789e-01 ipk=6 Ts=1.00e-08 peak/(q*hpeak)=0.3905
 .[ftr/iid] sigma=1.230615e-03 u=4.40 n=100000 M=400 p_emp=0.4250 p_signed_theory=0.4180 p_rect_theory=0.6613 p_emp_rect=0.6275 se=0.0247 u_shipped=16.25
 .[ftr/shaped] sigma=1.948946e-03 thr=6.626416e-03 p_signed=0.4108 p_rect=0.5525 ratio=1.345 iid1=0.3761 iid2=0.6108 se=0.0078 disc=567/4000
 .
-ÒÑÍê³É test_false_trigger_rate
+å·²å®Œæˆ test_false_trigger_rate
 __________
 
-ÕıÔÚÔËĞĞ test_field_topology_guard
+æ­£åœ¨è¿è¡Œ test_field_topology_guard
 ..........
-ÒÑÍê³É test_field_topology_guard
+å·²å®Œæˆ test_field_topology_guard
 __________
 
-ÕıÔÚÔËĞĞ test_geometry_3d_contract
+æ­£åœ¨è¿è¡Œ test_geometry_3d_contract
 .......... .......... .......
-ÒÑÍê³É test_geometry_3d_contract
+å·²å®Œæˆ test_geometry_3d_contract
 __________
 
-ÕıÔÚÔËĞĞ test_geometry_chord
+æ­£åœ¨è¿è¡Œ test_geometry_chord
 ..........
-ÒÑÍê³É test_geometry_chord
+å·²å®Œæˆ test_geometry_chord
 __________
 
-ÕıÔÚÔËĞĞ test_gui_error_surface
+æ­£åœ¨è¿è¡Œ test_gui_error_surface
 .....
-ÒÑÍê³É test_gui_error_surface
+å·²å®Œæˆ test_gui_error_surface
 __________
 
-ÕıÔÚÔËĞĞ test_io_transaction
+æ­£åœ¨è¿è¡Œ test_io_transaction
 .......... ..
-ÒÑÍê³É test_io_transaction
+å·²å®Œæˆ test_io_transaction
 __________
 
-ÕıÔÚÔËĞĞ test_peak_polarity
+æ­£åœ¨è¿è¡Œ test_peak_polarity
 ......
-ÒÑÍê³É test_peak_polarity
+å·²å®Œæˆ test_peak_polarity
 __________
 
-ÕıÔÚÔËĞĞ test_position_spread
+æ­£åœ¨è¿è¡Œ test_position_spread
 ........
-ÒÑÍê³É test_position_spread
+å·²å®Œæˆ test_position_spread
 __________
 
-ÕıÔÚÔËĞĞ test_spectrum_dose
+æ­£åœ¨è¿è¡Œ test_spectrum_dose
 .......... ...
-ÒÑÍê³É test_spectrum_dose
+å·²å®Œæˆ test_spectrum_dose
 __________
 
-ÕıÔÚÔËĞĞ test_transport
+æ­£åœ¨è¿è¡Œ test_transport
 .......... .
-ÒÑÍê³É test_transport
+å·²å®Œæˆ test_transport
 __________
 
-ÕıÔÚÔËĞĞ test_uq_measurement
+æ­£åœ¨è¿è¡Œ test_uq_measurement
 .......
-ÒÑÍê³É test_uq_measurement
+å·²å®Œæˆ test_uq_measurement
 __________
 
-ÕıÔÚÔËĞĞ test_uq_validation
+æ­£åœ¨è¿è¡Œ test_uq_validation
 .......... ..
-ÒÑÍê³É test_uq_validation
+å·²å®Œæˆ test_uq_validation
 __________
 
 
-==== ²âÊÔ»ã×Ü: 235 Í¨¹ı / 0 Ê§°Ü / 0 Î´¾ö / 235 ×Ü¼Æ ====
+==== æµ‹è¯•æ±‡æ€»: 235 é€šè¿‡ / 0 å¤±è´¥ / 0 æœªå†³ / 235 æ€»è®¡ ====

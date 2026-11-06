@@ -1,42 +1,42 @@
-ÕıÔÚÔËĞĞ test_electronics
+æ­£åœ¨è¿è¡Œ test_electronics
 ........
-ÒÑÍê³É test_electronics
+å·²å®Œæˆ test_electronics
 __________
 
-ÕıÔÚÔËĞĞ test_geometry_chord
+æ­£åœ¨è¿è¡Œ test_geometry_chord
 .....
-ÒÑÍê³É test_geometry_chord
+å·²å®Œæˆ test_geometry_chord
 __________
 
-ÕıÔÚÔËĞĞ test_spectrum_dose
+æ­£åœ¨è¿è¡Œ test_spectrum_dose
 ......
-ÒÑÍê³É test_spectrum_dose
+å·²å®Œæˆ test_spectrum_dose
 __________
 
-ÕıÔÚÔËĞĞ test_transport
+æ­£åœ¨è¿è¡Œ test_transport
 .......
-ÒÑÍê³É test_transport
+å·²å®Œæˆ test_transport
 __________
 
-ÕıÔÚÔËĞĞ test_uq_validation
+æ­£åœ¨è¿è¡Œ test_uq_validation
 ....
-ÒÑÍê³É test_uq_validation
+å·²å®Œæˆ test_uq_validation
 __________
 
-ÕıÔÚÔËĞĞ test_pipeline
+æ­£åœ¨è¿è¡Œ test_pipeline
 ......
-ÒÑÍê³É test_pipeline
+å·²å®Œæˆ test_pipeline
 __________
 
-ÕıÔÚÔËĞĞ test_simulink_gate
+æ­£åœ¨è¿è¡Œ test_simulink_gate
 .
-ÒÑÍê³É test_simulink_gate
+å·²å®Œæˆ test_simulink_gate
 __________
 
-ÕıÔÚÔËĞĞ test_gui
+æ­£åœ¨è¿è¡Œ test_gui
 .....
-ÒÑÍê³É test_gui
+å·²å®Œæˆ test_gui
 __________
 
 
-==== ²âÊÔ»ã×Ü: 42 Í¨¹ı / 0 Ê§°Ü / 42 ×Ü¼Æ ====
+==== æµ‹è¯•æ±‡æ€»: 42 é€šè¿‡ / 0 å¤±è´¥ / 42 æ€»è®¡ ====
