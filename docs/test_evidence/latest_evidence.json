@@ -1,6 +1,6 @@
 {
   "schema": "tepc-latest-evidence-v1",
-  "generated_at": "2026-11-06T10:03:02Z",
+  "generated_at": "2026-11-06T10:22:41Z",
   "note": "运行环境与证据哈希索引; 计数来自 docs/counts.json (tools/genCounts.m 生成); 不含本文件自身哈希",
   "repo_root": "<local-path>",
   "matlab_version": "25.1.0.2943329 (R2025a)",
@@ -562,7 +562,7 @@
     }
   ],
   "counts_source": "docs/counts.json",
-  "counts_generated_at": "2026-11-06T10:02:27Z",
+  "counts_generated_at": "2026-11-06T10:21:47Z",
   "test_functions": 617,
   "gates": 16,
   "h5_datasets": 23,
@@ -580,9 +580,9 @@
     },
     {
       "path": "docs/counts.json",
-      "sha256": "718770bd21c03093f40db06cfaf86ed339aff2646610057bddc7d31b66db8f7b",
+      "sha256": "85179b0e8ff61af222f5a06dfb4d08f7b04abadbab1717f746c882eb8d993716",
       "bytes": 8663,
-      "mtime_local": "2026-11-06 18:02:27"
+      "mtime_local": "2026-11-06 18:21:47"
     },
     {
       "path": "config/defaults/demo_only.json",
@@ -604,9 +604,9 @@
     },
     {
       "path": "README.md",
-      "sha256": "c12cfd1aafdc3681ef565cac3ebf2a01127a65896f89d687fe64ac23603b312a",
-      "bytes": 17364,
-      "mtime_local": "2026-11-06 17:55:18"
+      "sha256": "73ce0563eec423a7691dc2421c6f63bf87e573f99e8d6e8b7aa519848d204477",
+      "bytes": 19790,
+      "mtime_local": "2026-11-06 18:21:01"
     },
     {
       "path": "docs/test_evidence/batch_release.log",
@@ -940,9 +940,9 @@
     },
     {
       "path": "docs/test_evidence/source_manifest.json",
-      "sha256": "1614daf06c4037dac6410639df5a2e7ec5a12eaa4b722b730cef140b12f07e87",
+      "sha256": "178ad076491d5a05f3e3ca8e19fc0bb01707b34d1f4a1ef45a4bea58295c760c",
       "bytes": 52041,
-      "mtime_local": "2026-11-06 18:03:02"
+      "mtime_local": "2026-11-06 18:22:41"
     },
     {
       "path": "docs/test_evidence/species_axis_leg_pairing_20260929T150930Z.json",

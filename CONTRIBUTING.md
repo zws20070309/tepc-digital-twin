@@ -3,6 +3,13 @@
 Thanks for taking the time to contribute. This repository has an unusually strict
 internal contract, so please read this page before opening a pull request.
 
+## License of your contribution
+
+This project is licensed under the **PolyForm Noncommercial License 1.0.0** (see `LICENSE`):
+noncommercial use only, no commercial use. By opening a pull request you agree that your
+contribution is licensed under the same terms. If you need a different arrangement (for example
+a commercial licence for your own fork), say so in the pull request before we merge anything.
+
 ## Ground rules
 
 1. **Counts are generated, never hand-edited.**

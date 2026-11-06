@@ -13,7 +13,7 @@ authors:
   - name: "TEPC Digital Twin authors"
 version: "1.0.0"
 date-released: "2026-11-06"
-license: MIT
+license: PolyForm-Noncommercial-1.0.0
 repository-code: "https://github.com/zws20070309/tepc-digital-twin"
 keywords:
   - microdosimetry

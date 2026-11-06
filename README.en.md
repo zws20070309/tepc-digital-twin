@@ -35,6 +35,7 @@ splicing — deliberately not a collision-by-collision Monte Carlo.
 | Reproduction of any real device | Dimensions, materials and gas mixture are taken from design parameters and the literature; the model has never been compared against a physical detector |
 | Validated absolute dose | There is no reference-field calibration data; `runGate` returns `NOT_EVALUATED` for that item and the release flag stays false |
 | Precision neutron / gamma response | Elastic cross-section weights, gamma mass attenuation and the photoelectric branch are ASSUMED placeholder values, registered as such in every output file |
+| "Open source" (free for any use) | This project is **source-available but noncommercial only**: PolyForm Noncommercial 1.0.0, commercial use needs a separate licence — see [License and commercial use](#license-and-commercial-use) |
 
 ## At a glance
 
@@ -46,7 +47,7 @@ splicing — deliberately not a collision-by-collision Monte Carlo.
 | Not required | Statistics Toolbox — LHS, Poisson, quantiles, bootstrap and `norminv` are implemented in-repo |
 | Entry points | `tepc_quickstart`, `tepc_gui`, `tepc_3d_workbench` |
 | Verification | See [Verification](#verification) |
-| License | `LICENSE` file; third-party data terms in [Data provenance](#data-provenance-and-third-party-data) |
+| License | **PolyForm Noncommercial 1.0.0** — noncommercial use only (study / research / teaching / charity), no commercial use; see [License and commercial use](#license-and-commercial-use) |
 
 ## Why it exists
 
@@ -265,10 +266,54 @@ Every "current state" number in this repository can be recomputed on the spot:
 
 If you use this code in academic work, cite it via the metadata in [`CITATION.cff`](CITATION.cff).
 
-## License
+## License and commercial use
 
-See [`LICENSE`](LICENSE). Third-party reference data remains subject to the terms of its original
-publishers, as listed above.
+This project is licensed under the **[PolyForm Noncommercial License 1.0.0](LICENSE)**. The full
+text is in [`LICENSE`](LICENSE).
+
+**In one sentence: study, research, teaching and non-profit use are allowed; commercial use is not.**
+
+### Allowed without contacting the author
+
+- Personal study, reading the source, running the pipeline, coursework, a thesis or a paper
+- Research and teaching inside universities, research institutes, hospitals and public bodies
+- Use and modification by charities and other non-profit organizations
+- Modification, derivative works and redistribution for the noncommercial purposes above,
+  provided this licence and the `Required Notice` travel with the copy
+
+### Not allowed without a separate commercial licence
+
+- Selling, renting or charging a subscription for this project (or a derivative) as a product,
+  or bundling it into one
+- Use inside a company's **commercial** workflow: R&D, production, inspection or consulting that
+  generates revenue
+- Offering it as part of a paid service, including SaaS, pay-per-computation and paid delivery work
+- Any use whose primary purpose is commercial gain
+
+For commercial licensing, collaboration, or anything else, open an issue at
+[GitHub Issues](https://github.com/zws20070309/tepc-digital-twin).
+
+### Three things you should know
+
+1. **This is not a free licence.** PolyForm Noncommercial is not OSI-approved: the Open Source
+   Definition forbids discrimination by field of use. The accurate description of this project is
+   **source-available, noncommercial only** — not "open source software". Please do not describe it
+   as "MIT-licensed" or "free for any use" in a paper or a product document.
+2. **The licence does not cover third-party data.** The reference tables under
+   `config/reference/` and `config/quality-factor/` come from NIST, ICRP and published papers.
+   Rights in those stay with their authors and publishers and remain subject to their own terms;
+   this licence grants you nothing over them.
+3. **The licence is not a technical guarantee.** The code and its outputs carry a RESEARCH/DEMO
+   label and a technical gate that blocks absolute-dose release. Being licensed to use the
+   software does not change those technical limits.
+
+### Disclaimer
+
+Per the No Liability section of PolyForm Noncommercial 1.0.0, the software is provided as is,
+without any warranty or condition, and the licensor is not liable for any damages arising out of
+these terms or the use or nature of the software. **This project is not a radiation-protection
+instrument, not a calibrated dosimeter, and not a tool for clinical or regulatory use** — see the
+[delivery scope and limitations](#honest-limitations) above.
 
 ## Contributing / security
 
